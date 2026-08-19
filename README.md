@@ -11,7 +11,7 @@ required by Google Play. The application source is not part of this repository.
 
 Served by GitHub Pages from the `main` branch.
 
-Contact: admin@ikkadoes.com
+Contact: spoolfarm@ikkadoes.com
 
 © 2026 IkkaDoes. SpoolFarm is an independent project and is not affiliated with
 Bambu Lab, Klipper, Duet3D or Spoolman.
