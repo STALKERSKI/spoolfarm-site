@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — SpoolFarm</title>
+<meta name="description" content="SpoolFarm privacy policy. There is no SpoolFarm server: no analytics, no crash reporting, no ads, no accounts. All data stays on your device.">
+<link rel="canonical" href="https://spoolfarm.ikkadoes.com/privacy">
+<link rel="alternate" hreflang="ru" href="https://spoolfarm.ikkadoes.com/privacy/ru/">
+<link rel="alternate" hreflang="en" href="https://spoolfarm.ikkadoes.com/privacy">
+<link rel="stylesheet" href="/assets/legal.css">
+</head>
+<body>
+<div class="wrap">
+
+<nav class="nav">
+  <a href="/">← SpoolFarm</a>
+  <a href="/privacy/ru/">Русский</a>
+</nav>
+
+<h1>SpoolFarm Privacy Policy</h1>
+<p class="dates"><strong>Effective date:</strong> 19 August 2026 &nbsp;·&nbsp;
+<strong>Last updated:</strong> 19 August 2026</p>
+
+<p>SpoolFarm is an Android application for running a 3D-printing farm: filament spool
+inventory, customer orders, cost calculation and printer monitoring.</p>
+
+<p>The application is developed by <strong>IkkaDoes</strong> (&ldquo;we&rdquo;,
+&ldquo;us&rdquo;). You can reach us at
+<a href="mailto:admin@ikkadoes.com?subject=%5BSpoolFarm%5D%20Privacy">admin@ikkadoes.com</a>
+(please keep the <code>[SpoolFarm]</code> tag in the subject line).</p>
+
+<div class="lede">
+  <p><strong>In short: we do not operate a server. We are technically unable to receive
+  your data.</strong></p>
+  <p>SpoolFarm keeps everything on your device. The app contains no analytics, no crash
+  reporting, no advertising SDKs and no user accounts. Data leaves your device
+  <strong>only</strong> when you have configured an external integration yourself, and it
+  goes <strong>only</strong> to the destination you entered — your printer, your server,
+  your bot.</p>
+</div>
+
+<h2>1. Data that stays on your device</h2>
+<p>The app stores locally:</p>
+<ul>
+  <li>filament spool catalogue, remaining weight and consumption history;</li>
+  <li>orders, <strong>customer names and contact details</strong>;</li>
+  <li>prices, cost of goods, revenue and all financial calculations;</li>
+  <li>your business details used on invoices;</li>
+  <li>photos of spools and orders;</li>
+  <li>printer profiles, print history and the job ledger;</li>
+  <li>packaging catalogue and stock levels.</li>
+</ul>
+<p>This data is <strong>never transmitted</strong> to us or to anyone else. It lives in
+the app&rsquo;s database inside Android private storage. It leaves the device only if you
+export it yourself (a backup file, a CSV, a PDF invoice) and send that file somewhere
+yourself.</p>
+<p>We have no access to this data under any circumstances.</p>
+
+<h2>2. Device permissions</h2>
+<div class="tablewrap">
+<table>
+  <thead><tr><th>Permission</th><th>Why</th></tr></thead>
+  <tbody>
+    <tr><td>Internet</td><td>Communicating with your printers on the local network and with the integrations you configured</td></tr>
+    <tr><td>Network state</td><td>Detecting whether you are on your home network, to choose the local or the remote printer address</td></tr>
+    <tr><td>Camera (on request)</td><td>Scanning spool QR/barcodes and taking photos of spools and orders</td></tr>
+    <tr><td>Notifications</td><td>Local notifications about print progress, printer errors and low stock</td></tr>
+    <tr><td>Ignore battery optimisation (on request)</td><td>Keeping background print monitoring alive</td></tr>
+  </tbody>
+</table>
+</div>
+<p><strong>The app does not request or use location access.</strong></p>
+
+<h2>3. What can leave your device — and only because you configured it</h2>
+<p>Every item below is <strong>off by default</strong>. It is enabled only when you enter
+an address, token or credentials in Settings yourself. We do not choose the recipient for
+you and we do not receive a copy.</p>
+
+<h3>3.1 Bambu Lab Cloud</h3>
+<p>If you connect a Bambu Lab printer through the cloud, the app sends <strong>your email
+address and password</strong> to Bambu Lab servers to sign in to your account, and then
+exchanges printer status and print job data with them.</p>
+<p>Recipient: Bambu Lab. Their processing is governed by their own privacy policy. We have
+no access to this exchange. Connecting to a Bambu printer over LAN does not use cloud
+credentials.</p>
+
+<h3>3.2 Your machine-learning (ML) server</h3>
+<p>If you configure a print-defect detection server, the app sends <strong>frames from the
+printer camera</strong> to it. You supply the address; it is normally a machine on your own
+network. We neither provide such a server nor receive the frames.</p>
+
+<h3>3.3 Telegram, Discord, custom webhook</h3>
+<p>If you connect a bot or a webhook, <strong>notification text</strong> is sent there:
+printer name, print file name, printer error text, smart plug name, filament shortage
+message, overdue maintenance reminder.</p>
+<p><strong>Customer names and order contents are not included in these notifications.</strong>
+This is verified in the source code: orders are not added to the lines sent to external
+channels.</p>
+<p>The recipient is the service you chose (Telegram, Discord or your own webhook endpoint)
+and it operates under its own policy.</p>
+
+<h3>3.4 Spoolman</h3>
+<p>If you configure the address of your Spoolman server, the app synchronises
+<strong>spool data</strong> with it: material, manufacturer, colour, weight, remaining
+amount. Spoolman is software you deploy yourself, normally on your own network.</p>
+
+<h3>3.5 Your printers on the local network</h3>
+<p>The app exchanges control commands, status and print files with printers
+(Klipper/Moonraker, Duet, Bambu Lab over LAN). This traffic goes <strong>directly between
+your phone and your printer</strong> and does not pass through us.</p>
+
+<h3>3.6 Server mode (web interface)</h3>
+<p>If you enable server mode, the app serves a web interface on your local network so that
+you can work with your own data from a computer. Access is protected by a PIN that you set.
+In this mode <strong>your inventory and order data, including customer names, becomes
+reachable on your local network</strong> to anyone who knows the address and the PIN. Do not
+enable it on a network you do not control.</p>
+
+<h2>4. Encryption</h2>
+<p><strong>On the device.</strong> Sensitive settings — Bambu Cloud password, Telegram bot
+token and chat ID, Discord/webhook URL, server mode PIN, printer access codes and business
+details — are stored encrypted. The key lives in hardware-backed Android Keystore and never
+leaves the device.</p>
+<p><strong>In transit.</strong> The honest answer is that <strong>not everything that leaves
+the device is encrypted.</strong></p>
+<ul>
+  <li>Traffic to printers on the local network uses HTTP without TLS. This is how
+  Klipper/Moonraker and Duet work in a typical home installation; the app currently has no
+  HTTPS support for printers at all.</li>
+  <li>Traffic to Spoolman uses whichever scheme you entered in the address.</li>
+  <li>Traffic to Bambu Lab Cloud, Telegram and Discord uses HTTPS — those services require
+  encryption.</li>
+  <li>For custom webhooks the app <strong>blocks</strong> plaintext <code>http://</code> by
+  default. You can lift that restriction manually in Settings, at which point the security
+  of that channel is your responsibility.</li>
+</ul>
+<p>We intend to add HTTPS support for printers and Spoolman in a future update.</p>
+
+<h2>5. Android backup</h2>
+<p>Android automatic backup is <strong>disabled</strong> for SpoolFarm data: the database,
+files, settings and photos are not included in a Google cloud backup and are not transferred
+automatically to a new device.</p>
+<p>Data transfer is performed <strong>only</strong> through the built-in backup export, a
+file that you create and store yourself. The file is protected by a password you choose
+during export; <strong>only you know that password and we cannot recover it.</strong></p>
+
+<h2>6. Children</h2>
+<p>The app is intended for 3D printer owners and small-scale manufacturing. It is not
+directed at children under 13 and we do not knowingly collect children&rsquo;s data.</p>
+
+<h2>7. Deleting your data</h2>
+<p>SpoolFarm has no user accounts, so there is no account to delete — we hold nothing of
+yours.</p>
+<p>To delete your data, uninstall the app: the database, settings and photos are removed
+with it. You can also clear the app&rsquo;s data from Android system settings. If you want
+to keep your data, export a backup first.</p>
+<p>To delete data that has gone to external services (Bambu Lab, Telegram, Discord, your
+Spoolman or your ML server), contact those services directly — they are not under our
+control.</p>
+
+<h2>8. Selling and sharing</h2>
+<p>We do not sell, rent or share your data with third parties, because we never receive it.
+The app contains no ad network, data broker or analytics partner.</p>
+
+<h2>9. Changes to this policy</h2>
+<p>If the application starts handling data differently, we will update this document and
+change the date at the top of the page. Material changes will also be described in the
+Google Play release notes.</p>
+
+<h2>10. Contact</h2>
+<p>Questions about this policy or about data handling:
+<a href="mailto:admin@ikkadoes.com?subject=%5BSpoolFarm%5D%20Privacy">admin@ikkadoes.com</a>
+— please keep <code>[SpoolFarm]</code> in the subject line.</p>
+
+<footer>
+  Application: SpoolFarm (<code>com.ikkadoes.spoolfarm</code>) ·
+  <a href="/">spoolfarm.ikkadoes.com</a> ·
+  <a href="/privacy/ru/">Русская версия</a>
+</footer>
+
+</div>
+</body>
+</html>
