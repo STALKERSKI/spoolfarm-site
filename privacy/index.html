@@ -38,6 +38,10 @@ inventory, customer orders, cost calculation and printer monitoring.</p>
   <strong>only</strong> when you have configured an external integration yourself, and it
   goes <strong>only</strong> to the destination you entered — your printer, your server,
   your bot.</p>
+  <p><strong>One clarification for the paid Pro edition.</strong> Purchases are processed by
+  Google Play, and the developer console shows us anonymised sales statistics — country,
+  amounts, subscription status. Your card details are never passed to us. Details in
+  section 3.7.</p>
 </div>
 
 <h2>1. Data that stays on your device</h2>
@@ -116,6 +120,29 @@ you can work with your own data from a computer. Access is protected by a PIN th
 In this mode <strong>your inventory and order data, including customer names, becomes
 reachable on your local network</strong> to anyone who knows the address and the PIN. Do not
 enable it on a network you do not control.</p>
+
+<h3>3.7 Google Play — purchases in the Pro edition</h3>
+<p>This section concerns <strong>the Pro edition only</strong>. In the Free edition and in
+builds distributed outside the store, none of the below happens: the billing code is disabled
+at build level.</p>
+<p>Subscription and one-time purchase payments are processed by Google Play. <strong>We never
+receive or store your payment card details</strong> — they go to Google and never reach
+us.</p>
+<ul>
+  <li>The app queries the Google Play service to check whether your subscription is active.
+  The response contains the purchase status and its identifier — not payment credentials.</li>
+  <li>The response is <strong>cached on the device</strong> for up to 14 days so that a lack
+  of internet access does not deprive you of access you have paid for. The cache is held in
+  the app's encrypted storage (see section 4).</li>
+  <li>Google acts as the seller and processes the purchase under <strong>its own</strong>
+  privacy policy. We have no influence over that.</li>
+  <li>The Google Play developer console gives us sales statistics: country, currency, amounts,
+  subscription statuses, order identifiers. <strong>Your name, email address and payment
+  credentials are not shown to us there.</strong> The exception is if you write to us
+  yourself, or if Google discloses information when handling a refund or dispute.</li>
+</ul>
+<p>Subscription cancellations and refund requests are handled on the Google Play side; the
+procedure is described in the <a href="/terms/">Terms of Service</a>.</p>
 
 <h2>4. Encryption</h2>
 <p><strong>On the device.</strong> Sensitive settings — Bambu Cloud password, Telegram bot
