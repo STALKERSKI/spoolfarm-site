@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Product tour — SpoolFarm</title>
+<meta name="description" content="SpoolFarm: filament inventory, true print costing, orders and invoices, Bambu Lab and Klipper printer control, analytics. A tour of the 3D printing farm app.">
+<link rel="canonical" href="https://spoolfarm.ikkadoes.com/tour/">
+<link rel="alternate" hreflang="en" href="https://spoolfarm.ikkadoes.com/tour/">
+<link rel="alternate" hreflang="ru" href="https://spoolfarm.ikkadoes.com/tour/ru/">
+<link rel="stylesheet" href="/assets/tour.css">
+</head>
+<body>
+<div class="wrap">
+
+<nav class="nav noprint">
+  <a href="/">← SpoolFarm</a>
+  <a href="/faq/">FAQ</a>
+  <a href="/privacy/">Privacy</a>
+  <span class="spacer"></span>
+  <span class="langswitch"><span class="on">English</span><a href="/tour/ru/">Русский</a></span>
+</nav>
+
+<header class="hero">
+  <span class="badge">Android 12+ · coming to Google Play</span>
+  <h1>SpoolFarm</h1>
+  <p class="lead">Your phone as the control room of a 3D printing farm: filament inventory,
+  honest costing, customer orders and live printer control — in one app.</p>
+  <div class="cta noprint">
+    <a class="btn btn-primary" href="/faq/">Frequently asked questions</a>
+    <a class="btn btn-ghost" href="mailto:spoolfarm@ikkadoes.com?subject=%5BSpoolFarm%5D%20Testing">Apply to test</a>
+  </div>
+  <p class="printonly" style="color:var(--muted);font-size:10pt">spoolfarm.ikkadoes.com · spoolfarm@ikkadoes.com</p>
+</header>
+
+<hr class="rule">
+
+<section>
+  <h2>The problem this was written for</h2>
+  <div class="problem">
+    <p>With one printer, you keep it all in your head. Once there are several,
+    <strong>you lose track of the money.</strong></p>
+    <p>How much filament is actually left and what runs out next week. What a specific print
+    really cost, counting not just plastic but electricity, printer wear and failed jobs.
+    Whether you made money on an order — or quietly paid for it yourself.</p>
+    <p>The slicer shows grams. The bank shows a monthly total. <strong>Between them there is
+    nothing.</strong> Most people plug that gap with a spreadsheet and abandon it within a
+    month, because every print has to be typed in by hand.</p>
+    <p>SpoolFarm closes the gap by itself: filament is deducted when a print finishes, cost is
+    calculated automatically, and every order shows what you actually earned.</p>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><span class="n">5</span><span class="t">printer ecosystems in one list — Bambu Lab, Klipper, OctoPrint, Prusa, Duet</span></div>
+  <div class="stat"><span class="n">0</span><span class="t">servers, accounts and ads — your data never leaves the phone</span></div>
+  <div class="stat"><span class="n">7</span><span class="t">interface languages</span></div>
+</div>
+
+<hr class="rule">
+
+<section>
+  <h2>What it looks like</h2>
+  <p class="sub">The main screens of the app and what each one is responsible for.</p>
+
+  <div class="row">
+    <div class="shotwrap"><div class="phone">
+      <img src="/tour/shots/01-dashboard.jpg" alt="SpoolFarm dashboard: four printer tiles with status, progress and temperatures" loading="lazy">
+    </div></div>
+    <div class="rowtext">
+      <p class="kicker">Overview</p>
+      <h3>The whole farm on one screen</h3>
+      <p>Printers of different brands in a single list, not across four apps. You can see at a
+      glance who is printing, who is idle and where something went wrong.</p>
+      <ul>
+        <li>Status, progress and nozzle, bed and chamber temperatures</li>
+        <li>Bambu Lab works over the local network, with no cloud account</li>
+        <li>Pause, cancel and jump to controls straight from the tile</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row flip">
+    <div class="shotwrap"><div class="phone">
+      <img src="/tour/shots/02-spools.jpg" alt="Filament inventory: spool list with remaining weight and a low-stock warning" loading="lazy">
+    </div></div>
+    <div class="rowtext">
+      <p class="kicker">Inventory</p>
+      <h3>Every spool tracked to the gram</h3>
+      <p>The remaining weight goes down by itself when a print finishes. You never log
+      consumption by hand — which is exactly where spreadsheets die.</p>
+      <ul>
+        <li>Search and filters by material, sorting by remaining weight</li>
+        <li>Warning with a forecast: "TPU, 84 g left — about 10 days"</li>
+        <li>A low-stock threshold on every spool</li>
+        <li>Barcodes and NFC tags, plus a quick stocktake</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="shotwrap"><div class="phone">
+      <img src="/tour/shots/03-spool-card.jpg" alt="Spool detail: 46 percent, 468 of 1000 grams, material, storage location, lot number" loading="lazy">
+    </div></div>
+    <div class="rowtext">
+      <p class="kicker">Spool detail</p>
+      <h3>Everything about a spool in one place</h3>
+      <p>Not just "blue PLA" but the whole story: what is left, where it sits, what it cost and
+      what has already been printed from it.</p>
+      <ul>
+        <li>Remaining weight in grams and per cent, plus the spool's own weight</li>
+        <li>Storage location and lot number — so you can find it on the shelf</li>
+        <li>Price per kilo and the value of what is left</li>
+        <li>Print history for this spool with the usage of each job</li>
+        <li>QR code and NFC tag writing</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row flip">
+    <div class="shotwrap"><div class="phone">
+      <img src="/tour/shots/04-calculator.jpg" alt="Cost calculator: three models with cost, price and profit" loading="lazy">
+    </div></div>
+    <div class="rowtext">
+      <p class="kicker">Money</p>
+      <h3>Cost, not grams</h3>
+      <p>The slicer only knows about plastic. Margin is eaten by the lines it cannot see:
+      electricity, printer wear, labour and the share of failed prints.</p>
+      <ul>
+        <li>Price a job before you start it, instead of quoting by feel</li>
+        <li>Cost, price and profit shown per item at once</li>
+        <li>Several models in a single estimate</li>
+        <li>Filament costed at the real price of the actual spool</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="shotwrap"><div class="phone">
+      <img src="/tour/shots/05-orders.jpg" alt="Order list: active orders, 1522 euro revenue, 956.50 euro profit" loading="lazy">
+    </div></div>
+    <div class="rowtext">
+      <p class="kicker">Orders</p>
+      <h3>Profit, not just revenue</h3>
+      <p>The summary at the top covers every order: how many are in progress, what they brought
+      in and what is left of it after cost.</p>
+      <ul>
+        <li>Line items, quantity, price, customer</li>
+        <li>Filters by stage: new, in progress, ready, delivered</li>
+        <li>PDF invoices with your own business details</li>
+        <li>Packaging deducted from stock and included in cost</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row flip">
+    <div class="shotwrap"><div class="phone">
+      <img src="/tour/shots/06-reports.jpg" alt="Reports: 37 completed prints, 2 failures, 94 percent success rate, usage and profit" loading="lazy">
+    </div></div>
+    <div class="rowtext">
+      <p class="kicker">Reports</p>
+      <h3>Production and business, side by side</h3>
+      <p>Two halves of the same week: how much you printed, and how much you made doing it.</p>
+      <ul>
+        <li>Completed jobs, failures, success rate</li>
+        <li>Filament used and hours printed</li>
+        <li>Material cost, revenue, cost of sales, profit</li>
+        <li>Pick the period: week, month, 30 days, all time</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="shotwrap"><div class="phone">
+      <img src="/tour/shots/07-analytics.jpg" alt="Inventory analytics: material shares, stock value, usage over time chart" loading="lazy">
+    </div></div>
+    <div class="rowtext">
+      <p class="kicker">Analytics</p>
+      <h3>Where the plastic and the money go</h3>
+      <p>See which material drains the budget, how much capital is frozen in stock, and how
+      consumption shifts month to month.</p>
+      <ul>
+        <li>Total inventory value as a single figure</li>
+        <li>Material split: PLA, PETG, ASA, ABS, TPU, PA-CF</li>
+        <li>Usage over time</li>
+        <li>Breakdown by printer</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row flip">
+    <div class="shotwrap"><div class="phone">
+      <img src="/tour/shots/08-printer.jpg" alt="Printer screen: 62 percent progress, layer 259 of 412, temperatures, axis controls" loading="lazy">
+    </div></div>
+    <div class="rowtext">
+      <p class="kicker">Printers</p>
+      <h3>Real control, not just a viewer</h3>
+      <p>Layers, time remaining and the finish time, temperatures, axis movement, lighting and
+      fans — all from the phone.</p>
+      <ul>
+        <li>Pause, cancel and skip object</li>
+        <li>Camera streaming</li>
+        <li>G-code console and interactive Klipper macros</li>
+        <li>File queue and sending a model to print</li>
+        <li>Direct phone-to-printer connection, no middleman servers</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="shotwrap"><div class="phone">
+      <img src="/tour/shots/09-packaging.jpg" alt="Packaging catalogue: boxes, bags, tape and cards with price and stock" loading="lazy">
+    </div></div>
+    <div class="rowtext">
+      <p class="kicker">Packaging</p>
+      <h3>Boxes run out as quietly as filament</h3>
+      <p>Bags, boxes, tape and thank-you cards get their own stock with prices and quantities,
+      deducted when an order is placed and counted into cost.</p>
+      <ul>
+        <li>Unit price and current quantity</li>
+        <li>Low-stock warnings</li>
+        <li>Automatic deduction from order line items</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row flip">
+    <div class="shotwrap"><div class="phone">
+      <img src="/tour/shots/10-maintenance.jpg" alt="Printer maintenance: runtime hours and an overdue bed cleaning task" loading="lazy">
+    </div></div>
+    <div class="rowtext">
+      <p class="kicker">Maintenance</p>
+      <h3>The printer reminds you itself</h3>
+      <p>The app counts runtime hours per machine and tells you what is due — before you find
+      out in the middle of a customer's order.</p>
+      <ul>
+        <li>Runtime tracked per printer</li>
+        <li>Bed cleaning, extruder inspection, belt tension, Z axis lubrication</li>
+        <li>Overdue work is called out separately</li>
+        <li>Marking a task done resets its counter</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section>
+  <p class="sub" style="margin-top:28px">These are not all the screens: notification
+  settings, server mode, the G-code console and the filament load wizard did not fit.
+  The full list is below.</p>
+</section>
+
+<hr class="rule">
+
+<section class="pagebreak">
+  <h2>How it differs from what already exists</h2>
+  <p class="sub">These tools exist separately, and many of them are free. The difference is
+  that none of them answers the question "did this job make money", and none of them keeps
+  printers of different brands in one place.</p>
+
+  <div class="tablewrap">
+  <table>
+    <colgroup><col><col class="us"><col><col><col></colgroup>
+    <thead>
+      <tr>
+        <th>What a working farm needs</th>
+        <th class="us">SpoolFarm</th>
+        <th>Bambu Handy</th>
+        <th>Mobileraker</th>
+        <th>Spoolman + OctoPrint</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Different printer brands in one list</td>
+          <td class="yes">Yes, 5 ecosystems</td><td class="no">Bambu only</td>
+          <td class="no">Klipper only</td><td class="no">OctoPrint only</td></tr>
+      <tr><td>Filament inventory with weight and price</td>
+          <td class="yes">Yes</td><td class="no">No</td>
+          <td class="no">No</td><td class="yes">Yes (Spoolman)</td></tr>
+      <tr><td>Filament deducted when a print finishes</td>
+          <td class="yes">Yes, automatically</td><td class="no">No</td>
+          <td class="no">No</td><td class="no">Partly, via a plugin</td></tr>
+      <tr><td>Cost including power, wear and failures</td>
+          <td class="yes">Yes</td><td class="no">No</td>
+          <td class="no">No</td><td class="no">No</td></tr>
+      <tr><td>Pre-print price calculator</td>
+          <td class="yes">Yes</td><td class="no">No</td>
+          <td class="no">No</td><td class="no">No</td></tr>
+      <tr><td>Orders, profit, PDF invoices</td>
+          <td class="yes">Yes</td><td class="no">No</td>
+          <td class="no">No</td><td class="no">No</td></tr>
+      <tr><td>Packaging stock</td>
+          <td class="yes">Yes</td><td class="no">No</td>
+          <td class="no">No</td><td class="no">No</td></tr>
+      <tr><td>Money analytics</td>
+          <td class="yes">Yes</td><td class="no">No</td>
+          <td class="no">No</td><td class="no">No</td></tr>
+      <tr><td>Works without a cloud account</td>
+          <td class="yes">Yes</td><td class="no">Account required</td>
+          <td class="yes">Yes</td><td class="yes">Yes</td></tr>
+      <tr><td>Needs a separate server or computer</td>
+          <td class="yes">No, it all runs on the phone</td><td class="yes">No</td>
+          <td class="yes">No</td><td class="no">Yes, always on</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="note">Comparison as of August 2026, and limited to the jobs a commercial print farm
+  has to do. Each of these tools is strong in its own area: Mobileraker goes deeper into
+  Klipper, Spoolman is a mature inventory server, and OctoPrint has a plugin ecosystem that no
+  mobile app can match.</p>
+</section>
+
+<hr class="rule">
+
+<section>
+  <h2>Privacy is built into the architecture</h2>
+  <div class="problem">
+    <p><strong>There is no SpoolFarm server.</strong> The app contains no analytics, no crash
+    reporting, no advertising SDKs and no user accounts. The developer is technically unable to
+    receive your data.</p>
+    <p>Spools, orders, customer names and prices stay on the device. Data leaves the phone only
+    through integrations you configure yourself, and only to the address you entered: your
+    printer, your server, your bot. The app also works with no internet at all.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Full feature list</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Inventory</h3>
+      <ul>
+        <li>Spools tracked to the gram</li>
+        <li>Automatic deduction per print</li>
+        <li>Low-stock threshold and day forecast</li>
+        <li>Barcodes and NFC</li>
+        <li>Quick stocktake</li>
+        <li>Spoolman: server or on-device</li>
+        <li>CSV import and export</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Money</h3>
+      <ul>
+        <li>Cost of every print</li>
+        <li>Electricity and depreciation</li>
+        <li>Labour and failure allowance</li>
+        <li>Pre-print calculator</li>
+        <li>Multi-model estimates</li>
+        <li>Price and margin</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Orders</h3>
+      <ul>
+        <li>Line items, quantity, price</li>
+        <li>Profit per order</li>
+        <li>PDF invoices with your details</li>
+        <li>Packaging stock with deduction</li>
+        <li>Packaging low-stock alerts</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Printers</h3>
+      <ul>
+        <li>Bambu Lab over LAN</li>
+        <li>Klipper / Moonraker</li>
+        <li>OctoPrint, Prusa, Duet</li>
+        <li>Status, temperatures, progress</li>
+        <li>Camera</li>
+        <li>G-code console</li>
+        <li>Interactive Klipper macros</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Records and reports</h3>
+      <ul>
+        <li>Print log with costs</li>
+        <li>Consumption and money by month</li>
+        <li>Breakdown by material</li>
+        <li>Breakdown by printer</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Connectivity</h3>
+      <ul>
+        <li>Telegram notifications</li>
+        <li>Discord notifications</li>
+        <li>Webhooks</li>
+        <li>Server mode: web interface</li>
+        <li>Remote access over VPN</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Data and privacy</h3>
+      <ul>
+        <li>Everything stays on the phone</li>
+        <li>No analytics, no ads</li>
+        <li>Works offline</li>
+        <li>Encrypted backups</li>
+        <li>Mobile data switch</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Details that show</h3>
+      <ul>
+        <li>Demo mode with a ready farm</li>
+        <li>7 interface languages</li>
+        <li>Dark theme</li>
+        <li>Optimised battery use</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Maintenance</h3>
+      <ul>
+        <li>Runtime hours per printer</li>
+        <li>Bed cleaning, extruder inspection</li>
+        <li>Belt tension, Z axis lubrication</li>
+        <li>Overdue work called out</li>
+        <li>K-factor profiles</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section>
+  <h2>Closed testing</h2>
+  <p class="sub">The Google Play release is being prepared and closed testing is running: a
+  limited group gets builds and sends feedback before the public release. All that is asked of
+  a tester is to use the app in real work and say what broke, what feels awkward and what is
+  missing. Several features exist because someone described a workflow the developer had not
+  thought of.</p>
+  <p>To apply: <a href="mailto:spoolfarm@ikkadoes.com?subject=%5BSpoolFarm%5D%20Testing">spoolfarm@ikkadoes.com</a>
+  — briefly describe your setup: how many printers and which ones. More detail about the app is
+  in the <a href="/faq/">FAQ</a>.</p>
+</section>
+
+<footer>
+  <a href="/">SpoolFarm</a>
+  <a href="/faq/">FAQ</a>
+  <a href="/privacy/">Privacy Policy</a>
+  <a href="/terms/">Terms</a>
+  <p style="margin:16px 0 0">© 2026 IkkaDoes. SpoolFarm is an independent project and is not
+  affiliated with Bambu Lab, Klipper, Duet3D or Spoolman. Product names belong to their
+  respective owners.</p>
+</footer>
+
+</div>
+</body>
+</html>
