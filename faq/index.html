@@ -5,17 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FAQ — SpoolFarm</title>
 <meta name="description" content="What SpoolFarm does: filament inventory, true print costing, orders and invoices, Bambu Lab and Klipper printers, analytics, notifications, server mode. Frequently asked questions.">
-<link rel="canonical" href="https://spoolfarm.ikkadoes.com/faq/">
-<link rel="alternate" hreflang="en" href="https://spoolfarm.ikkadoes.com/faq/">
-<link rel="alternate" hreflang="ru" href="https://spoolfarm.ikkadoes.com/faq/ru/">
+<link rel="stylesheet" href="/assets/site.css">
 <link rel="stylesheet" href="/assets/legal.css">
 <style>
-  .langswitch{display:flex;gap:8px;margin:28px 0 0}
-  .langswitch a,.langswitch span{
-    display:inline-block;padding:5px 14px;border:1px solid var(--line);
-    border-radius:999px;font-size:.88rem;text-decoration:none;color:var(--muted)
-  }
-  .langswitch .on{background:var(--accent);border-color:var(--accent);color:var(--bg);font-weight:600}
   .toc{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 24px;margin:28px 0 8px}
   .toc h2{margin:0 0 10px;font-size:1rem;padding-top:0}
   .toc ol{margin:0;padding-left:1.3em;columns:2;column-gap:32px}
@@ -30,20 +22,55 @@
     font-size:.76rem;color:var(--muted);vertical-align:middle;margin-left:8px;font-weight:400
   }
 </style>
+<!--SF:META-->
+<script>document.documentElement.classList.add('js')</script>
+<link rel="canonical" href="https://spoolfarm.ikkadoes.com/faq/">
+<link rel="alternate" hreflang="en" href="https://spoolfarm.ikkadoes.com/faq/">
+<link rel="alternate" hreflang="ru" href="https://spoolfarm.ikkadoes.com/faq/ru/">
+<link rel="alternate" hreflang="x-default" href="https://spoolfarm.ikkadoes.com/">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1013" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SpoolFarm">
+<meta property="og:title" content="FAQ — SpoolFarm">
+<meta property="og:description" content="What SpoolFarm does: filament inventory, true print costing, orders and invoices, Bambu Lab and Klipper printers, analytics, notifications, server mode. Frequently asked questions.">
+<meta property="og:url" content="https://spoolfarm.ikkadoes.com/faq/">
+<meta property="og:image" content="https://spoolfarm.ikkadoes.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FAQ — SpoolFarm">
+<meta name="twitter:description" content="What SpoolFarm does: filament inventory, true print costing, orders and invoices, Bambu Lab and Klipper printers, analytics, notifications, server mode. Frequently asked questions.">
+<meta name="twitter:image" content="https://spoolfarm.ikkadoes.com/assets/og.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","url":"https://spoolfarm.ikkadoes.com/faq/","mainEntity":[{"@type":"Question","name":"What is SpoolFarm?","acceptedAnswer":{"@type":"Answer","text":"An Android application for people who print on 3D printers for paying customers. Not for a single hobby printer — for the point where you have several machines and printing brings in money. Your phone becomes the control room of the farm: inventory, printers, orders and money in one app."}},{"@type":"Question","name":"Who is it for?","acceptedAnswer":{"@type":"Answer","text":"People with more than one printer and real customers. If you print one figurine a month for yourself, this will be overkill. If you run 2–10 printers, a shelf of spools and a stream of orders, it was written for exactly that."}},{"@type":"Question","name":"Why do I need this — isn't it all obvious anyway?","acceptedAnswer":{"@type":"Answer","text":"Once you have more than one printer, you lose track of the money. How much filament is actually left and what runs out next week. What a specific print really cost, counting not just plastic but electricity, printer wear and failed prints. Whether you made money on a job or quietly paid for it yourself. The slicer shows grams, the bank shows a monthly total, and between them there is nothing. Most people try to keep a spreadsheet and abandon it within a month, because every print has to be typed in by hand. SpoolFarm does the deduction and the arithmetic itself, when a print finishes."}},{"@type":"Question","name":"All of this already exists separately, and for free?","acceptedAnswer":{"@type":"Answer","text":"It does: Spoolman keeps inventory, OctoPrint shows the printer, the slicer counts grams. But none of them counts money, and stitching that together by hand is something almost nobody keeps up for more than a month. SpoolFarm holds inventory, printers and orders in one place and answers the question that matters — did this job make money or not."}},{"@type":"Question","name":"Is it tied to one printer brand?","acceptedAnswer":{"@type":"Answer","text":"No. Bambu Lab and Klipper live in the same list, on the same screen, in the same statistics. You do not need a separate app per ecosystem."}},{"@type":"Question","name":"How are spools tracked?","acceptedAnswer":{"@type":"Answer","text":"Every spool is its own record: material, colour, manufacturer, price, storage location and remaining weight to the gram. The remaining weight goes down automatically as prints finish — you do not log consumption by hand."}},{"@type":"Question","name":"Will it warn me before filament runs out?","acceptedAnswer":{"@type":"Answer","text":"In two ways. First, a low-stock threshold: the spool is flagged and you get a notification. Second, a forecast: based on your actual consumption the app estimates how many days your stock will last, so you reorder in advance instead of mid-job."}},{"@type":"Question","name":"Do I have to type every spool in?","acceptedAnswer":{"@type":"Answer","text":"No. Barcode and NFC tag scanning are supported — you can find or create a spool with one tap of the phone instead of scrolling a list."}},{"@type":"Question","name":"Is there a quick stocktake?","acceptedAnswer":{"@type":"Answer","text":"Yes — a dedicated mode for walking the shelf, comparing physical stock against the app and fixing discrepancies without opening each record one by one."}},{"@type":"Question","name":"What exactly goes into the cost?","acceptedAnswer":{"@type":"Answer","text":"Not just plastic. Filament at the real price of the specific spool, electricity, printer depreciation, labour and a failure allowance. Those are the lines that quietly eat the margin — you will never see them in the slicer's gram count."}},{"@type":"Question","name":"Is cost calculated per print?","acceptedAnswer":{"@type":"Answer","text":"Yes, after the fact. A finished print lands in the log already carrying a money figure, not just a weight."}},{"@type":"Question","name":"Can I price a job before starting it?","acceptedAnswer":{"@type":"Answer","text":"Yes, there is a separate calculator. You enter the parameters and it shows cost, price and margin, so you can quote a customer deliberately rather than by feel."}},{"@type":"Question","name":"What if the order has several different models?","acceptedAnswer":{"@type":"Answer","text":"The calculator handles a multi-model order as one calculation, instead of pricing each part separately and adding it up in your head."}},{"@type":"Question","name":"How do orders work?","acceptedAnswer":{"@type":"Answer","text":"An order is a list of line items: description, quantity, price. Each order shows profit — not only what the customer paid you, but what is left of it after cost."}},{"@type":"Question","name":"Can I invoice a customer?","acceptedAnswer":{"@type":"Answer","text":"Yes, invoices are generated as PDF with your own business details and can be sent straight from the phone."}},{"@type":"Question","name":"Is packaging counted too?","acceptedAnswer":{"@type":"Answer","text":"Yes. Bags, boxes and bubble wrap are tracked as their own stock, deducted automatically when an order is placed, and included in cost. They have low-stock thresholds as well — boxes run out just as quietly as filament."}},{"@type":"Question","name":"Which printers are supported?","acceptedAnswer":{"@type":"Answer","text":"Bambu Lab — over LAN, no cloud account required Klipper / Moonraker OctoPrint Prusa Duet"}},{"@type":"Question","name":"What do I need to connect one?","acceptedAnswer":{"@type":"Answer","text":"For Bambu Lab, the access code from the printer's menu. For Klipper, OctoPrint and the rest, the network address and an API key. Every connection is direct, phone to printer, with no server in between."}},{"@type":"Question","name":"Is it monitoring only, or real control?","acceptedAnswer":{"@type":"Answer","text":"Real control. You get live status, temperatures, print progress, the camera stream, command sending, a G-code console, and interactive Klipper macros — with proper fields and parameters, not just a blind command line."}},{"@type":"Question","name":"What goes into the log?","acceptedAnswer":{"@type":"Answer","text":"Every print: what was printed, on which machine, how much filament it used and what it cost. The log fills itself from printer data and feeds both the analytics and the occasional \"where did that spool go\" investigation."}},{"@type":"Question","name":"What reports are there?","acceptedAnswer":{"@type":"Answer","text":"Consumption and money by month, broken down by material and by printer. You can see which machine actually earns and which one sits there accruing depreciation, and which material is draining the budget."}},{"@type":"Question","name":"Where do notifications go?","acceptedAnswer":{"@type":"Answer","text":"To your phone, and to Telegram and Discord if you would rather see events in a working chat than only on your own device. Webhooks are supported for your own automations."}},{"@type":"Question","name":"What triggers them?","acceptedAnswer":{"@type":"Answer","text":"A print finished, a print failed, filament running low, packaging running low."}},{"@type":"Question","name":"Can I work from a computer instead of the phone?","acceptedAnswer":{"@type":"Answer","text":"Yes — that is what server mode is for. The app serves a web interface on your local network, reachable from Windows, Mac, Linux or a tablet on the same network. The phone remains where the data lives. in progress Server mode works today but is still being developed — not every part of the app is fully available in the web interface yet."}},{"@type":"Question","name":"Can I watch a print while I am out?","acceptedAnswer":{"@type":"Answer","text":"Yes, provided your phone and printers end up on the same network. There are two routes: a public IP address from your ISP, in which case it works with no extra setup, or a VPN."}},{"@type":"Question","name":"How does the developer do it?","acceptedAnswer":{"@type":"Answer","text":"With a VPN server running at home. Wherever he is, the phone or laptop joins the home network and the app behaves as if it were at home. Across four printers (two Klipper, two Bambu Lab) everything works over VPN: sending commands, monitoring and camera streams. The same approach is the answer when your ISP will not give you a public IP at all."}},{"@type":"Question","name":"Why is there no one-button cloud access?","acceptedAnswer":{"@type":"Answer","text":"Because that would mean a middleman server carrying your data. That is deliberately absent — see the next section."}},{"@type":"Question","name":"Where does my data go?","acceptedAnswer":{"@type":"Answer","text":"Nowhere. There is no SpoolFarm server, no analytics, no advertising and no user accounts. Your spools, orders, customer names and prices stay on the device. The developer is technically unable to receive them."}},{"@type":"Question","name":"What about printers and notifications?","acceptedAnswer":{"@type":"Answer","text":"Data leaves the phone only through integrations you configure yourself, and only to the address you entered: your printer on your network, your server, your bot. The full text is in the privacy policy and the terms of service ."}},{"@type":"Question","name":"Do I need an internet connection?","acceptedAnswer":{"@type":"Answer","text":"No. The app works without internet — printers are polled over the local network and the data sits on the phone. Internet is only needed for things that inherently require it: Telegram or Discord notifications, and buying a subscription."}},{"@type":"Question","name":"Will it burn through my mobile data?","acceptedAnswer":{"@type":"Answer","text":"There is a dedicated switch for behaviour off Wi-Fi. This is not paranoia: a Bambu X1C, for example, pushes telemetry roughly once a second on its own schedule, which adds up to about a gigabyte a day, and the printer offers no way to slow it down. The switch lets you limit or disable polling on mobile networks."}},{"@type":"Question","name":"And battery?","acceptedAnswer":{"@type":"Answer","text":"Background work was optimised specifically: drain is down roughly fourfold from early versions. The app maintains live connections to printers, so this got dedicated attention."}},{"@type":"Question","name":"How do I move to a new phone or make a backup?","acceptedAnswer":{"@type":"Answer","text":"CSV import and export, plus encrypted backups. Since there is no cloud, the backup is your safety net — do make one."}},{"@type":"Question","name":"Will a CSV import duplicate my inventory?","acceptedAnswer":{"@type":"Answer","text":"Import always adds records and does not reconcile them against existing ones, so importing your own export on top of your current stock will produce duplicates. The app warns you about this during import."}},{"@type":"Question","name":"Is Spoolman supported?","acceptedAnswer":{"@type":"Answer","text":"Yes, the app syncs with your Spoolman server."}},{"@type":"Question","name":"What if I do not run a Spoolman server?","acceptedAnswer":{"@type":"Answer","text":"You do not need one: Spoolman can run locally, on the phone itself. No spare machine, no Docker, no always-on server."}},{"@type":"Question","name":"Can I look around without printers to hand?","acceptedAnswer":{"@type":"Answer","text":"Yes. There is a demo with a ready-made virtual farm — printers, spools and print history already populated — so you can try the interface and the logic immediately, connecting nothing."}},{"@type":"Question","name":"What do I need to run it?","acceptedAnswer":{"@type":"Answer","text":"Android 12 or newer. Phone and printers on the same local network, or joined by a VPN. No server, no computer and no permanent internet connection required."}},{"@type":"Question","name":"Is an iPhone version planned?","acceptedAnswer":{"@type":"Answer","text":"Android only for now. If the project takes off, an iOS version is planned, but it is a substantial separate effort given the platform's restrictions and App Store rules — so no dates promised today."}},{"@type":"Question","name":"What can a Mac or iPhone owner do meanwhile?","acceptedAnswer":{"@type":"Answer","text":"Use server mode: the app runs on an Android device and you drive it from a browser on a Mac, a PC or a tablet on the same network."}},{"@type":"Question","name":"What languages does the interface support?","acceptedAnswer":{"@type":"Answer","text":"Seven, including English and Russian. The app follows your phone's system language."}},{"@type":"Question","name":"Is the app paid?","acceptedAnswer":{"@type":"Answer","text":"The core is free; some capabilities belong to the Pro edition. Pro is available as a subscription or a lifetime licence, and the subscription comes with a free trial so you can try before paying. Payment goes through Google Play, and so do cancellations and refunds."}},{"@type":"Question","name":"Are there ads?","acceptedAnswer":{"@type":"Answer","text":"No — in neither edition. There are no advertising SDKs in the app at all."}},{"@type":"Question","name":"Is it on Google Play yet?","acceptedAnswer":{"@type":"Answer","text":"The Google Play release is being prepared. Closed testing is running now: a limited group of users gets builds and sends feedback ahead of the public release."}},{"@type":"Question","name":"How do I join the test?","acceptedAnswer":{"@type":"Answer","text":"Write to spoolfarm@ikkadoes.com with a short description of your setup: how many printers and which ones. Places in closed testing are limited by Google Play's own rules."}},{"@type":"Question","name":"What is expected from a tester?","acceptedAnswer":{"@type":"Answer","text":"Use the app in real work and send feedback: what broke, what feels awkward, what is missing. Feature requests are especially welcome — several capabilities exist because someone described a workflow the developer had not thought of."}},{"@type":"Question","name":"Who makes this?","acceptedAnswer":{"@type":"Answer","text":"One developer who has been printing for customers for five years. The app started as a fix for his own problems: the spreadsheets you abandon, and the orders where you cannot tell whether you made money."}},{"@type":"Question","name":"Where do I write?","acceptedAnswer":{"@type":"Answer","text":"spoolfarm@ikkadoes.com — questions, bugs, ideas. Please keep the [SpoolFarm] tag in the subject line so the message is not lost."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"SpoolFarm","item":"https://spoolfarm.ikkadoes.com/"},{"@type":"ListItem","position":2,"name":"FAQ","item":"https://spoolfarm.ikkadoes.com/faq/"}]}</script>
+<!--SF:/META-->
 </head>
 <body>
-<div class="wrap">
-
-<nav class="nav">
-  <a href="/">← SpoolFarm</a>
-  <a href="/privacy/">Privacy</a>
-  <a href="/terms/">Terms</a>
-</nav>
-
-<div class="langswitch">
-  <span class="on">English</span>
-  <a href="/faq/ru/">Русский</a>
-</div>
+<!--SF:HEADER-->
+<a class="skip" href="#main">Skip to content</a>
+<header class="sitehead noprint">
+  <div class="bar">
+    <a class="brand" href="/">
+      <img src="/assets/icon.png" alt="" width="26" height="26">
+      <span>SpoolFarm</span>
+      <span class="brand-by">IkkaDoes</span>
+    </a>
+    <nav class="sitenav" aria-label="Product">
+      <a href="/tour/">Tour</a>
+      <a href="/faq/" aria-current="page">FAQ</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+    </nav>
+    <div class="lang"><span class="on">EN</span><a href="/faq/ru/" hreflang="ru" lang="ru">RU</a></div>
+  </div>
+</header>
+<!--SF:/HEADER-->
+<div class="wrap" id="main">
 
 <h1>Frequently asked questions</h1>
 <p class="dates">Android application · updated 21 August 2026</p>
@@ -251,14 +278,48 @@
 <h3 class="q">Where do I write?</h3>
 <p><a href="mailto:spoolfarm@ikkadoes.com?subject=%5BSpoolFarm%5D%20">spoolfarm@ikkadoes.com</a> — questions, bugs, ideas. Please keep the <code>[SpoolFarm]</code> tag in the subject line so the message is not lost.</p>
 
-<footer>
-<p><a href="/">SpoolFarm</a> &middot;
-   <a href="/privacy/">Privacy Policy</a> &middot;
-   <a href="/terms/">Terms</a> &middot;
-   <a href="/faq/ru/">Русский FAQ</a></p>
-<p>© 2026 IkkaDoes. SpoolFarm is an independent project and is not affiliated with Bambu Lab, Klipper, Duet3D or Spoolman.</p>
-</footer>
-
 </div>
+<!--SF:FOOTER-->
+<footer class="sitefoot noprint">
+  <div class="cols">
+    <div class="about">
+      <a class="brand" href="/">
+        <img src="/assets/icon.png" alt="" width="26" height="26">
+        <span>SpoolFarm</span>
+        <span class="brand-by">IkkaDoes</span>
+      </a>
+      <p>An IkkaDoes product. 3D printing farm management for Android — filament inventory, real costing, orders and printer control.</p>
+      <p><a href="mailto:spoolfarm@ikkadoes.com?subject=%5BSpoolFarm%5D%20">spoolfarm@ikkadoes.com</a><br>
+      <span class="small">Subject line must keep the <code>[SpoolFarm]</code> tag.</span></p>
+    </div>
+    <div>
+      <h4>Product</h4>
+      <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/tour/">Product tour</a></li>
+      <li><a href="/faq/">Questions &amp; answers</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <ul>
+      <li><a href="/privacy/">Privacy policy</a></li>
+      <li><a href="/terms/">Terms of service</a></li>
+      </ul>
+    </div>
+    <div lang="ru">
+      <h4>Русский</h4>
+      <ul>
+      <li><a href="/ru/">Главная</a></li>
+      <li><a href="/tour/ru/">Обзор приложения</a></li>
+      <li><a href="/faq/ru/">Вопросы и ответы</a></li>
+      <li><a href="/privacy/ru/">Политика конфиденциальности</a></li>
+      <li><a href="/terms/ru/">Пользовательское соглашение</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="fine">© 2026 IkkaDoes. SpoolFarm is an independent project and is not affiliated with Bambu Lab, Klipper, OctoPrint, Prusa, Duet3D or Spoolman. Product names belong to their respective owners.</p>
+</footer>
+<!--SF:/FOOTER-->
 </body>
 </html>

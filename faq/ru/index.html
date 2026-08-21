@@ -5,17 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Вопросы и ответы — SpoolFarm</title>
 <meta name="description" content="Что умеет SpoolFarm: склад филамента, себестоимость печати, заказы и счета, принтеры Bambu Lab и Klipper, аналитика, уведомления, режим сервера. Ответы на частые вопросы.">
-<link rel="canonical" href="https://spoolfarm.ikkadoes.com/faq/ru/">
-<link rel="alternate" hreflang="en" href="https://spoolfarm.ikkadoes.com/faq/">
-<link rel="alternate" hreflang="ru" href="https://spoolfarm.ikkadoes.com/faq/ru/">
+<link rel="stylesheet" href="/assets/site.css">
 <link rel="stylesheet" href="/assets/legal.css">
 <style>
-  .langswitch{display:flex;gap:8px;margin:28px 0 0}
-  .langswitch a,.langswitch span{
-    display:inline-block;padding:5px 14px;border:1px solid var(--line);
-    border-radius:999px;font-size:.88rem;text-decoration:none;color:var(--muted)
-  }
-  .langswitch .on{background:var(--accent);border-color:var(--accent);color:var(--bg);font-weight:600}
   .toc{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 24px;margin:28px 0 8px}
   .toc h2{margin:0 0 10px;font-size:1rem;padding-top:0}
   .toc ol{margin:0;padding-left:1.3em;columns:2;column-gap:32px}
@@ -30,20 +22,55 @@
     font-size:.76rem;color:var(--muted);vertical-align:middle;margin-left:8px;font-weight:400
   }
 </style>
+<!--SF:META-->
+<script>document.documentElement.classList.add('js')</script>
+<link rel="canonical" href="https://spoolfarm.ikkadoes.com/faq/ru/">
+<link rel="alternate" hreflang="en" href="https://spoolfarm.ikkadoes.com/faq/">
+<link rel="alternate" hreflang="ru" href="https://spoolfarm.ikkadoes.com/faq/ru/">
+<link rel="alternate" hreflang="x-default" href="https://spoolfarm.ikkadoes.com/">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1013" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SpoolFarm">
+<meta property="og:title" content="Вопросы и ответы — SpoolFarm">
+<meta property="og:description" content="Что умеет SpoolFarm: склад филамента, себестоимость печати, заказы и счета, принтеры Bambu Lab и Klipper, аналитика, уведомления, режим сервера. Ответы на частые вопросы.">
+<meta property="og:url" content="https://spoolfarm.ikkadoes.com/faq/ru/">
+<meta property="og:image" content="https://spoolfarm.ikkadoes.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Вопросы и ответы — SpoolFarm">
+<meta name="twitter:description" content="Что умеет SpoolFarm: склад филамента, себестоимость печати, заказы и счета, принтеры Bambu Lab и Klipper, аналитика, уведомления, режим сервера. Ответы на частые вопросы.">
+<meta name="twitter:image" content="https://spoolfarm.ikkadoes.com/assets/og.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","url":"https://spoolfarm.ikkadoes.com/faq/ru/","mainEntity":[{"@type":"Question","name":"Что такое SpoolFarm?","acceptedAnswer":{"@type":"Answer","text":"Это приложение для Android для тех, кто печатает на 3D-принтерах на заказ. Не для одного принтера в хобби — для случая, когда принтеров несколько и печать приносит деньги. Телефон становится диспетчерской фермы: склад, принтеры, заказы и деньги в одном приложении."}},{"@type":"Question","name":"Кому оно подойдёт?","acceptedAnswer":{"@type":"Answer","text":"Тем, у кого больше одного принтера и есть заказчики. Если вы печатаете одну фигурку в месяц для себя — приложение будет избыточным. Если у вас 2–10 принтеров, склад катушек и поток заказов — оно писалось ровно под это."}},{"@type":"Question","name":"Зачем это нужно, если и так всё видно?","acceptedAnswer":{"@type":"Answer","text":"Когда принтеров больше одного, пропадает понимание денег. Сколько филамента реально осталось и что кончится на следующей неделе. Во сколько обошлась конкретная печать, если считать не только пластик, но и электричество, износ принтера и брак. Заработали вы на заказе или доплатили за него сами. Слайсер показывает граммы, банк показывает итог месяца — а между ними пусто. Обычно это пытаются вести в таблице и бросают через месяц, потому что каждую печать надо вносить руками. SpoolFarm списывает и считает сам, по факту завершённой печати."}},{"@type":"Question","name":"Всё это ведь уже есть по отдельности и бесплатно?","acceptedAnswer":{"@type":"Answer","text":"Да: Spoolman ведёт склад, OctoPrint показывает принтер, слайсер считает граммы. Но денег не считает никто, а свести это вручную и не бросить через месяц почти ни у кого не выходит. SpoolFarm держит склад, принтеры и заказы в одном месте и отвечает на вопрос «заработал или нет»."}},{"@type":"Question","name":"А привязка к марке принтера?","acceptedAnswer":{"@type":"Answer","text":"Её нет. Bambu Lab и Klipper живут в одном списке, на одном экране, с общей статистикой. Не нужно держать отдельное приложение под каждую экосистему."}},{"@type":"Question","name":"Как ведётся учёт катушек?","acceptedAnswer":{"@type":"Answer","text":"Каждая катушка отдельной карточкой: материал, цвет, производитель, цена, место хранения и остаток с точностью до грамма. Остаток уменьшается автоматически, когда печать завершилась, — вносить расход руками не нужно."}},{"@type":"Question","name":"Приложение предупредит, что пластик заканчивается?","acceptedAnswer":{"@type":"Answer","text":"Да, двумя способами. Первое — порог минимального остатка: катушка помечается, приходит уведомление. Второе — прогноз: по вашему реальному расходу приложение считает, на сколько дней хватит текущих запасов, чтобы вы заказали новую партию заранее, а не посреди заказа."}},{"@type":"Question","name":"Катушки заводить только руками?","acceptedAnswer":{"@type":"Answer","text":"Нет. Поддерживается сканирование штрихкодов и NFC-меток — катушку можно найти или создать одним касанием телефона, не листая список."}},{"@type":"Question","name":"Есть быстрая инвентаризация?","acceptedAnswer":{"@type":"Answer","text":"Да — отдельный режим, чтобы пройти по стеллажу, сверить фактические остатки со складом и поправить расхождения, не открывая каждую карточку по очереди."}},{"@type":"Question","name":"Что именно входит в себестоимость?","acceptedAnswer":{"@type":"Answer","text":"Не только пластик. Считаются: филамент по реальной цене конкретной катушки, электричество, амортизация принтера, работа и доля брака. Именно эти статьи обычно и съедают прибыль незаметно — по граммам из слайсера их не увидеть."}},{"@type":"Question","name":"Себестоимость считается по каждой печати?","acceptedAnswer":{"@type":"Answer","text":"Да, по факту. Завершённая печать попадает в журнал уже с суммой, а не просто с граммами."}},{"@type":"Question","name":"Можно посчитать заказ заранее, до старта?","acceptedAnswer":{"@type":"Answer","text":"Да, для этого есть отдельный калькулятор. Вы задаёте параметры — он показывает себестоимость, цену и маржу, чтобы вы называли клиенту сумму осознанно, а не «на глаз»."}},{"@type":"Question","name":"А если в заказе несколько разных моделей?","acceptedAnswer":{"@type":"Answer","text":"Калькулятор считает мульти-модельный заказ целиком, за один расчёт, а не по одной детали с последующим складыванием в уме."}},{"@type":"Question","name":"Как ведутся заказы?","acceptedAnswer":{"@type":"Answer","text":"Заказ состоит из позиций: наименование, количество, цена. По каждому заказу видно прибыль — не только сумму, которую вам заплатили, но и то, что от неё осталось после себестоимости."}},{"@type":"Question","name":"Можно выставить клиенту счёт?","acceptedAnswer":{"@type":"Answer","text":"Да, счёт формируется в PDF с вашими реквизитами — его можно сразу отправить заказчику из телефона."}},{"@type":"Question","name":"Упаковка тоже считается?","acceptedAnswer":{"@type":"Answer","text":"Да. Пакеты, коробки, пузырчатая плёнка ведутся как отдельный склад, списываются при оформлении заказа автоматически и входят в себестоимость. По ним тоже работает порог минимального остатка — коробки заканчиваются так же незаметно, как пластик."}},{"@type":"Question","name":"Список поддерживаемых принтеров","acceptedAnswer":{"@type":"Answer","text":"Bambu Lab — по локальной сети, без облачного аккаунта Klipper / Moonraker OctoPrint Prusa Duet"}},{"@type":"Question","name":"Что нужно для подключения?","acceptedAnswer":{"@type":"Answer","text":"Для Bambu Lab — код доступа из меню принтера. Для Klipper, OctoPrint и остальных — адрес в сети и ключ API. Всё соединение идёт напрямую, телефон-принтер, без промежуточных серверов."}},{"@type":"Question","name":"Это только мониторинг или полноценное управление?","acceptedAnswer":{"@type":"Answer","text":"Полноценное управление. Доступны: текущий статус, температуры, прогресс печати, трансляция с камеры, отправка команд, консоль G-code и интерактивные макросы Klipper — с полями и параметрами, а не просто «отправить строку вслепую»."}},{"@type":"Question","name":"Что попадает в журнал?","acceptedAnswer":{"@type":"Answer","text":"Каждая печать: что печаталось, на каком принтере, сколько ушло пластика и во сколько это обошлось. Журнал заполняется сам, из данных принтера, и служит источником для аналитики и для разбора «куда делась катушка»."}},{"@type":"Question","name":"Какие отчёты есть?","acceptedAnswer":{"@type":"Answer","text":"Расход и деньги по месяцам, разбивка по материалам и разбивка по принтерам. Видно, какой принтер реально зарабатывает, а какой стоит и ест амортизацию, и какой материал вытягивает бюджет."}},{"@type":"Question","name":"Куда приходят уведомления?","acceptedAnswer":{"@type":"Answer","text":"На телефон, а также в Telegram и Discord — если вы хотите видеть события в рабочем чате, а не только на своём устройстве. Поддерживаются и вебхуки для своих сценариев."}},{"@type":"Question","name":"О чём именно уведомляет?","acceptedAnswer":{"@type":"Answer","text":"Печать завершилась, печать упала, заканчивается филамент, заканчивается упаковка."}},{"@type":"Question","name":"Можно управлять не с телефона, а с компьютера?","acceptedAnswer":{"@type":"Answer","text":"Да, для этого есть режим сервера: приложение поднимает веб-интерфейс в вашей локальной сети, и к нему можно подключиться с Windows, Mac, Linux или планшета — с любого устройства в той же сети. Телефон при этом остаётся хранилищем данных. в разработке Режим сервера уже работает, но дорабатывается — часть возможностей приложения в веб-интерфейсе пока доступна не полностью."}},{"@type":"Question","name":"Я не дома. Смогу следить за печатью?","acceptedAnswer":{"@type":"Answer","text":"Да, но для этого нужно, чтобы телефон и принтеры оказались в одной сети. Есть два пути: внешний («белый») IP-адрес от провайдера — тогда всё работает без дополнительных настроек, либо VPN."}},{"@type":"Question","name":"Как это устроено у автора?","acceptedAnswer":{"@type":"Answer","text":"Дома поднят VPN-сервер. Где бы автор ни находился, телефон или ноутбук подключается к домашней сети, и приложение считает, что он дома. На четырёх принтерах (два Klipper и два Bambu Lab) через VPN работает всё: отправка команд, мониторинг и трансляция с камер. Это же решение выручает, если внешний IP получить у провайдера невозможно."}},{"@type":"Question","name":"Почему нет просто «облачного доступа» одной кнопкой?","acceptedAnswer":{"@type":"Answer","text":"Потому что тогда у приложения появился бы сервер-посредник, через который шли бы ваши данные. Этого сознательно нет — см. следующий раздел."}},{"@type":"Question","name":"Куда уходят мои данные?","acceptedAnswer":{"@type":"Answer","text":"Никуда. У приложения нет своего сервера, нет аналитики, нет рекламы и нет аккаунтов. Ваши катушки, заказы, имена клиентов и цены остаются на устройстве. Разработчик технически не может получить эти данные."}},{"@type":"Question","name":"А принтеры и уведомления?","acceptedAnswer":{"@type":"Answer","text":"Данные покидают телефон только через интеграции, которые вы настроили сами, и уходят только по тому адресу, который вы указали: ваш принтер в локальной сети, ваш сервер, ваш бот. Полный текст — в политике конфиденциальности и пользовательском соглашении ."}},{"@type":"Question","name":"Нужен ли интернет?","acceptedAnswer":{"@type":"Answer","text":"Нет. Приложение работает без интернета — принтеры опрашиваются по локальной сети, данные лежат на телефоне. Интернет нужен только для того, что по своей природе требует сети: уведомления в Telegram или Discord и покупка подписки."}},{"@type":"Question","name":"Приложение съест мобильный трафик?","acceptedAnswer":{"@type":"Answer","text":"Есть отдельный переключатель для работы вне Wi-Fi. Это не перестраховка: например, Bambu X1C сам шлёт телеметрию примерно раз в секунду, и за сутки набегает около гигабайта — частоту принтер не регулирует. Переключатель позволяет ограничить опрос принтеров мобильной сетью или запретить его."}},{"@type":"Question","name":"А батарея?","acceptedAnswer":{"@type":"Answer","text":"Фоновая работа специально оптимизировалась: расход снижен примерно в четыре раза относительно первых версий. Приложение постоянно держит связь с принтерами, поэтому этому пункту уделено отдельное внимание."}},{"@type":"Question","name":"Как перенести данные на другой телефон или сделать резервную копию?","acceptedAnswer":{"@type":"Answer","text":"Есть импорт и экспорт CSV, а также зашифрованные резервные копии. Поскольку облака нет, бэкап — ваша страховка, и делать его стоит."}},{"@type":"Question","name":"Импорт CSV не задвоит склад?","acceptedAnswer":{"@type":"Answer","text":"Импорт всегда добавляет записи и не сверяет их с существующими — то есть импорт собственного же экспорта поверх текущего склада приведёт к дублям. Приложение об этом предупреждает при импорте."}},{"@type":"Question","name":"Поддерживается ли Spoolman?","acceptedAnswer":{"@type":"Answer","text":"Да, есть синхронизация с вашим сервером Spoolman."}},{"@type":"Question","name":"А если сервера Spoolman нет?","acceptedAnswer":{"@type":"Answer","text":"Он не нужен: Spoolman может работать локально, прямо на телефоне. Отдельная машина, Docker и постоянно работающий сервер не требуются."}},{"@type":"Question","name":"Можно посмотреть приложение, если принтеров под рукой нет?","acceptedAnswer":{"@type":"Answer","text":"Да. Есть демо с готовой виртуальной фермой — принтеры, катушки и история печати уже заполнены, так что интерфейс и логику можно пощупать сразу, ничего не подключая."}},{"@type":"Question","name":"Что нужно, чтобы запустить?","acceptedAnswer":{"@type":"Answer","text":"Android 12 или новее. Телефон и принтеры — в одной локальной сети (или соединены через VPN). Сервер, компьютер и постоянный интернет не нужны."}},{"@type":"Question","name":"А версия для iPhone?","acceptedAnswer":{"@type":"Answer","text":"Пока только Android. Если проект пойдёт — версия для iOS планируется, но это отдельная большая работа из-за ограничений платформы и правил App Store, поэтому обещать сроки сейчас честнее не буду."}},{"@type":"Question","name":"Что делать владельцу Mac или iPhone сейчас?","acceptedAnswer":{"@type":"Answer","text":"Использовать режим сервера: приложение работает на Android-устройстве, а управлять можно из браузера на Mac, Windows или планшете в той же сети."}},{"@type":"Question","name":"На каких языках интерфейс?","acceptedAnswer":{"@type":"Answer","text":"Семь языков, включая русский и английский. Язык подхватывается из системных настроек телефона."}},{"@type":"Question","name":"Приложение платное?","acceptedAnswer":{"@type":"Answer","text":"Базовая работа бесплатна, часть возможностей относится к редакции Pro. Pro доступен по подписке или как пожизненная лицензия, и у подписки есть бесплатный пробный период — можно попробовать до оплаты. Оплата идёт через Google Play, отмена и возврат — там же."}},{"@type":"Question","name":"Есть ли реклама?","acceptedAnswer":{"@type":"Answer","text":"Нет. Ни в бесплатной, ни в платной редакции. Рекламных SDK в приложении нет вообще."}},{"@type":"Question","name":"Приложение уже в Google Play?","acceptedAnswer":{"@type":"Answer","text":"Выход в Google Play готовится. Сейчас идёт закрытый тест — ограниченная группа пользователей получает сборки и присылает замечания до публичного релиза."}},{"@type":"Question","name":"Как попасть в тестирование?","acceptedAnswer":{"@type":"Answer","text":"Напишите на spoolfarm@ikkadoes.com , коротко описав свою ферму: сколько принтеров и каких. Места в закрытом тесте ограничены правилами Google Play."}},{"@type":"Question","name":"Что требуется от тестировщика?","acceptedAnswer":{"@type":"Answer","text":"Пользоваться приложением в реальной работе и присылать замечания: что сломалось, что неудобно, чего не хватает. Пожелания по функциям особенно ценны — часть возможностей появилась именно из чужих сценариев, о которых автор не подумал."}},{"@type":"Question","name":"Кто делает приложение?","acceptedAnswer":{"@type":"Answer","text":"Один разработчик, который сам печатает на заказ пять лет. Приложение начиналось как решение собственных проблем — таблиц, которые бросаешь, и заказов, по которым непонятно, заработал ты или нет."}},{"@type":"Question","name":"Куда писать?","acceptedAnswer":{"@type":"Answer","text":"spoolfarm@ikkadoes.com — вопросы, баги, идеи. Пожалуйста, сохраняйте метку [SpoolFarm] в теме письма, чтобы сообщение не потерялось."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"SpoolFarm","item":"https://spoolfarm.ikkadoes.com/ru/"},{"@type":"ListItem","position":2,"name":"Вопросы и ответы","item":"https://spoolfarm.ikkadoes.com/faq/ru/"}]}</script>
+<!--SF:/META-->
 </head>
 <body>
-<div class="wrap">
-
-<nav class="nav">
-  <a href="/">← SpoolFarm</a>
-  <a href="/privacy/ru/">Конфиденциальность</a>
-  <a href="/terms/ru/">Соглашение</a>
-</nav>
-
-<div class="langswitch">
-  <span class="on">Русский</span>
-  <a href="/faq/">English</a>
-</div>
+<!--SF:HEADER-->
+<a class="skip" href="#main">К содержанию</a>
+<header class="sitehead noprint">
+  <div class="bar">
+    <a class="brand" href="/ru/">
+      <img src="/assets/icon.png" alt="" width="26" height="26">
+      <span>SpoolFarm</span>
+      <span class="brand-by">IkkaDoes</span>
+    </a>
+    <nav class="sitenav" aria-label="Продукт">
+      <a href="/tour/ru/">Обзор</a>
+      <a href="/faq/ru/" aria-current="page">Вопросы</a>
+      <a href="/privacy/ru/">Приватность</a>
+      <a href="/terms/ru/">Соглашение</a>
+    </nav>
+    <div class="lang"><a href="/faq/" hreflang="en" lang="en">EN</a><span class="on">RU</span></div>
+  </div>
+</header>
+<!--SF:/HEADER-->
+<div class="wrap" id="main">
 
 <h1>Вопросы и ответы</h1>
 <p class="dates">Приложение для Android · обновлено 21 августа 2026 г.</p>
@@ -251,14 +278,48 @@
 <h3 class="q">Куда писать?</h3>
 <p><a href="mailto:spoolfarm@ikkadoes.com?subject=%5BSpoolFarm%5D%20">spoolfarm@ikkadoes.com</a> — вопросы, баги, идеи. Пожалуйста, сохраняйте метку <code>[SpoolFarm]</code> в теме письма, чтобы сообщение не потерялось.</p>
 
-<footer>
-<p><a href="/">SpoolFarm</a> &middot;
-   <a href="/privacy/ru/">Политика конфиденциальности</a> &middot;
-   <a href="/terms/ru/">Пользовательское соглашение</a> &middot;
-   <a href="/faq/">English FAQ</a></p>
-<p>© 2026 IkkaDoes. SpoolFarm — независимый проект, не связанный с Bambu Lab, Klipper, Duet3D и Spoolman.</p>
-</footer>
-
 </div>
+<!--SF:FOOTER-->
+<footer class="sitefoot noprint">
+  <div class="cols">
+    <div class="about">
+      <a class="brand" href="/ru/">
+        <img src="/assets/icon.png" alt="" width="26" height="26">
+        <span>SpoolFarm</span>
+        <span class="brand-by">IkkaDoes</span>
+      </a>
+      <p>Продукт IkkaDoes. Управление фермой 3D-печати с телефона — склад филамента, честная себестоимость, заказы и контроль принтеров.</p>
+      <p><a href="mailto:spoolfarm@ikkadoes.com?subject=%5BSpoolFarm%5D%20">spoolfarm@ikkadoes.com</a><br>
+      <span class="small">Пожалуйста, оставьте в теме письма пометку <code>[SpoolFarm]</code>.</span></p>
+    </div>
+    <div>
+      <h4>Продукт</h4>
+      <ul>
+      <li><a href="/ru/">Главная</a></li>
+      <li><a href="/tour/ru/">Обзор приложения</a></li>
+      <li><a href="/faq/ru/">Вопросы и ответы</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Документы</h4>
+      <ul>
+      <li><a href="/privacy/ru/">Политика конфиденциальности</a></li>
+      <li><a href="/terms/ru/">Пользовательское соглашение</a></li>
+      </ul>
+    </div>
+    <div lang="en">
+      <h4>English</h4>
+      <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/tour/">Product tour</a></li>
+      <li><a href="/faq/">Questions &amp; answers</a></li>
+      <li><a href="/privacy/">Privacy policy</a></li>
+      <li><a href="/terms/">Terms of service</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="fine">© 2026 IkkaDoes. SpoolFarm — независимый проект, не связанный с Bambu Lab, Klipper, OctoPrint, Prusa, Duet3D и Spoolman. Названия продуктов принадлежат их владельцам.</p>
+</footer>
+<!--SF:/FOOTER-->
 </body>
 </html>

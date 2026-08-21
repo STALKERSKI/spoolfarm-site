@@ -4,65 +4,83 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SpoolFarm — 3D printing farm management for Android</title>
-<meta name="description" content="Filament inventory, customer orders, cost calculation and printer control for your 3D printing farm. No servers, no analytics, no accounts.">
+<meta name="description" content="Filament inventory, customer orders, real cost calculation and printer control for your 3D printing farm. No servers, no analytics, no accounts.">
+<link rel="stylesheet" href="/assets/site.css">
+<!--SF:META-->
+<script>document.documentElement.classList.add('js')</script>
 <link rel="canonical" href="https://spoolfarm.ikkadoes.com/">
-<style>
-  :root{
-    --bg:#ffffff; --fg:#16181d; --muted:#5c6370; --line:#e3e6ea;
-    --card:#f7f8fa; --accent:#0b6b53; --accent-fg:#ffffff;
-  }
-  @media (prefers-color-scheme: dark){
-    :root{
-      --bg:#101215; --fg:#e8eaed; --muted:#9aa1ac; --line:#282c33;
-      --card:#181b20; --accent:#3fbf9b; --accent-fg:#0a0c0e;
-    }
-  }
-  *{box-sizing:border-box}
-  body{
-    margin:0; background:var(--bg); color:var(--fg);
-    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    -webkit-font-smoothing:antialiased;
-  }
-  .wrap{max-width:800px;margin:0 auto;padding:0 24px}
-  header{padding:72px 0 48px;border-bottom:1px solid var(--line)}
-  h1{font-size:2.6rem;line-height:1.15;margin:0 0 12px;letter-spacing:-.02em}
-  .tagline{font-size:1.2rem;color:var(--muted);margin:0 0 32px;max-width:34em}
-  .badge{
-    display:inline-block;padding:4px 12px;border:1px solid var(--line);
-    border-radius:999px;font-size:.82rem;color:var(--muted);margin-bottom:20px
-  }
-  h2{font-size:1.35rem;margin:48px 0 16px;letter-spacing:-.01em}
-  section{padding-bottom:8px}
-  ul{padding-left:1.2em;margin:0 0 20px}
-  li{margin:6px 0}
-  .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin:24px 0}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
-  .card h3{margin:0 0 8px;font-size:1rem}
-  .card p{margin:0;color:var(--muted);font-size:.94rem}
-  .privacy-note{
-    background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);
-    border-radius:8px;padding:20px 24px;margin:32px 0
-  }
-  a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:2px}
-  footer{
-    margin-top:64px;padding:32px 0 64px;border-top:1px solid var(--line);
-    color:var(--muted);font-size:.9rem
-  }
-  footer a{margin-right:18px;display:inline-block}
-</style>
+<link rel="alternate" hreflang="en" href="https://spoolfarm.ikkadoes.com/">
+<link rel="alternate" hreflang="ru" href="https://spoolfarm.ikkadoes.com/ru/">
+<link rel="alternate" hreflang="x-default" href="https://spoolfarm.ikkadoes.com/">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1013" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SpoolFarm">
+<meta property="og:title" content="SpoolFarm — 3D printing farm management for Android">
+<meta property="og:description" content="Filament inventory, customer orders, real cost calculation and printer control for your 3D printing farm. No servers, no analytics, no accounts.">
+<meta property="og:url" content="https://spoolfarm.ikkadoes.com/">
+<meta property="og:image" content="https://spoolfarm.ikkadoes.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SpoolFarm — 3D printing farm management for Android">
+<meta name="twitter:description" content="Filament inventory, customer orders, real cost calculation and printer control for your 3D printing farm. No servers, no analytics, no accounts.">
+<meta name="twitter:image" content="https://spoolfarm.ikkadoes.com/assets/og.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"SpoolFarm","url":"https://spoolfarm.ikkadoes.com/","applicationCategory":"BusinessApplication","operatingSystem":"Android 12+","inLanguage":"en","description":"Filament inventory, customer orders, real cost calculation and printer control for your 3D printing farm. No servers, no analytics, no accounts.","image":"https://spoolfarm.ikkadoes.com/assets/og.png","author":{"@type":"Organization","name":"IkkaDoes","email":"spoolfarm@ikkadoes.com"},"publisher":{"@type":"Organization","name":"IkkaDoes"}}</script>
+<!--SF:/META-->
 </head>
 <body>
+
+<!--SF:HEADER-->
+<a class="skip" href="#main">Skip to content</a>
+<header class="sitehead noprint">
+  <div class="bar">
+    <a class="brand" href="/" aria-current="page">
+      <img src="/assets/icon.png" alt="" width="26" height="26">
+      <span>SpoolFarm</span>
+      <span class="brand-by">IkkaDoes</span>
+    </a>
+    <nav class="sitenav" aria-label="Product">
+      <a href="/tour/">Tour</a>
+      <a href="/faq/">FAQ</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+    </nav>
+    <div class="lang"><span class="on">EN</span><a href="/ru/" hreflang="ru" lang="ru">RU</a></div>
+  </div>
+</header>
+<!--SF:/HEADER-->
+
+<main id="main">
 <div class="wrap">
 
-  <header>
-    <span class="badge">Android · coming to Google Play</span>
-    <h1>SpoolFarm</h1>
-    <p class="tagline">Your phone as the control room of a 3D printing farm — filament
-    inventory, customer orders, honest costing and live printer control.</p>
-  </header>
+  <section class="homehero">
+    <div>
+      <span class="badge"><span class="dot"></span>Android 12+ · coming to Google Play</span>
+      <h1>Your print farm, with the books that add up</h1>
+      <p class="lead">Filament inventory, customer orders, honest costing and live printer
+      control — on the phone that is already in your pocket.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="/tour/">See the product tour</a>
+        <a class="btn btn-ghost" href="/faq/">Questions &amp; answers</a>
+      </div>
+    </div>
+    <div class="shot">
+      <div class="phone">
+        <img src="/tour/shots/01-dashboard.jpg" width="1220" height="2712"
+             alt="SpoolFarm dashboard: four printer tiles with status, progress and temperatures">
+      </div>
+    </div>
+  </section>
 
-  <section>
-    <h2>What it does</h2>
+  <section class="section">
+    <div class="section-head">
+      <h2>What it does</h2>
+    </div>
     <div class="grid">
       <div class="card">
         <h3>Inventory that adds up</h3>
@@ -85,45 +103,82 @@
         web interface on your own network. CSV and encrypted backups. Seven languages.</p>
       </div>
     </div>
-    <p>See the app screen by screen in the <a href="/tour/">product tour</a>
-    (<a href="/tour/ru/">на русском</a>), or read the detailed
-    <a href="/faq/">frequently asked questions</a> (<a href="/faq/ru/">на русском</a>).</p>
+    <p class="sub" style="margin-top:28px">See the app screen by screen in the
+    <a href="/tour/">product tour</a>, or read the detailed
+    <a href="/faq/">questions and answers</a>.</p>
   </section>
 
-  <section>
-    <h2>Privacy by architecture</h2>
-    <div class="privacy-note">
-      <p style="margin:0 0 12px"><strong>There is no SpoolFarm server.</strong> The app
-      contains no analytics, no crash reporting, no advertising SDKs and no user accounts.
-      We are technically unable to receive your data.</p>
-      <p style="margin:0">Your spools, orders, customer names and prices stay on your
-      device. Data leaves it only through integrations you configure yourself, and goes
-      only to the address you entered — your printer, your server, your bot.</p>
+  <section class="section">
+    <div class="section-head">
+      <h2>Privacy by architecture</h2>
     </div>
-    <p><a href="/privacy">Read the full privacy policy</a> ·
-       <a href="/privacy/ru/">Политика конфиденциальности на русском</a></p>
-    <p><a href="/terms/">Terms of Service</a> &middot;
-       <a href="/terms/ru/">Пользовательское соглашение</a></p>
+    <div class="callout">
+      <p><strong>There is no SpoolFarm server.</strong> The app contains no analytics, no crash
+      reporting, no advertising SDKs and no user accounts. We are technically unable to receive
+      your data.</p>
+      <p>Your spools, orders, customer names and prices stay on your device. Data leaves it
+      only through integrations you configure yourself, and goes only to the address you
+      entered — your printer, your server, your bot.</p>
+      <p style="margin:0"><a href="/privacy/">Read the full privacy policy</a> ·
+      <a href="/terms/">Terms of service</a></p>
+    </div>
   </section>
 
-  <section>
-    <h2>Contact</h2>
-    <p>Questions, bug reports and testing requests:
-    <a href="mailto:spoolfarm@ikkadoes.com?subject=%5BSpoolFarm%5D%20">spoolfarm@ikkadoes.com</a>
-    <br><span style="color:var(--muted);font-size:.92rem">Please keep the
-    <code>[SpoolFarm]</code> tag in the subject line so the message is not lost.</span></p>
+  <section class="section">
+    <div class="section-head">
+      <h2>Contact</h2>
+      <p class="sub">Questions, bug reports and testing requests:
+      <a href="mailto:spoolfarm@ikkadoes.com?subject=%5BSpoolFarm%5D%20">spoolfarm@ikkadoes.com</a>
+      <br><span class="small">Please keep the <code>[SpoolFarm]</code> tag in the subject line
+      so the message is not lost.</span></p>
+    </div>
   </section>
-
-  <footer>
-    <a href="/tour/">Tour</a>
-    <a href="/faq/">FAQ</a>
-    <a href="/privacy">Privacy Policy</a>
-    <a href="/terms/">Terms</a>
-    <a href="mailto:spoolfarm@ikkadoes.com?subject=%5BSpoolFarm%5D%20">Contact</a>
-    <p style="margin:16px 0 0">© 2026 IkkaDoes. SpoolFarm is an independent project and is
-    not affiliated with Bambu Lab, Klipper, Duet3D or Spoolman.</p>
-  </footer>
 
 </div>
+</main>
+
+<!--SF:FOOTER-->
+<footer class="sitefoot noprint">
+  <div class="cols">
+    <div class="about">
+      <a class="brand" href="/">
+        <img src="/assets/icon.png" alt="" width="26" height="26">
+        <span>SpoolFarm</span>
+        <span class="brand-by">IkkaDoes</span>
+      </a>
+      <p>An IkkaDoes product. 3D printing farm management for Android — filament inventory, real costing, orders and printer control.</p>
+      <p><a href="mailto:spoolfarm@ikkadoes.com?subject=%5BSpoolFarm%5D%20">spoolfarm@ikkadoes.com</a><br>
+      <span class="small">Subject line must keep the <code>[SpoolFarm]</code> tag.</span></p>
+    </div>
+    <div>
+      <h4>Product</h4>
+      <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/tour/">Product tour</a></li>
+      <li><a href="/faq/">Questions &amp; answers</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <ul>
+      <li><a href="/privacy/">Privacy policy</a></li>
+      <li><a href="/terms/">Terms of service</a></li>
+      </ul>
+    </div>
+    <div lang="ru">
+      <h4>Русский</h4>
+      <ul>
+      <li><a href="/ru/">Главная</a></li>
+      <li><a href="/tour/ru/">Обзор приложения</a></li>
+      <li><a href="/faq/ru/">Вопросы и ответы</a></li>
+      <li><a href="/privacy/ru/">Политика конфиденциальности</a></li>
+      <li><a href="/terms/ru/">Пользовательское соглашение</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="fine">© 2026 IkkaDoes. SpoolFarm is an independent project and is not affiliated with Bambu Lab, Klipper, OctoPrint, Prusa, Duet3D or Spoolman. Product names belong to their respective owners.</p>
+</footer>
+<!--SF:/FOOTER-->
+
 </body>
 </html>

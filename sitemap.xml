@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://spoolfarm.ikkadoes.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spoolfarm.ikkadoes.com/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://spoolfarm.ikkadoes.com/ru/"/>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://spoolfarm.ikkadoes.com/ru/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spoolfarm.ikkadoes.com/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://spoolfarm.ikkadoes.com/ru/"/>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://spoolfarm.ikkadoes.com/tour/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spoolfarm.ikkadoes.com/tour/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://spoolfarm.ikkadoes.com/tour/ru/"/>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://spoolfarm.ikkadoes.com/tour/ru/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spoolfarm.ikkadoes.com/tour/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://spoolfarm.ikkadoes.com/tour/ru/"/>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://spoolfarm.ikkadoes.com/faq/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spoolfarm.ikkadoes.com/faq/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://spoolfarm.ikkadoes.com/faq/ru/"/>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://spoolfarm.ikkadoes.com/faq/ru/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spoolfarm.ikkadoes.com/faq/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://spoolfarm.ikkadoes.com/faq/ru/"/>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://spoolfarm.ikkadoes.com/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spoolfarm.ikkadoes.com/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://spoolfarm.ikkadoes.com/privacy/ru/"/>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://spoolfarm.ikkadoes.com/privacy/ru/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spoolfarm.ikkadoes.com/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://spoolfarm.ikkadoes.com/privacy/ru/"/>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://spoolfarm.ikkadoes.com/terms/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spoolfarm.ikkadoes.com/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://spoolfarm.ikkadoes.com/terms/ru/"/>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://spoolfarm.ikkadoes.com/terms/ru/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spoolfarm.ikkadoes.com/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://spoolfarm.ikkadoes.com/terms/ru/"/>
+    <priority>0.4</priority>
+  </url>
+</urlset>

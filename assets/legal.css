@@ -1,53 +1,39 @@
-:root{
-  --bg:#ffffff; --fg:#16181d; --muted:#5c6370; --line:#e3e6ea;
-  --card:#f7f8fa; --accent:#0b6b53;
-}
-@media (prefers-color-scheme: dark){
-  :root{
-    --bg:#101215; --fg:#e8eaed; --muted:#9aa1ac; --line:#282c33;
-    --card:#181b20; --accent:#3fbf9b;
-  }
-}
-*{box-sizing:border-box}
-body{
-  margin:0; background:var(--bg); color:var(--fg);
-  font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  -webkit-font-smoothing:antialiased;
-}
-.wrap{max-width:760px;margin:0 auto;padding:0 24px 80px}
-.nav{padding:24px 0;border-bottom:1px solid var(--line);font-size:.92rem}
-.nav a{color:var(--muted);text-decoration:none;margin-right:18px}
-.nav a:hover{color:var(--accent);text-decoration:underline}
-h1{font-size:2.1rem;line-height:1.2;margin:48px 0 8px;letter-spacing:-.02em}
+/* Юридические страницы и «Вопросы и ответы».
+   Подключается после site.css и добавляет только то, что специфично
+   для длинного читаемого документа: узкая колонка и более скромные заголовки. */
+
+.wrap{--w:768px;padding-bottom:20px}
+
+h1{font-size:clamp(1.9rem,4vw,2.5rem);margin:44px 0 10px}
+h2{font-size:1.32rem;margin:44px 0 14px;letter-spacing:-.015em}
+h3{font-size:1.06rem;margin:28px 0 10px}
+
 .dates{color:var(--muted);font-size:.92rem;margin:0 0 8px}
-h2{font-size:1.3rem;margin:44px 0 14px;letter-spacing:-.01em;padding-top:4px}
-h3{font-size:1.05rem;margin:28px 0 10px}
-p{margin:0 0 16px}
-ul{padding-left:1.25em;margin:0 0 18px}
-li{margin:7px 0}
-a{color:var(--accent);text-underline-offset:2px}
+
 hr{border:0;border-top:1px solid var(--line);margin:40px 0}
-code{
-  background:var(--card);border:1px solid var(--line);border-radius:4px;
-  padding:1px 5px;font-size:.9em
-}
+
 pre{
-  background:var(--card);border:1px solid var(--line);border-radius:8px;
+  background:var(--surface);border:1px solid var(--line);border-radius:8px;
   padding:14px 16px;overflow-x:auto;margin:0 0 20px;font-size:.9rem;line-height:1.55
 }
 pre code{background:none;border:0;padding:0;font-size:inherit}
+
 blockquote{
   margin:0 0 20px;padding:2px 0 2px 18px;border-left:3px solid var(--line);
   color:var(--muted)
 }
 blockquote p:last-child{margin-bottom:0}
+
+/* вводная сводка в начале документа */
 .lede{
-  background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);
-  border-radius:8px;padding:20px 24px;margin:28px 0
+  background:var(--surface);border:1px solid var(--line);
+  border-left:3px solid var(--brand);border-radius:10px;
+  padding:20px 24px;margin:28px 0
 }
 .lede p:last-child{margin-bottom:0}
-.tablewrap{overflow-x:auto;margin:0 0 20px}
-table{border-collapse:collapse;width:100%;font-size:.95rem;min-width:420px}
-th,td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
-th{background:var(--card);font-weight:600}
-footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+
+/* в договорах таблицы мелкие и служебные — рамка по каждой ячейке читается лучше */
+.tablewrap{border:0;border-radius:0;margin:0 0 20px}
+table{font-size:.95rem;min-width:420px}
+th,td{border:1px solid var(--line);padding:9px 12px}
+thead th{white-space:normal}
