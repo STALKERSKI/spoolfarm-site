@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SpoolFarm: облік філаменту та собівартість 3D-друку — огляд застосунку</title>
+<meta name="description" content="Як влаштований SpoolFarm екран за екраном: склад філаменту з автосписанням, собівартість друку з електрикою та амортизацією, замовлення та рахунки, керування Bambu Lab і Klipper без хмари.">
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/tour.css">
+<!--SF:META-->
+<script>document.documentElement.classList.add('js')</script>
+<link rel="canonical" href="https://spoolfarm.ikkadoes.com/tour/uk/">
+<link rel="alternate" hreflang="en" href="https://spoolfarm.ikkadoes.com/tour/">
+<link rel="alternate" hreflang="ru" href="https://spoolfarm.ikkadoes.com/tour/ru/">
+<link rel="alternate" hreflang="uk" href="https://spoolfarm.ikkadoes.com/tour/uk/">
+<link rel="alternate" hreflang="x-default" href="https://spoolfarm.ikkadoes.com/">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1013" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SpoolFarm">
+<meta property="og:title" content="SpoolFarm: облік філаменту та собівартість 3D-друку — огляд застосунку">
+<meta property="og:description" content="Як влаштований SpoolFarm екран за екраном: склад філаменту з автосписанням, собівартість друку з електрикою та амортизацією, замовлення та рахунки, керування Bambu Lab і Klipper без хмари.">
+<meta property="og:url" content="https://spoolfarm.ikkadoes.com/tour/uk/">
+<meta property="og:image" content="https://spoolfarm.ikkadoes.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="uk_UA">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SpoolFarm: облік філаменту та собівартість 3D-друку — огляд застосунку">
+<meta name="twitter:description" content="Як влаштований SpoolFarm екран за екраном: склад філаменту з автосписанням, собівартість друку з електрикою та амортизацією, замовлення та рахунки, керування Bambu Lab і Klipper без хмари.">
+<meta name="twitter:image" content="https://spoolfarm.ikkadoes.com/assets/og.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"SpoolFarm","item":"https://spoolfarm.ikkadoes.com/uk/"},{"@type":"ListItem","position":2,"name":"SpoolFarm: облік філаменту та собівартість 3D-друку","item":"https://spoolfarm.ikkadoes.com/tour/uk/"}]}</script>
+<!--SF:/META-->
+</head>
+<body>
+<!--SF:HEADER-->
+<a class="skip" href="#main">До змісту</a>
+<header class="sitehead noprint">
+  <div class="bar">
+    <a class="brand" href="/uk/">
+      <img src="/assets/icon.png" alt="" width="26" height="26">
+      <span>SpoolFarm</span>
+      <span class="brand-by">IkkaDoes</span>
+    </a>
+    <nav class="sitenav" aria-label="Продукт">
+      <a href="/tour/uk/" aria-current="page">Огляд</a>
+      <a href="/faq/uk/">Питання</a>
+      <a href="/privacy/uk/">Приватність</a>
+      <a href="/terms/uk/">Угода</a>
+    </nav>
+    <div class="lang"><a href="/tour/" hreflang="en" lang="en">EN</a><a href="/tour/ru/" hreflang="ru" lang="ru">RU</a><span class="on">UK</span></div>
+  </div>
+</header>
+<!--SF:/HEADER-->
+
+<div class="wrap" id="top">
+  <section class="hero">
+    <span class="badge"><span class="dot"></span>Android 12+ · готується вихід у Google Play</span>
+    <h1>Диспетчерська ферми — в кишені</h1>
+    <p class="lead">Склад філаменту, чесна собівартість, замовлення і живе керування
+    принтерами. Десять екранів, один застосунок, жодного сервера.</p>
+    <div class="cta noprint">
+      <a class="btn btn-primary" href="#test">Заявка в закритий тест</a>
+      <a class="btn btn-ghost" href="/faq/uk/">Питання та відповіді</a>
+    </div>
+    <p class="printonly small">spoolfarm.ikkadoes.com · spoolfarm@ikkadoes.com</p>
+  </section>
+</div>
+
+<nav class="toc noprint" aria-label="Розділи сторінки">
+  <div class="inner">
+    <a href="#navischo">Навіщо</a>
+    <a href="#ferma">Ферма</a>
+    <a href="#sklad">Склад</a>
+    <a href="#groshi">Гроші</a>
+    <a href="#zamovlennya">Замовлення</a>
+    <a href="#printery">Принтери</a>
+    <a href="#sche">Ще п'ять екранів</a>
+    <a href="#porivnyannya">Порівняння</a>
+    <a href="#pryvatnist">Приватність</a>
+    <a href="#test">Тестування</a>
+  </div>
+</nav>
+
+<main id="main">
+<div class="wrap">
+
+  <section class="section" id="navischo">
+    <p class="kicker">Навіщо це написано</p>
+    <blockquote class="pullquote reveal">Слайсер показує грами.
+    Банк показує підсумок місяця.<br><span class="dim">Між ними порожньо.</span></blockquote>
+    <p class="sub">Поки принтер один, усе тримається в голові. Коли їх кілька, першим
+    зникає розуміння грошей: скільки філаменту реально залишилось, у скільки обійшовся
+    конкретний друк разом з електрикою й зносом, заробили ви на замовленні — чи тихо
+    доплатили за нього самі.</p>
+    <p class="sub">Зазвичай цю діру закривають таблицею і кидають її через місяць, бо
+    кожен друк треба вносити руками. <strong>SpoolFarm закриває її сам:</strong> списує
+    філамент за фактом завершеного друку, рахує собівартість і показує прибуток по
+    кожному замовленню.</p>
+
+    <div class="stats reveal">
+      <div class="stat"><span class="n">5</span><span class="t">екосистем принтерів в одному
+        списку: Bambu Lab, Klipper, OctoPrint, Prusa, Duet</span></div>
+      <div class="stat"><span class="n">0</span><span class="t">серверів, облікових записів,
+        аналітики і реклами — дані не залишають телефон</span></div>
+      <div class="stat"><span class="n">5</span><span class="t">статей собівартості, яких
+        не бачить слайсер: пластик, електрика, амортизація, робота, брак</span></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Як це виглядає</h2>
+      <p class="sub">П'ять екранів, на яких тримається все інше.</p>
+    </div>
+
+    <article class="feature reveal" id="ferma">
+      <div class="shot"><div class="phone">
+        <img src="/tour/shots/01-dashboard.jpg" width="1220" height="2712" loading="lazy"
+             alt="Дашборд SpoolFarm: плитки чотирьох принтерів зі статусами, прогресом і температурами">
+      </div></div>
+      <div class="say">
+        <p class="kicker">Огляд ферми</p>
+        <h3>Уся ферма на одному екрані</h3>
+        <p>Принтери різних марок — в одному списку, а не в чотирьох застосунках. Одразу видно,
+        хто друкує, хто вільний і де щось пішло не так.</p>
+        <ul>
+          <li><strong>Статус, прогрес і температури</strong> сопла, столу і камери</li>
+          <li><strong>Bambu Lab по локальній мережі</strong>, без хмарного облікового запису</li>
+          <li>Пауза, скасування і перехід до керування прямо з плитки</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="feature flip reveal" id="sklad">
+      <div class="shot"><div class="phone">
+        <img src="/tour/shots/02-spools.jpg" width="1220" height="2712" loading="lazy"
+             alt="Склад філаменту: список котушок із залишком і попередженням про низький запас">
+      </div></div>
+      <div class="say">
+        <p class="kicker">Склад</p>
+        <h3>Кожна котушка із залишком до грама</h3>
+        <p>Залишок зменшується сам, коли друк завершився. Вносити витрату руками не потрібно —
+        саме на цьому зазвичай і вмирають таблиці.</p>
+        <ul>
+          <li><strong>Прогноз, а не просто залишок:</strong> «TPU, залишилось 84 г — приблизно
+          на 10 днів»</li>
+          <li>Поріг мінімального залишку на кожну котушку</li>
+          <li>Пошук і фільтри за матеріалом, сортування за залишком</li>
+          <li><strong>Штрихкоди і NFC-мітки</strong>, швидка інвентаризація</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="feature reveal" id="groshi">
+      <div class="shot"><div class="phone">
+        <img src="/tour/shots/04-calculator.jpg" width="1220" height="2712" loading="lazy"
+             alt="Калькулятор собівартості: три моделі із собівартістю, ціною і прибутком">
+      </div></div>
+      <div class="say">
+        <p class="kicker">Гроші</p>
+        <h3>Собівартість, а не грами</h3>
+        <p>Слайсер знає тільки пластик. Прибуток з'їдають статті, яких він не бачить:
+        електрика, знос принтера, робота і частка браку.</p>
+        <ul>
+          <li><strong>Розрахунок до друку</strong> — щоб називати ціну усвідомлено, а не «на око»</li>
+          <li>Собівартість, ціна і прибуток по кожній позиції одразу</li>
+          <li>Кілька моделей в одному розрахунку</li>
+          <li>Філамент рахується <strong>за реальною ціною конкретної котушки</strong></li>
+        </ul>
+      </div>
+    </article>
+
+    <div class="calc reveal">
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th rowspan="2">Модель</th>
+              <th class="grp" colspan="2">Знає слайсер</th>
+              <th class="grp us" colspan="3">Показує SpoolFarm</th>
+            </tr>
+            <tr>
+              <th>Матеріал</th><th>Час</th>
+              <th class="us">Собівартість</th><th class="us">Ціна</th><th class="us">Прибуток</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Retail Display Stand</td>
+              <td class="slicer">PLA · 410 г</td><td class="slicer">11 год</td>
+              <td class="us money">€1,80</td><td class="us money">€3,43</td>
+              <td class="us money profit">€1,62</td>
+            </tr>
+            <tr>
+              <td>Desk Organizer Tray</td>
+              <td class="slicer">PLA · 182 г</td><td class="slicer">5 год</td>
+              <td class="us money">€0,30</td><td class="us money">€0,56</td>
+              <td class="us money profit">€0,27</td>
+            </tr>
+            <tr>
+              <td>Drone Frame Arm</td>
+              <td class="slicer">PLA · 96 г</td><td class="slicer">3 год</td>
+              <td class="us money">€0,11</td><td class="us money">€0,21</td>
+              <td class="us money profit">€0,10</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">Це ті самі три рядки, що на скриншоті вище. Зліва — все, що вам скаже
+      слайсер. Права половина з'являється тільки тоді, коли пораховані електрика,
+      амортизація принтера, робота і частка браку. Суми демонстраційні: вони з демо-ферми,
+      а не з чийогось реального виробництва.</p>
+    </div>
+
+    <article class="feature flip reveal" id="zamovlennya">
+      <div class="shot"><div class="phone">
+        <img src="/tour/shots/05-orders.jpg" width="1220" height="2712" loading="lazy"
+             alt="Список замовлень: активні замовлення, виручка 1522 євро, прибуток 956,50 євро">
+      </div></div>
+      <div class="say">
+        <p class="kicker">Замовлення</p>
+        <h3>Видно прибуток, а не тільки виручку</h3>
+        <p>Зверху — зведення по всіх замовленнях: скільки в роботі, скільки принесли і скільки
+        від цього залишилось після собівартості.</p>
+        <ul>
+          <li>Позиції, кількість, ціна, замовник</li>
+          <li>Фільтри за стадіями: новий, у роботі, готовий, відвантажений</li>
+          <li><strong>Рахунок у PDF</strong> з вашими реквізитами</li>
+          <li>Пакування списується зі складу і входить у собівартість</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="feature reveal" id="printery">
+      <div class="shot"><div class="phone">
+        <img src="/tour/shots/08-printer.jpg" width="1220" height="2712" loading="lazy"
+             alt="Екран принтера: прогрес 62 відсотки, 259 із 412 шарів, температури, керування осями">
+      </div></div>
+      <div class="say">
+        <p class="kicker">Принтери</p>
+        <h3>Повноцінне керування, а не тільки перегляд</h3>
+        <p>Шари, час, що залишився, і час завершення друку, температури, рух по осях,
+        світло і обдув — усе з телефону.</p>
+        <ul>
+          <li>Пауза, скасування і <strong>пропуск об'єкта</strong></li>
+          <li>Трансляція з камери</li>
+          <li><strong>Консоль G-code</strong> та інтерактивні макроси Klipper</li>
+          <li>Черга файлів і відправлення моделі на друк</li>
+          <li>З'єднання пряме, телефон — принтер, <strong>без серверів-посередників</strong></li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <section class="section pagebreak" id="sche">
+    <div class="section-head">
+      <h2>І ще п'ять екранів</h2>
+      <p class="sub">Ті, що потрібні рідше, але без яких картина не сходиться.</p>
+    </div>
+
+    <div class="gallery">
+      <div class="tile reveal">
+        <div class="phone"><img src="/tour/shots/03-spool-card.jpg" width="1220" height="2712"
+          loading="lazy" alt="Картка котушки: 46 відсотків, 468 грамів з 1000, матеріал, місце зберігання, номер партії"></div>
+        <div>
+          <h3>Картка котушки</h3>
+          <p>Не «PLA синій», а повна історія однієї котушки.</p>
+          <ul>
+            <li>Залишок у грамах і відсотках, <strong>місце зберігання і партія</strong></li>
+            <li>Ціна за кілограм і вартість залишку</li>
+            <li>Історія друків з витратою по кожному</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tile reveal">
+        <div class="phone"><img src="/tour/shots/06-reports.jpg" width="1220" height="2712"
+          loading="lazy" alt="Звіти: 37 завершених друків, 2 браковані, успішність 94 відсотки, витрата і прибуток"></div>
+        <div>
+          <h3>Звіти</h3>
+          <p>Два боки одного тижня: що надруковано і що зароблено.</p>
+          <ul>
+            <li>Завершено, брак, <strong>відсоток успішних друків</strong></li>
+            <li>Пластик, години друку, виручка, прибуток</li>
+            <li>Період: тиждень, місяць, 30 днів, весь час</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tile reveal">
+        <div class="phone"><img src="/tour/shots/07-analytics.jpg" width="1220" height="2712"
+          loading="lazy" alt="Аналітика складу: частки матеріалів, вартість запасів, графік витрати за часом"></div>
+        <div>
+          <h3>Аналітика складу</h3>
+          <p>Куди йде пластик і скільки грошей заморожено в запасах.</p>
+          <ul>
+            <li><strong>Вартість складу однією цифрою</strong></li>
+            <li>Частки матеріалів: PLA, PETG, ASA, ABS, TPU, PA-CF</li>
+            <li>Графік витрати за часом і розбивка за принтерами</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tile reveal">
+        <div class="phone"><img src="/tour/shots/09-packaging.jpg" width="1220" height="2712"
+          loading="lazy" alt="Склад пакування: коробки, пакети, стрічка і листівки з ціною і залишком"></div>
+        <div>
+          <h3>Пакування</h3>
+          <p>Коробки закінчуються так само непомітно, як пластик.</p>
+          <ul>
+            <li>Пакети, коробки, стрічка, листівки — <strong>власний склад з ціною</strong></li>
+            <li>Автосписання по позиціях замовлення</li>
+            <li>Попередження про мінімальний запас</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tile reveal">
+        <div class="phone"><img src="/tour/shots/10-maintenance.jpg" width="1220" height="2712"
+          loading="lazy" alt="Обслуговування принтерів: наробіток у годинах і прострочене завдання з чищення столу"></div>
+        <div>
+          <h3>Обслуговування</h3>
+          <p>Принтер нагадає про себе сам — до того як це з'ясується посеред замовлення.</p>
+          <ul>
+            <li><strong>Наробіток кожного принтера в годинах</strong></li>
+            <li>Чищення столу, екструдер, ремені, змащення осі Z</li>
+            <li>Прострочені роботи виділяються окремо</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <p class="note">За кадром залишились налаштування сповіщень, режим сервера з веб-інтерфейсом,
+    майстер завантаження філаменту і профілі K-фактора. Повний перелік — нижче.</p>
+  </section>
+
+  <section class="section pagebreak" id="porivnyannya">
+    <div class="section-head">
+      <h2>Чим відрізняється від того, що вже є</h2>
+      <p class="sub">Окремо інструменти існують, і багато з них безкоштовні. Різниця
+      в тому, що жоден не відповідає на питання «заробив чи ні» і жоден не тримає
+      принтери різних марок в одному місці.</p>
+    </div>
+
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Що потрібно фермі</th>
+            <th class="us">SpoolFarm</th>
+            <th>Bambu Handy</th>
+            <th>Mobileraker</th>
+            <th>Spoolman + OctoPrint</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Принтери різних марок в одному списку</td>
+              <td class="us yes">Так, 5 екосистем</td><td class="no">Тільки Bambu</td>
+              <td class="no">Тільки Klipper</td><td class="no">Тільки OctoPrint</td></tr>
+          <tr><td>Склад філаменту із залишком і ціною</td>
+              <td class="us yes">Так</td><td class="no">Ні</td>
+              <td class="no">Ні</td><td class="yes">Так (Spoolman)</td></tr>
+          <tr><td>Списання філаменту за фактом друку</td>
+              <td class="us yes">Так, автоматично</td><td class="no">Ні</td>
+              <td class="no">Ні</td><td class="no">Частково, через плагін</td></tr>
+          <tr><td>Собівартість: електрика, знос, брак</td>
+              <td class="us yes">Так</td><td class="no">Ні</td>
+              <td class="no">Ні</td><td class="no">Ні</td></tr>
+          <tr><td>Калькулятор ціни до друку</td>
+              <td class="us yes">Так</td><td class="no">Ні</td>
+              <td class="no">Ні</td><td class="no">Ні</td></tr>
+          <tr><td>Замовлення, прибуток, рахунок у PDF</td>
+              <td class="us yes">Так</td><td class="no">Ні</td>
+              <td class="no">Ні</td><td class="no">Ні</td></tr>
+          <tr><td>Облік пакування</td>
+              <td class="us yes">Так</td><td class="no">Ні</td>
+              <td class="no">Ні</td><td class="no">Ні</td></tr>
+          <tr><td>Аналітика по грошах</td>
+              <td class="us yes">Так</td><td class="no">Ні</td>
+              <td class="no">Ні</td><td class="no">Ні</td></tr>
+          <tr><td>Працює без хмари й облікового запису</td>
+              <td class="us yes">Так</td><td class="no">Потрібен обліковий запис</td>
+              <td class="yes">Так</td><td class="yes">Так</td></tr>
+          <tr><td>Потрібен окремий сервер або комп'ютер</td>
+              <td class="us yes">Ні, все на телефоні</td><td class="yes">Ні</td>
+              <td class="yes">Ні</td><td class="no">Так, постійно увімкнений</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Порівняння станом на серпень 2026 року і стосується тільки тих завдань,
+    які вирішує ферма на замовлення. Кожен із перелічених інструментів сильний у своїй сфері:
+    Mobileraker глибше працює з Klipper, Spoolman — зрілий складський сервер, а в OctoPrint
+    екосистема плагінів, якої в мобільному застосунку немає.</p>
+  </section>
+
+  <section class="section" id="pryvatnist">
+    <div class="section-head"><h2>Приватність закладена в устрій застосунку</h2></div>
+    <div class="callout reveal">
+      <p><strong>У SpoolFarm немає власного сервера.</strong> У застосунку немає аналітики, немає
+      збору звітів про збої, немає рекламних SDK і немає облікових записів. Розробник технічно
+      не може отримати ваші дані.</p>
+      <p>Котушки, замовлення, імена клієнтів і ціни залишаються на пристрої. Дані залишають
+      телефон лише через інтеграції, які ви налаштували самі, і йдуть лише за тією адресою, що
+      ви вказали: ваш принтер, ваш сервер, ваш бот. Застосунок працює і без інтернету.</p>
+      <p class="small" style="margin:0"><a href="/privacy/uk/">Політика конфіденційності</a>
+      · <a href="/terms/uk/">Угода користувача</a></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <details class="deets">
+      <summary>Повний перелік можливостей <span class="hint">— усі розділи застосунку списком</span></summary>
+      <div class="body">
+        <div class="grid">
+          <div class="card">
+            <h3>Склад</h3>
+            <ul>
+              <li>Котушки із залишком до грама</li>
+              <li>Автосписання за фактом друку</li>
+              <li>Поріг залишку і прогноз на дні</li>
+              <li>Штрихкоди і NFC</li>
+              <li>Швидка інвентаризація</li>
+              <li>Spoolman: сервер або локально</li>
+              <li>Імпорт і експорт CSV</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Гроші</h3>
+            <ul>
+              <li>Собівартість кожного друку</li>
+              <li>Електрика і амортизація</li>
+              <li>Робота і частка браку</li>
+              <li>Калькулятор до друку</li>
+              <li>Мульти-модельний розрахунок</li>
+              <li>Ціна і маржа</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Замовлення</h3>
+            <ul>
+              <li>Позиції, кількість, ціна</li>
+              <li>Прибуток по кожному замовленню</li>
+              <li>Рахунок у PDF з реквізитами</li>
+              <li>Склад пакування зі списанням</li>
+              <li>Поріг залишку пакування</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Принтери</h3>
+            <ul>
+              <li>Bambu Lab по локальній мережі</li>
+              <li>Klipper / Moonraker</li>
+              <li>OctoPrint, Prusa, Duet</li>
+              <li>Статус, температури, прогрес</li>
+              <li>Камера</li>
+              <li>Консоль G-code</li>
+              <li>Інтерактивні макроси Klipper</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Облік і звіти</h3>
+            <ul>
+              <li>Журнал друку із сумами</li>
+              <li>Витрата і гроші за місяцями</li>
+              <li>Розбивка за матеріалами</li>
+              <li>Розбивка за принтерами</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Зв'язок і доступ</h3>
+            <ul>
+              <li>Сповіщення в Telegram</li>
+              <li>Сповіщення в Discord</li>
+              <li>Вебхуки</li>
+              <li>Режим сервера: веб-інтерфейс</li>
+              <li>Доступ поза домом через VPN</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Дані і приватність</h3>
+            <ul>
+              <li>Все зберігається на телефоні</li>
+              <li>Ні аналітики, ні реклами</li>
+              <li>Робота без інтернету</li>
+              <li>Зашифровані резервні копії</li>
+              <li>Перемикач мобільного трафіку</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Обслуговування</h3>
+            <ul>
+              <li>Наробіток кожного принтера в годинах</li>
+              <li>Чищення столу, огляд екструдера</li>
+              <li>Натяг ременів, змащення осі Z</li>
+              <li>Прострочені роботи окремо</li>
+              <li>Профілі K-фактора</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Дрібниці, які помітні</h3>
+            <ul>
+              <li>Демо-режим з готовою фермою</li>
+              <li>7 мов інтерфейсу</li>
+              <li>Темна тема</li>
+              <li>Оптимізована витрата батареї</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <section class="section" id="test">
+    <div class="invite reveal">
+      <h2>Закрите тестування</h2>
+      <p class="sub">Вихід у Google Play готується, зараз триває закритий тест: обмежена
+      група отримує збірки і надсилає зауваження до публічного релізу. Частина можливостей
+      застосунку з'явилась саме з чужих сценаріїв роботи.</p>
+
+      <ul class="terms">
+        <li><b>Що потрібно від вас</b><span>Користуватись застосунком у реальній роботі і
+        казати, що зламалось, що незручно і чого не вистачає.</span></li>
+        <li><b>Скільки це триває</b><span>Google вимагає безперервної участі групи протягом
+        14 днів, далі — за бажанням.</span></li>
+        <li><b>Що ви отримуєте</b><span>Ранній доступ до збірок і прямий вплив на те,
+        що з'явиться в застосунку.</span></li>
+      </ul>
+
+      <div class="cta noprint" style="margin:0">
+        <a class="btn btn-primary" href="mailto:spoolfarm@ikkadoes.com?subject=%D0%97%D0%B0%D1%8F%D0%B2%D0%BA%D0%B0%20%D0%BD%D0%B0%20%D0%B7%D0%B0%D0%BA%D1%80%D0%B8%D1%82%D0%B8%D0%B9%20%D1%82%D0%B5%D1%81%D1%82&amp;body=%D0%92%D1%96%D1%82%D0%B0%D1%8E%21%0A%0A%D0%9F%D1%80%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B8%20%28%D1%81%D0%BA%D1%96%D0%BB%D1%8C%D0%BA%D0%B8%20%D1%96%20%D1%8F%D0%BA%D1%96%29%3A%20%0A%D0%A9%D0%BE%20%D0%B4%D1%80%D1%83%D0%BA%D1%83%D1%8E%3A%20%0A%D0%9F%D0%BE%D1%88%D1%82%D0%B0%20Google%20%D0%B4%D0%BB%D1%8F%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%D1%83%20%D0%B4%D0%BE%20%D1%82%D0%B5%D1%81%D1%82%D1%83%3A%20%0A%0A%D0%9A%D0%BE%D1%80%D0%BE%D1%82%D0%BA%D0%BE%2C%20%D1%89%D0%BE%20%D0%B7%D0%B0%D1%80%D0%B0%D0%B7%20%D1%80%D0%B0%D1%85%D1%83%D1%8E%20%D1%80%D1%83%D0%BA%D0%B0%D0%BC%D0%B8%20%D0%B0%D0%B1%D0%BE%20%D0%B2%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D1%96%3A%0A">Написати заявку</a>
+        <a class="btn btn-ghost" href="/faq/uk/">Спочатку питання та відповіді</a>
+      </div>
+      <p class="small" style="margin:18px 0 0">Лист відкриється з готовим шаблоном — залишиться
+      заповнити пропуски. Позначку <code>[SpoolFarm]</code> у темі, будь ласка, залиште:
+      за нею лист не загубиться.</p>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<script>
+(function () {
+  var items = document.querySelectorAll('.reveal');
+  var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (calm || !('IntersectionObserver' in window)) {
+    items.forEach(function (el) { el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+    items.forEach(function (el) { io.observe(el); });
+  }
+  // буклет збирається друком сторінки — згорнутий перелік має потрапити в PDF
+  window.addEventListener('beforeprint', function () {
+    document.querySelectorAll('details').forEach(function (d) { d.open = true; });
+  });
+})();
+</script>
+<!--SF:FOOTER-->
+<footer class="sitefoot noprint">
+  <div class="cols">
+    <div class="about">
+      <a class="brand" href="/uk/">
+        <img src="/assets/icon.png" alt="" width="26" height="26">
+        <span>SpoolFarm</span>
+        <span class="brand-by">IkkaDoes</span>
+      </a>
+      <p>Продукт IkkaDoes. Керування фермою 3D-друку з телефону — склад філаменту, чесна собівартість, замовлення та контроль принтерів.</p>
+      <p><a href="mailto:spoolfarm@ikkadoes.com?subject=%5BSpoolFarm%5D%20">spoolfarm@ikkadoes.com</a><br>
+      <span class="small">Будь ласка, залиште в темі листа позначку <code>[SpoolFarm]</code>.</span></p>
+    </div>
+    <div>
+      <h4>Продукт</h4>
+      <ul>
+      <li><a href="/uk/">Головна</a></li>
+      <li><a href="/tour/uk/">Огляд застосунку</a></li>
+      <li><a href="/faq/uk/">Питання та відповіді</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Документи</h4>
+      <ul>
+      <li><a href="/privacy/uk/">Політика конфіденційності</a></li>
+      <li><a href="/terms/uk/">Угода користувача</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="small" style="margin:0 0 8px">Інші мови</p>
+      <h4 lang="en">English</h4>
+      <ul lang="en">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tour/">Product tour</a></li>
+      <li><a href="/faq/">Questions &amp; answers</a></li>
+      <li><a href="/privacy/">Privacy policy</a></li>
+      <li><a href="/terms/">Terms of service</a></li>
+      </ul>
+      <h4 lang="ru">Русский</h4>
+      <ul lang="ru">
+      <li><a href="/ru/">Главная</a></li>
+      <li><a href="/tour/ru/">Обзор приложения</a></li>
+      <li><a href="/faq/ru/">Вопросы и ответы</a></li>
+      <li><a href="/privacy/ru/">Политика конфиденциальности</a></li>
+      <li><a href="/terms/ru/">Пользовательское соглашение</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="fine">© 2026 IkkaDoes. SpoolFarm — незалежний проєкт, не пов'язаний з Bambu Lab, Klipper, OctoPrint, Prusa, Duet3D та Spoolman. Назви продуктів належать їхнім власникам.</p>
+</footer>
+<!--SF:/FOOTER-->
+</body>
+</html>
