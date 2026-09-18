@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SpoolFarm — управление фермой 3D-печати на Android</title>
-<meta name="description" content="Склад филамента, заказы, честный расчёт себестоимости и управление принтерами для вашей 3D-фермы. Ни серверов, ни аналитики, ни учётных записей.">
+<title>SpoolFarm — калькулятор себестоимости 3D-печати и менеджер фермы</title>
+<meta name="description" content="Калькулятор себестоимости 3D-печати, склад филамента, заказы и управление принтерами Klipper, Bambu Lab и OctoPrint — в одном приложении для Android. Ни серверов, ни аналитики, ни учётных записей.">
 <link rel="stylesheet" href="/assets/site.css">
 <!--SF:META-->
 <script>document.documentElement.classList.add('js')</script>
@@ -19,8 +19,8 @@
 <meta name="theme-color" content="#0e1013" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SpoolFarm">
-<meta property="og:title" content="SpoolFarm — управление фермой 3D-печати на Android">
-<meta property="og:description" content="Склад филамента, заказы, честный расчёт себестоимости и управление принтерами для вашей 3D-фермы. Ни серверов, ни аналитики, ни учётных записей.">
+<meta property="og:title" content="SpoolFarm — калькулятор себестоимости 3D-печати и менеджер фермы">
+<meta property="og:description" content="Калькулятор себестоимости 3D-печати, склад филамента, заказы и управление принтерами Klipper, Bambu Lab и OctoPrint — в одном приложении для Android. Ни серверов, ни аналитики, ни учётных записей.">
 <meta property="og:url" content="https://spoolfarm.ikkadoes.com/ru/">
 <meta property="og:image" content="https://spoolfarm.ikkadoes.com/assets/og.png">
 <meta property="og:image:width" content="1200">
@@ -29,10 +29,10 @@
 <meta property="og:locale:alternate" content="en_US">
 <meta property="og:locale:alternate" content="uk_UA">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SpoolFarm — управление фермой 3D-печати на Android">
-<meta name="twitter:description" content="Склад филамента, заказы, честный расчёт себестоимости и управление принтерами для вашей 3D-фермы. Ни серверов, ни аналитики, ни учётных записей.">
+<meta name="twitter:title" content="SpoolFarm — калькулятор себестоимости 3D-печати и менеджер фермы">
+<meta name="twitter:description" content="Калькулятор себестоимости 3D-печати, склад филамента, заказы и управление принтерами Klipper, Bambu Lab и OctoPrint — в одном приложении для Android. Ни серверов, ни аналитики, ни учётных записей.">
 <meta name="twitter:image" content="https://spoolfarm.ikkadoes.com/assets/og.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"SpoolFarm","url":"https://spoolfarm.ikkadoes.com/ru/","applicationCategory":"BusinessApplication","operatingSystem":"Android 12+","inLanguage":"ru","description":"Склад филамента, заказы, честный расчёт себестоимости и управление принтерами для вашей 3D-фермы. Ни серверов, ни аналитики, ни учётных записей.","image":"https://spoolfarm.ikkadoes.com/assets/og.png","author":{"@type":"Organization","name":"IkkaDoes","email":"spoolfarm@ikkadoes.com"},"publisher":{"@type":"Organization","name":"IkkaDoes"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"SpoolFarm","url":"https://spoolfarm.ikkadoes.com/ru/","applicationCategory":"BusinessApplication","operatingSystem":"Android 12+","inLanguage":"ru","description":"Калькулятор себестоимости 3D-печати, склад филамента, заказы и управление принтерами Klipper, Bambu Lab и OctoPrint — в одном приложении для Android. Ни серверов, ни аналитики, ни учётных записей.","image":"https://spoolfarm.ikkadoes.com/assets/og.png","screenshot":"https://spoolfarm.ikkadoes.com/tour/shots/01-dashboard.jpg","downloadUrl":"https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm","installUrl":"https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR","url":"https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm","availability":"https://schema.org/InStock"},"author":{"@type":"Organization","name":"IkkaDoes","email":"spoolfarm@ikkadoes.com"},"publisher":{"@type":"Organization","name":"IkkaDoes"}}</script>
 <!--SF:/META-->
 </head>
 <body>
@@ -48,6 +48,7 @@
     </a>
     <nav class="sitenav" aria-label="Продукт">
       <a href="/tour/ru/">Обзор</a>
+      <a href="/calculator/ru/">Калькулятор</a>
       <a href="/faq/ru/">Вопросы</a>
       <a href="/privacy/ru/">Приватность</a>
       <a href="/terms/ru/">Соглашение</a>
@@ -62,13 +63,13 @@
 
   <section class="homehero">
     <div>
-      <span class="badge"><span class="dot"></span>Android 12+ · готовится выход в Google Play</span>
+      <span class="badge"><span class="dot"></span>Android 12+ · в Google Play</span>
       <h1>Ферма, у которой сходится касса</h1>
-      <p class="lead">Склад филамента, заказы, честная себестоимость и живое управление
-      принтерами — на телефоне, который и так у вас в кармане.</p>
+      <p class="lead">Калькулятор себестоимости 3D-печати, склад филамента, заказы и живое
+      управление принтерами — на телефоне, который и так у вас в кармане.</p>
       <div class="cta">
-        <a class="btn btn-primary" href="/tour/ru/">Посмотреть обзор</a>
-        <a class="btn btn-ghost" href="/faq/ru/">Вопросы и ответы</a>
+        <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm">Установить из Google Play</a>
+        <a class="btn btn-ghost" href="/tour/ru/">Посмотреть обзор</a>
       </div>
     </div>
     <div class="shot">
@@ -93,7 +94,8 @@
       <div class="card">
         <h3>Заказы и настоящая себестоимость</h3>
         <p>Филамент, электричество, амортизация, работа и упаковка в одном расчёте.
-        Целевая цена и маржа. Счета в PDF с вашими реквизитами.</p>
+        Целевая цена и маржа. Счета в PDF с вашими реквизитами.
+        <a href="/calculator/ru/">Как считается себестоимость печати</a>.</p>
       </div>
       <div class="card">
         <h3>Принтеры в одном месте</h3>
@@ -159,7 +161,9 @@
       <ul>
       <li><a href="/ru/">Главная</a></li>
       <li><a href="/tour/ru/">Обзор приложения</a></li>
+      <li><a href="/calculator/ru/">Калькулятор себестоимости 3D-печати</a></li>
       <li><a href="/faq/ru/">Вопросы и ответы</a></li>
+      <li><a href="https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm">Установить из Google Play</a></li>
       </ul>
     </div>
     <div>
@@ -175,6 +179,7 @@
       <ul lang="en">
       <li><a href="/">Home</a></li>
       <li><a href="/tour/">Product tour</a></li>
+      <li><a href="/calculator/">3D print cost calculator</a></li>
       <li><a href="/faq/">Questions &amp; answers</a></li>
       <li><a href="/privacy/">Privacy policy</a></li>
       <li><a href="/terms/">Terms of service</a></li>
@@ -183,6 +188,7 @@
       <ul lang="uk">
       <li><a href="/uk/">Головна</a></li>
       <li><a href="/tour/uk/">Огляд застосунку</a></li>
+      <li><a href="/calculator/uk/">Калькулятор собівартості 3D-друку</a></li>
       <li><a href="/faq/uk/">Питання та відповіді</a></li>
       <li><a href="/privacy/uk/">Політика конфіденційності</a></li>
       <li><a href="/terms/uk/">Угода користувача</a></li>

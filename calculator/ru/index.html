@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Калькулятор себестоимости 3D-печати — во что обходится печать | SpoolFarm</title>
+<meta name="description" content="Как посчитать настоящую себестоимость 3D-печати: филамент, электричество, амортизация принтера, работа, упаковка, брак и комиссии площадок. Разбор на живом примере и калькулятор в приложении SpoolFarm для Android.">
+<link rel="stylesheet" href="/assets/site.css">
+<!--SF:META-->
+<script>document.documentElement.classList.add('js')</script>
+<link rel="canonical" href="https://spoolfarm.ikkadoes.com/calculator/ru/">
+<link rel="alternate" hreflang="en" href="https://spoolfarm.ikkadoes.com/calculator/">
+<link rel="alternate" hreflang="ru" href="https://spoolfarm.ikkadoes.com/calculator/ru/">
+<link rel="alternate" hreflang="uk" href="https://spoolfarm.ikkadoes.com/calculator/uk/">
+<link rel="alternate" hreflang="x-default" href="https://spoolfarm.ikkadoes.com/">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1013" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SpoolFarm">
+<meta property="og:title" content="Калькулятор себестоимости 3D-печати — во что обходится печать | SpoolFarm">
+<meta property="og:description" content="Как посчитать настоящую себестоимость 3D-печати: филамент, электричество, амортизация принтера, работа, упаковка, брак и комиссии площадок. Разбор на живом примере и калькулятор в приложении SpoolFarm для Android.">
+<meta property="og:url" content="https://spoolfarm.ikkadoes.com/calculator/ru/">
+<meta property="og:image" content="https://spoolfarm.ikkadoes.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="uk_UA">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Калькулятор себестоимости 3D-печати — во что обходится печать | SpoolFarm">
+<meta name="twitter:description" content="Как посчитать настоящую себестоимость 3D-печати: филамент, электричество, амортизация принтера, работа, упаковка, брак и комиссии площадок. Разбор на живом примере и калькулятор в приложении SpoolFarm для Android.">
+<meta name="twitter:image" content="https://spoolfarm.ikkadoes.com/assets/og.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","url":"https://spoolfarm.ikkadoes.com/calculator/ru/","mainEntity":[{"@type":"Question","name":"Как считается цена грамма?","acceptedAnswer":{"@type":"Answer","text":"По той катушке, с которой печатали: цена покупки делится на её чистый вес. Две катушки одного материала, купленные по разной цене, так и остаются разными — удачная покупка не раздувает маржу у всего остального."}},{"@type":"Question","name":"Продувка и отходы учитываются?","acceptedAnswer":{"@type":"Answer","text":"Да. Продувка, прайм-линия и юбка вносятся отдельным весом: на многоцветной печати они бывают тяжелее самой детали."}},{"@type":"Question","name":"Можно посчитать заказ из нескольких разных моделей?","acceptedAnswer":{"@type":"Answer","text":"Да. Заказ из нескольких моделей считается как одна работа: у каждой модели свой вес, время печати и превью, а общие статьи — упаковка, работа, доставка — учитываются один раз, а не по разу на модель."}},{"@type":"Question","name":"Калькулятор работает без интернета?","acceptedAnswer":{"@type":"Answer","text":"Да. Сервера SpoolFarm не существует и аккаунтов нет: расчёт идёт на телефоне, и ваши цены с него никуда не уходят."}},{"@type":"Question","name":"За приложение надо платить?","acceptedAnswer":{"@type":"Answer","text":"Установка из Google Play бесплатна. Полная работа открывается подпиской или разовой покупкой навсегда; пробный период предлагается новым подписчикам, которым его даёт Google Play. Цена показывается до покупки и зависит от страны."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"SpoolFarm","url":"https://spoolfarm.ikkadoes.com/calculator/ru/","applicationCategory":"BusinessApplication","operatingSystem":"Android 12+","inLanguage":"ru","description":"Как посчитать настоящую себестоимость 3D-печати: филамент, электричество, амортизация принтера, работа, упаковка, брак и комиссии площадок. Разбор на живом примере и калькулятор в приложении SpoolFarm для Android.","image":"https://spoolfarm.ikkadoes.com/assets/og.png","screenshot":"https://spoolfarm.ikkadoes.com/tour/shots/01-dashboard.jpg","downloadUrl":"https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm","installUrl":"https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR","url":"https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm","availability":"https://schema.org/InStock"},"author":{"@type":"Organization","name":"IkkaDoes","email":"spoolfarm@ikkadoes.com"},"publisher":{"@type":"Organization","name":"IkkaDoes"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"SpoolFarm","item":"https://spoolfarm.ikkadoes.com/ru/"},{"@type":"ListItem","position":2,"name":"Калькулятор себестоимости 3D-печати","item":"https://spoolfarm.ikkadoes.com/calculator/ru/"}]}</script>
+<!--SF:/META-->
+</head>
+<body>
+<!--SF:HEADER-->
+<a class="skip" href="#main">К содержанию</a>
+<header class="sitehead noprint">
+  <div class="bar">
+    <a class="brand" href="/ru/">
+      <img src="/assets/icon.png" alt="" width="26" height="26">
+      <span>SpoolFarm</span>
+      <span class="brand-by">IkkaDoes</span>
+    </a>
+    <nav class="sitenav" aria-label="Продукт">
+      <a href="/tour/ru/">Обзор</a>
+      <a href="/calculator/ru/" aria-current="page">Калькулятор</a>
+      <a href="/faq/ru/">Вопросы</a>
+      <a href="/privacy/ru/">Приватность</a>
+      <a href="/terms/ru/">Соглашение</a>
+    </nav>
+    <div class="lang"><a href="/calculator/" hreflang="en" lang="en">EN</a><span class="on">RU</span><a href="/calculator/uk/" hreflang="uk" lang="uk">UK</a></div>
+  </div>
+</header>
+<!--SF:/HEADER-->
+
+<main id="main">
+<div class="wrap">
+
+  <section class="homehero">
+    <div>
+      <span class="badge"><span class="dot"></span>Android 12+ · в Google Play</span>
+      <h1>Калькулятор себестоимости 3D-печати</h1>
+      <p class="lead">Филамент считают все, и он редко составляет даже половину счёта.
+      Электричество, износ принтера, ваше собственное время, упаковка и неудавшиеся печати
+      всё равно попадают в цену — или в ваш карман, со знаком минус.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm">Установить из Google Play</a>
+        <a class="btn btn-ghost" href="/tour/ru/">Посмотреть обзор</a>
+      </div>
+    </div>
+    <div class="shot">
+      <div class="phone">
+        <img src="/tour/shots/01-dashboard.jpg" width="1220" height="2712"
+             alt="SpoolFarm на телефоне: плитки принтеров со статусом, прогрессом и температурами">
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Из чего складывается цена печати</h2>
+      <p class="sub">Семь статей. Пропустите одну — и заказ только выглядит прибыльным.</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>Филамент</h3>
+        <p>Вес модели плюс продувка и юбка, по цене той катушки, которую вы реально
+        купили, — а не по сегодняшнему ценнику в магазине.</p>
+      </div>
+      <div class="card">
+        <h3>Электричество</h3>
+        <p>Средняя мощность принтера, умноженная на время печати и ваш тариф. Копейки за
+        печать, заметная строка за месяц — и растёт с каждым новым столом.</p>
+      </div>
+      <div class="card">
+        <h3>Амортизация принтера</h3>
+        <p>У принтера есть ресурс в часах. Каждый час печати тратит часть денег, за
+        которые он куплен, и это настоящий расход, а не бухгалтерская условность.</p>
+      </div>
+      <div class="card">
+        <h3>Ваша работа</h3>
+        <p>Нарезка, снятие поддержек, обработка, упаковка. Та часть заказа, которую не
+        считают, и причина, по которой печать за 5 евро уходит в минус.</p>
+      </div>
+      <div class="card">
+        <h3>Упаковка</h3>
+        <p>Коробка, пакет, скотч, наполнитель и этикетка. Дёшево поштучно и решает всё на
+        партии в полсотни.</p>
+      </div>
+      <div class="card">
+        <h3>Процент брака</h3>
+        <p>Часть печатей отклеится, поведёт или встанет без филамента. Если в цене за них
+        ничего не заложено, за них молча платят удачные печати.</p>
+      </div>
+      <div class="card">
+        <h3>Комиссии площадок</h3>
+        <p>Комиссия, доставка, эквайринг и реклама. Покупатель платит одну сумму, до вас
+        доходит другая.</p>
+      </div>
+      <div class="card">
+        <h3>Постоянные расходы</h3>
+        <p>Аренда, подписки, хранение. Разложенные на месячный тираж, они превращаются в
+        копейки на изделие — и в разницу по итогам года.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Разбор на примере</h2>
+      <p class="sub">Одна деталь 180 г, 7 ч 20 мин на принтере за 450 €, продана на
+      площадке за 19,90 €.</p>
+    </div>
+    <div class="callout">
+      <p><strong>Филамент.</strong> 180 г в детали и 12 г продувки — это 192 г. Катушка
+      обошлась в 22 € за килограмм, значит материал стоит <strong>4,22 €</strong>.</p>
+      <p><strong>Электричество.</strong> 120 Вт в среднем за 7,33 часа — 0,88 кВт·ч. По
+      тарифу 0,18 € за кВт·ч это <strong>0,16 €</strong>.</p>
+      <p><strong>Амортизация.</strong> Принтер за 450 € с ресурсом 4000 часов тратит 0,11 €
+      в час, то есть на этот заказ — <strong>0,82 €</strong>.</p>
+      <p><strong>Работа.</strong> 15 минут рук по 12 € в час — <strong>3,00 €</strong>.
+      Обычно вторая по величине строка и первая из тех, что забывают в таблице.</p>
+      <p><strong>Упаковка.</strong> Коробка, наполнитель, этикетка: <strong>0,60 €</strong>.</p>
+      <p><strong>Итого 8,80 €.</strong> С запасом на брак 7 % себестоимость одной доехавшей
+      до клиента детали — <strong>9,42 €</strong>.</p>
+      <p style="margin:0"><strong>Продажа.</strong> При цене 19,90 € площадка забирает 12 %
+      комиссии, а эквайринг 3 % — вместе 2,99 €. Остаётся <strong>7,49 €</strong>, то есть
+      37 % маржи. Посчитайте ту же деталь по одному филаменту — и 6 € покажутся выгодной
+      ценой, на которой вы теряете на каждой штуке.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Почему таблица рано или поздно врёт</h2>
+    </div>
+    <p>Таблица верна в тот день, когда её составили. Потом филамент дорожает, катушка
+    покупается по акции, меняется тариф, приезжает второй принтер с другой мощностью — а
+    формула тихо продолжает считать по прошлогодним цифрам. И ничто об этом не сообщает:
+    ячейки по-прежнему сходятся.</p>
+    <p>SpoolFarm берёт числа оттуда же, где идёт работа. Катушка знает, сколько стоила и
+    сколько на ней осталось, принтер знает, сколько он печатал, заказ знает, сколько штук
+    сделано. Сохранённый расчёт становится прайс-листом, а изменившуюся цену вы правите
+    один раз.</p>
+    <p class="sub">Калькулятор и остальные экраны показаны в
+    <a href="/tour/ru/">обзоре приложения</a>.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Вопросы</h2>
+    </div>
+
+    <h3 class="q">Как считается цена грамма?</h3>
+    <p>По той катушке, с которой печатали: цена покупки делится на её чистый вес. Две
+    катушки одного материала, купленные по разной цене, так и остаются разными — удачная
+    покупка не раздувает маржу у всего остального.</p>
+
+    <h3 class="q">Продувка и отходы учитываются?</h3>
+    <p>Да. Продувка, прайм-линия и юбка вносятся отдельным весом: на многоцветной печати
+    они бывают тяжелее самой детали.</p>
+
+    <h3 class="q">Можно посчитать заказ из нескольких разных моделей?</h3>
+    <p>Да. Заказ из нескольких моделей считается как одна работа: у каждой модели свой вес,
+    время печати и превью, а общие статьи — упаковка, работа, доставка — учитываются один
+    раз, а не по разу на модель.</p>
+
+    <h3 class="q">Калькулятор работает без интернета?</h3>
+    <p>Да. Сервера SpoolFarm не существует и аккаунтов нет: расчёт идёт на телефоне, и ваши
+    цены с него никуда не уходят.</p>
+
+    <h3 class="q">За приложение надо платить?</h3>
+    <p>Установка из Google Play бесплатна. Полная работа открывается подпиской или разовой
+    покупкой навсегда; пробный период предлагается новым подписчикам, которым его даёт
+    Google Play. Цена показывается до покупки и зависит от страны.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Считайте весь счёт, а не только филамент</h2>
+      <p class="sub">Калькулятор — часть SpoolFarm: склад филамента, заказы, счета и
+      контроль принтеров в одном приложении.</p>
+    </div>
+    <div class="cta">
+      <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm">Установить из Google Play</a>
+      <a class="btn btn-ghost" href="/faq/ru/">Вопросы и ответы</a>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<!--SF:FOOTER-->
+<footer class="sitefoot noprint">
+  <div class="cols">
+    <div class="about">
+      <a class="brand" href="/ru/">
+        <img src="/assets/icon.png" alt="" width="26" height="26">
+        <span>SpoolFarm</span>
+        <span class="brand-by">IkkaDoes</span>
+      </a>
+      <p>Продукт IkkaDoes. Управление фермой 3D-печати с телефона — склад филамента, честная себестоимость, заказы и контроль принтеров.</p>
+      <p><a href="mailto:spoolfarm@ikkadoes.com?subject=%5BSpoolFarm%5D%20">spoolfarm@ikkadoes.com</a><br>
+      <span class="small">Пожалуйста, оставьте в теме письма пометку <code>[SpoolFarm]</code>.</span></p>
+    </div>
+    <div>
+      <h4>Продукт</h4>
+      <ul>
+      <li><a href="/ru/">Главная</a></li>
+      <li><a href="/tour/ru/">Обзор приложения</a></li>
+      <li><a href="/calculator/ru/">Калькулятор себестоимости 3D-печати</a></li>
+      <li><a href="/faq/ru/">Вопросы и ответы</a></li>
+      <li><a href="https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm">Установить из Google Play</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Документы</h4>
+      <ul>
+      <li><a href="/privacy/ru/">Политика конфиденциальности</a></li>
+      <li><a href="/terms/ru/">Пользовательское соглашение</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="small" style="margin:0 0 8px">Другие языки</p>
+      <h4 lang="en">English</h4>
+      <ul lang="en">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tour/">Product tour</a></li>
+      <li><a href="/calculator/">3D print cost calculator</a></li>
+      <li><a href="/faq/">Questions &amp; answers</a></li>
+      <li><a href="/privacy/">Privacy policy</a></li>
+      <li><a href="/terms/">Terms of service</a></li>
+      </ul>
+      <h4 lang="uk">Українська</h4>
+      <ul lang="uk">
+      <li><a href="/uk/">Головна</a></li>
+      <li><a href="/tour/uk/">Огляд застосунку</a></li>
+      <li><a href="/calculator/uk/">Калькулятор собівартості 3D-друку</a></li>
+      <li><a href="/faq/uk/">Питання та відповіді</a></li>
+      <li><a href="/privacy/uk/">Політика конфіденційності</a></li>
+      <li><a href="/terms/uk/">Угода користувача</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="fine">© 2026 IkkaDoes. SpoolFarm — независимый проект, не связанный с Bambu Lab, Klipper, OctoPrint, Prusa, Duet3D и Spoolman. Названия продуктов принадлежат их владельцам.</p>
+</footer>
+<!--SF:/FOOTER-->
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3D printing cost calculator — what a print really costs | SpoolFarm</title>
+<meta name="description" content="Work out the real cost of a 3D print: filament, electricity, printer depreciation, labour, packaging, failed prints and marketplace fees. A worked example, and the calculator in the SpoolFarm Android app.">
+<link rel="stylesheet" href="/assets/site.css">
+<!--SF:META-->
+<script>document.documentElement.classList.add('js')</script>
+<link rel="canonical" href="https://spoolfarm.ikkadoes.com/calculator/">
+<link rel="alternate" hreflang="en" href="https://spoolfarm.ikkadoes.com/calculator/">
+<link rel="alternate" hreflang="ru" href="https://spoolfarm.ikkadoes.com/calculator/ru/">
+<link rel="alternate" hreflang="uk" href="https://spoolfarm.ikkadoes.com/calculator/uk/">
+<link rel="alternate" hreflang="x-default" href="https://spoolfarm.ikkadoes.com/">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1013" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SpoolFarm">
+<meta property="og:title" content="3D printing cost calculator — what a print really costs | SpoolFarm">
+<meta property="og:description" content="Work out the real cost of a 3D print: filament, electricity, printer depreciation, labour, packaging, failed prints and marketplace fees. A worked example, and the calculator in the SpoolFarm Android app.">
+<meta property="og:url" content="https://spoolfarm.ikkadoes.com/calculator/">
+<meta property="og:image" content="https://spoolfarm.ikkadoes.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:locale:alternate" content="uk_UA">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="3D printing cost calculator — what a print really costs | SpoolFarm">
+<meta name="twitter:description" content="Work out the real cost of a 3D print: filament, electricity, printer depreciation, labour, packaging, failed prints and marketplace fees. A worked example, and the calculator in the SpoolFarm Android app.">
+<meta name="twitter:image" content="https://spoolfarm.ikkadoes.com/assets/og.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","url":"https://spoolfarm.ikkadoes.com/calculator/","mainEntity":[{"@type":"Question","name":"How is the cost per gram worked out?","acceptedAnswer":{"@type":"Answer","text":"From the spool you actually used: its purchase price divided by its net weight. Two spools of the same material bought at different prices stay different in the app, so a lucky purchase does not silently inflate the margin on everything else."}},{"@type":"Question","name":"Does it count purge and waste?","acceptedAnswer":{"@type":"Answer","text":"Yes. Purge, prime line and the skirt are entered as a separate weight, because on a multi-colour print they can outweigh the part itself."}},{"@type":"Question","name":"Can it price an order of several different models?","acceptedAnswer":{"@type":"Answer","text":"Yes. An order with several models is costed as a single job: each model keeps its own weight, print time and preview image, and the fixed parts of the order — packaging, labour, delivery — are counted once, not once per model."}},{"@type":"Question","name":"Does the calculator work offline?","acceptedAnswer":{"@type":"Answer","text":"Yes. There is no SpoolFarm server and no account: the calculation happens on the phone, and your prices never leave it."}},{"@type":"Question","name":"Do I have to pay to use it?","acceptedAnswer":{"@type":"Answer","text":"The app installs free from Google Play. Full use is covered by a subscription, or by a one-time lifetime purchase; a free trial is offered to new subscribers who are eligible for it on Google Play. Prices are shown before purchase and differ by country."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"SpoolFarm","url":"https://spoolfarm.ikkadoes.com/calculator/","applicationCategory":"BusinessApplication","operatingSystem":"Android 12+","inLanguage":"en","description":"Work out the real cost of a 3D print: filament, electricity, printer depreciation, labour, packaging, failed prints and marketplace fees. A worked example, and the calculator in the SpoolFarm Android app.","image":"https://spoolfarm.ikkadoes.com/assets/og.png","screenshot":"https://spoolfarm.ikkadoes.com/tour/shots/01-dashboard.jpg","downloadUrl":"https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm","installUrl":"https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR","url":"https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm","availability":"https://schema.org/InStock"},"author":{"@type":"Organization","name":"IkkaDoes","email":"spoolfarm@ikkadoes.com"},"publisher":{"@type":"Organization","name":"IkkaDoes"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"SpoolFarm","item":"https://spoolfarm.ikkadoes.com/"},{"@type":"ListItem","position":2,"name":"3D printing cost calculator","item":"https://spoolfarm.ikkadoes.com/calculator/"}]}</script>
+<!--SF:/META-->
+</head>
+<body>
+<!--SF:HEADER-->
+<a class="skip" href="#main">Skip to content</a>
+<header class="sitehead noprint">
+  <div class="bar">
+    <a class="brand" href="/">
+      <img src="/assets/icon.png" alt="" width="26" height="26">
+      <span>SpoolFarm</span>
+      <span class="brand-by">IkkaDoes</span>
+    </a>
+    <nav class="sitenav" aria-label="Product">
+      <a href="/tour/">Tour</a>
+      <a href="/calculator/" aria-current="page">Calculator</a>
+      <a href="/faq/">FAQ</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+    </nav>
+    <div class="lang"><span class="on">EN</span><a href="/calculator/ru/" hreflang="ru" lang="ru">RU</a><a href="/calculator/uk/" hreflang="uk" lang="uk">UK</a></div>
+  </div>
+</header>
+<!--SF:/HEADER-->
+
+<main id="main">
+<div class="wrap">
+
+  <section class="homehero">
+    <div>
+      <span class="badge"><span class="dot"></span>Android 12+ · on Google Play</span>
+      <h1>3D printing cost calculator</h1>
+      <p class="lead">Filament is the part everyone counts, and it is rarely half the bill.
+      Electricity, the printer wearing out, your own time, packaging and the prints that
+      failed all end up in the price — or they end up in your pocket, negative.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm">Get it on Google Play</a>
+        <a class="btn btn-ghost" href="/tour/">See the product tour</a>
+      </div>
+    </div>
+    <div class="shot">
+      <div class="phone">
+        <img src="/tour/shots/01-dashboard.jpg" width="1220" height="2712"
+             alt="SpoolFarm on a phone: printer tiles with status, progress and temperatures">
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>What goes into the price of a print</h2>
+      <p class="sub">Seven costs. Miss one and the job only looks profitable.</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>Filament</h3>
+        <p>Model weight plus purge and the skirt, priced from what the spool actually cost
+        you — not from the shop's price per kilo today.</p>
+      </div>
+      <div class="card">
+        <h3>Electricity</h3>
+        <p>Average draw of the printer multiplied by print time and your tariff. Small per
+        print, visible per month, and it grows with every heated bed you add.</p>
+      </div>
+      <div class="card">
+        <h3>Machine depreciation</h3>
+        <p>The printer has a working life in hours. Every hour of printing spends part of
+        the money it cost, and that is a real expense, not an accounting trick.</p>
+      </div>
+      <div class="card">
+        <h3>Your labour</h3>
+        <p>Slicing, removing supports, sanding, packing. The part of the job nobody counts,
+        and the reason a €5 print can lose money.</p>
+      </div>
+      <div class="card">
+        <h3>Packaging</h3>
+        <p>Box, bag, tape, filler and the label. Cheap per unit, decisive on a run of fifty.</p>
+      </div>
+      <div class="card">
+        <h3>Failure rate</h3>
+        <p>A share of prints will warp, come loose or run out of filament. If nothing in the
+        price covers them, the successful prints pay for them silently.</p>
+      </div>
+      <div class="card">
+        <h3>Marketplace fees</h3>
+        <p>Commission, shipping, card processing and advertising. The customer pays a price;
+        what reaches you is a different number.</p>
+      </div>
+      <div class="card">
+        <h3>Fixed monthly costs</h3>
+        <p>Rent, subscriptions, storage. Spread over the units you print in a month, they
+        turn into a few cents each — and into the difference at the end of the year.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>A worked example</h2>
+      <p class="sub">One 180 g part, 7 h 20 min on a €450 printer, sold on a marketplace for
+      €19.90.</p>
+    </div>
+    <div class="callout">
+      <p><strong>Filament.</strong> 180 g in the part and 12 g of purge is 192 g. The spool
+      cost €22 per kilogram, so the material is <strong>€4.22</strong>.</p>
+      <p><strong>Electricity.</strong> 120 W average over 7.33 hours is 0.88 kWh. At €0.18
+      per kWh that is <strong>€0.16</strong>.</p>
+      <p><strong>Depreciation.</strong> A €450 printer with a 4000-hour working life spends
+      €0.11 an hour, so this job spends <strong>€0.82</strong>.</p>
+      <p><strong>Labour.</strong> 15 minutes of handling at €12 an hour is
+      <strong>€3.00</strong> — usually the second largest line, and the one left out of most
+      spreadsheets.</p>
+      <p><strong>Packaging.</strong> Box, filler and label: <strong>€0.60</strong>.</p>
+      <p><strong>Subtotal: €8.80.</strong> With a 7 % failure allowance the cost of one
+      delivered part is <strong>€9.42</strong>.</p>
+      <p style="margin:0"><strong>The sale.</strong> At €19.90 the marketplace takes 12 %
+      commission and the card 3 %, together €2.99. What is left is
+      <strong>€7.49</strong> — a 37 % margin. Price the same part from filament alone and
+      you would have called €6 a good deal, and lost money on every single one.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Why the spreadsheet drifts</h2>
+    </div>
+    <p>A spreadsheet is right on the day you write it. Then filament goes up, a spool is
+    bought on sale, electricity changes, a second printer arrives with a different power
+    draw, and the formula quietly keeps using last spring's numbers. Nothing warns you: the
+    cells still add up.</p>
+    <p>SpoolFarm takes the numbers from the same place the work happens. The spool knows
+    what it cost and how much is left, the printer knows how long it ran, the order knows
+    how many units were made. A saved calculation becomes your price list, and when a
+    price changes you change it once.</p>
+    <p class="sub">See the calculator and the rest of the app screen by screen in the
+    <a href="/tour/">product tour</a>.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Questions</h2>
+    </div>
+
+    <h3 class="q">How is the cost per gram worked out?</h3>
+    <p>From the spool you actually used: its purchase price divided by its net weight. Two
+    spools of the same material bought at different prices stay different in the app, so a
+    lucky purchase does not silently inflate the margin on everything else.</p>
+
+    <h3 class="q">Does it count purge and waste?</h3>
+    <p>Yes. Purge, prime line and the skirt are entered as a separate weight, because on a
+    multi-colour print they can outweigh the part itself.</p>
+
+    <h3 class="q">Can it price an order of several different models?</h3>
+    <p>Yes. An order with several models is costed as a single job: each model keeps its own
+    weight, print time and preview image, and the fixed parts of the order — packaging,
+    labour, delivery — are counted once, not once per model.</p>
+
+    <h3 class="q">Does the calculator work offline?</h3>
+    <p>Yes. There is no SpoolFarm server and no account: the calculation happens on the
+    phone, and your prices never leave it.</p>
+
+    <h3 class="q">Do I have to pay to use it?</h3>
+    <p>The app installs free from Google Play. Full use is covered by a subscription, or by
+    a one-time lifetime purchase; a free trial is offered to new subscribers who are
+    eligible for it on Google Play. Prices are shown before purchase and differ by country.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Count the whole bill, not just the filament</h2>
+      <p class="sub">The calculator is part of SpoolFarm: filament stock, orders, invoices
+      and printer control in one app.</p>
+    </div>
+    <div class="cta">
+      <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm">Get it on Google Play</a>
+      <a class="btn btn-ghost" href="/faq/">Questions &amp; answers</a>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<!--SF:FOOTER-->
+<footer class="sitefoot noprint">
+  <div class="cols">
+    <div class="about">
+      <a class="brand" href="/">
+        <img src="/assets/icon.png" alt="" width="26" height="26">
+        <span>SpoolFarm</span>
+        <span class="brand-by">IkkaDoes</span>
+      </a>
+      <p>An IkkaDoes product. 3D printing farm management for Android — filament inventory, real costing, orders and printer control.</p>
+      <p><a href="mailto:spoolfarm@ikkadoes.com?subject=%5BSpoolFarm%5D%20">spoolfarm@ikkadoes.com</a><br>
+      <span class="small">Subject line must keep the <code>[SpoolFarm]</code> tag.</span></p>
+    </div>
+    <div>
+      <h4>Product</h4>
+      <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/tour/">Product tour</a></li>
+      <li><a href="/calculator/">3D print cost calculator</a></li>
+      <li><a href="/faq/">Questions &amp; answers</a></li>
+      <li><a href="https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm">Get it on Google Play</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <ul>
+      <li><a href="/privacy/">Privacy policy</a></li>
+      <li><a href="/terms/">Terms of service</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="small" style="margin:0 0 8px">Other languages</p>
+      <h4 lang="ru">Русский</h4>
+      <ul lang="ru">
+      <li><a href="/ru/">Главная</a></li>
+      <li><a href="/tour/ru/">Обзор приложения</a></li>
+      <li><a href="/calculator/ru/">Калькулятор себестоимости 3D-печати</a></li>
+      <li><a href="/faq/ru/">Вопросы и ответы</a></li>
+      <li><a href="/privacy/ru/">Политика конфиденциальности</a></li>
+      <li><a href="/terms/ru/">Пользовательское соглашение</a></li>
+      </ul>
+      <h4 lang="uk">Українська</h4>
+      <ul lang="uk">
+      <li><a href="/uk/">Головна</a></li>
+      <li><a href="/tour/uk/">Огляд застосунку</a></li>
+      <li><a href="/calculator/uk/">Калькулятор собівартості 3D-друку</a></li>
+      <li><a href="/faq/uk/">Питання та відповіді</a></li>
+      <li><a href="/privacy/uk/">Політика конфіденційності</a></li>
+      <li><a href="/terms/uk/">Угода користувача</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="fine">© 2026 IkkaDoes. SpoolFarm is an independent project and is not affiliated with Bambu Lab, Klipper, OctoPrint, Prusa, Duet3D or Spoolman. Product names belong to their respective owners.</p>
+</footer>
+<!--SF:/FOOTER-->
+</body>
+</html>

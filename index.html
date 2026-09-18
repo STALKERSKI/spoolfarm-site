@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SpoolFarm — 3D printing farm management for Android</title>
-<meta name="description" content="Filament inventory, customer orders, real cost calculation and printer control for your 3D printing farm. No servers, no analytics, no accounts.">
+<title>SpoolFarm — 3D print cost calculator and farm manager</title>
+<meta name="description" content="3D printing cost calculator, filament inventory, customer orders and printer control for Klipper, Bambu Lab and OctoPrint — in one Android app. No servers, no analytics, no accounts.">
 <link rel="stylesheet" href="/assets/site.css">
 <!--SF:META-->
 <script>document.documentElement.classList.add('js')</script>
@@ -19,8 +19,8 @@
 <meta name="theme-color" content="#0e1013" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SpoolFarm">
-<meta property="og:title" content="SpoolFarm — 3D printing farm management for Android">
-<meta property="og:description" content="Filament inventory, customer orders, real cost calculation and printer control for your 3D printing farm. No servers, no analytics, no accounts.">
+<meta property="og:title" content="SpoolFarm — 3D print cost calculator and farm manager">
+<meta property="og:description" content="3D printing cost calculator, filament inventory, customer orders and printer control for Klipper, Bambu Lab and OctoPrint — in one Android app. No servers, no analytics, no accounts.">
 <meta property="og:url" content="https://spoolfarm.ikkadoes.com/">
 <meta property="og:image" content="https://spoolfarm.ikkadoes.com/assets/og.png">
 <meta property="og:image:width" content="1200">
@@ -29,10 +29,10 @@
 <meta property="og:locale:alternate" content="ru_RU">
 <meta property="og:locale:alternate" content="uk_UA">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SpoolFarm — 3D printing farm management for Android">
-<meta name="twitter:description" content="Filament inventory, customer orders, real cost calculation and printer control for your 3D printing farm. No servers, no analytics, no accounts.">
+<meta name="twitter:title" content="SpoolFarm — 3D print cost calculator and farm manager">
+<meta name="twitter:description" content="3D printing cost calculator, filament inventory, customer orders and printer control for Klipper, Bambu Lab and OctoPrint — in one Android app. No servers, no analytics, no accounts.">
 <meta name="twitter:image" content="https://spoolfarm.ikkadoes.com/assets/og.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"SpoolFarm","url":"https://spoolfarm.ikkadoes.com/","applicationCategory":"BusinessApplication","operatingSystem":"Android 12+","inLanguage":"en","description":"Filament inventory, customer orders, real cost calculation and printer control for your 3D printing farm. No servers, no analytics, no accounts.","image":"https://spoolfarm.ikkadoes.com/assets/og.png","author":{"@type":"Organization","name":"IkkaDoes","email":"spoolfarm@ikkadoes.com"},"publisher":{"@type":"Organization","name":"IkkaDoes"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"SpoolFarm","url":"https://spoolfarm.ikkadoes.com/","applicationCategory":"BusinessApplication","operatingSystem":"Android 12+","inLanguage":"en","description":"3D printing cost calculator, filament inventory, customer orders and printer control for Klipper, Bambu Lab and OctoPrint — in one Android app. No servers, no analytics, no accounts.","image":"https://spoolfarm.ikkadoes.com/assets/og.png","screenshot":"https://spoolfarm.ikkadoes.com/tour/shots/01-dashboard.jpg","downloadUrl":"https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm","installUrl":"https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR","url":"https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm","availability":"https://schema.org/InStock"},"author":{"@type":"Organization","name":"IkkaDoes","email":"spoolfarm@ikkadoes.com"},"publisher":{"@type":"Organization","name":"IkkaDoes"}}</script>
 <!--SF:/META-->
 </head>
 <body>
@@ -48,6 +48,7 @@
     </a>
     <nav class="sitenav" aria-label="Product">
       <a href="/tour/">Tour</a>
+      <a href="/calculator/">Calculator</a>
       <a href="/faq/">FAQ</a>
       <a href="/privacy/">Privacy</a>
       <a href="/terms/">Terms</a>
@@ -62,13 +63,13 @@
 
   <section class="homehero">
     <div>
-      <span class="badge"><span class="dot"></span>Android 12+ · coming to Google Play</span>
+      <span class="badge"><span class="dot"></span>Android 12+ · on Google Play</span>
       <h1>Your print farm, with the books that add up</h1>
-      <p class="lead">Filament inventory, customer orders, honest costing and live printer
-      control — on the phone that is already in your pocket.</p>
+      <p class="lead">3D printing cost calculator, filament inventory, customer orders and
+      live printer control — on the phone that is already in your pocket.</p>
       <div class="cta">
-        <a class="btn btn-primary" href="/tour/">See the product tour</a>
-        <a class="btn btn-ghost" href="/faq/">Questions &amp; answers</a>
+        <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm">Get it on Google Play</a>
+        <a class="btn btn-ghost" href="/tour/">See the product tour</a>
       </div>
     </div>
     <div class="shot">
@@ -92,7 +93,8 @@
       <div class="card">
         <h3>Orders and real cost</h3>
         <p>Filament, electricity, depreciation, labour and packaging in one calculation.
-        Target price and margin. PDF invoices with your own business details.</p>
+        Target price and margin. PDF invoices with your own business details.
+        <a href="/calculator/">How the print cost calculator works</a>.</p>
       </div>
       <div class="card">
         <h3>Printers in one place</h3>
@@ -157,7 +159,9 @@
       <ul>
       <li><a href="/">Home</a></li>
       <li><a href="/tour/">Product tour</a></li>
+      <li><a href="/calculator/">3D print cost calculator</a></li>
       <li><a href="/faq/">Questions &amp; answers</a></li>
+      <li><a href="https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm">Get it on Google Play</a></li>
       </ul>
     </div>
     <div>
@@ -173,6 +177,7 @@
       <ul lang="ru">
       <li><a href="/ru/">Главная</a></li>
       <li><a href="/tour/ru/">Обзор приложения</a></li>
+      <li><a href="/calculator/ru/">Калькулятор себестоимости 3D-печати</a></li>
       <li><a href="/faq/ru/">Вопросы и ответы</a></li>
       <li><a href="/privacy/ru/">Политика конфиденциальности</a></li>
       <li><a href="/terms/ru/">Пользовательское соглашение</a></li>
@@ -181,6 +186,7 @@
       <ul lang="uk">
       <li><a href="/uk/">Головна</a></li>
       <li><a href="/tour/uk/">Огляд застосунку</a></li>
+      <li><a href="/calculator/uk/">Калькулятор собівартості 3D-друку</a></li>
       <li><a href="/faq/uk/">Питання та відповіді</a></li>
       <li><a href="/privacy/uk/">Політика конфіденційності</a></li>
       <li><a href="/terms/uk/">Угода користувача</a></li>
