@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Filament inventory app — track spools, weight and cost | SpoolFarm</title>
+<meta name="description" content="Track every spool: material, colour, remaining weight and what it cost. Automatic write-off when a print finishes, QR and NFC labels, low-stock alerts, Spoolman sync. Android app.">
+<link rel="stylesheet" href="/assets/site.css">
+<!--SF:META-->
+<script>document.documentElement.classList.add('js')</script>
+<link rel="canonical" href="https://spoolfarm.ikkadoes.com/filament-inventory/">
+<link rel="alternate" hreflang="en" href="https://spoolfarm.ikkadoes.com/filament-inventory/">
+<link rel="alternate" hreflang="ru" href="https://spoolfarm.ikkadoes.com/filament-inventory/ru/">
+<link rel="alternate" hreflang="uk" href="https://spoolfarm.ikkadoes.com/filament-inventory/uk/">
+<link rel="alternate" hreflang="x-default" href="https://spoolfarm.ikkadoes.com/">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1013" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SpoolFarm">
+<meta property="og:title" content="Filament inventory app — track spools, weight and cost | SpoolFarm">
+<meta property="og:description" content="Track every spool: material, colour, remaining weight and what it cost. Automatic write-off when a print finishes, QR and NFC labels, low-stock alerts, Spoolman sync. Android app.">
+<meta property="og:url" content="https://spoolfarm.ikkadoes.com/filament-inventory/">
+<meta property="og:image" content="https://spoolfarm.ikkadoes.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:locale:alternate" content="uk_UA">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Filament inventory app — track spools, weight and cost | SpoolFarm">
+<meta name="twitter:description" content="Track every spool: material, colour, remaining weight and what it cost. Automatic write-off when a print finishes, QR and NFC labels, low-stock alerts, Spoolman sync. Android app.">
+<meta name="twitter:image" content="https://spoolfarm.ikkadoes.com/assets/og.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","url":"https://spoolfarm.ikkadoes.com/filament-inventory/","mainEntity":[{"@type":"Question","name":"How does the app know how much filament a print used?","acceptedAnswer":{"@type":"Answer","text":"From the printer. Klipper, OctoPrint, Bambu Lab and the others report the finished job and its filament use; the grams are written off the spool assigned to that printer. You can also enter a job by hand."}},{"@type":"Question","name":"What if I swap spools between printers?","acceptedAnswer":{"@type":"Answer","text":"Assign the spool to the printer when you load it. The write-off follows the assignment, so a swap mid-week does not corrupt last week's numbers."}},{"@type":"Question","name":"Can I import my existing list?","acceptedAnswer":{"@type":"Answer","text":"Yes, by CSV. Be careful with re-importing your own export: import always adds rows and does not match by id, so importing the same file twice doubles the shelf. The import wizard warns about it."}},{"@type":"Question","name":"Does it work without the internet?","acceptedAnswer":{"@type":"Answer","text":"Yes. There is no SpoolFarm server and no account. Printers are reached over your own network; Bambu Lab works in LAN mode without a cloud account."}},{"@type":"Question","name":"Does packaging count too?","acceptedAnswer":{"@type":"Answer","text":"Yes, packaging is its own stock with its own reorder threshold, and it is written off with the order — boxes are the second thing that runs out at the worst moment."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"SpoolFarm","url":"https://spoolfarm.ikkadoes.com/filament-inventory/","applicationCategory":"BusinessApplication","operatingSystem":"Android 12+","inLanguage":"en","description":"Track every spool: material, colour, remaining weight and what it cost. Automatic write-off when a print finishes, QR and NFC labels, low-stock alerts, Spoolman sync. Android app.","image":"https://spoolfarm.ikkadoes.com/assets/og.png","screenshot":"https://spoolfarm.ikkadoes.com/tour/shots/01-dashboard.jpg","downloadUrl":"https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm","installUrl":"https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR","url":"https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm","availability":"https://schema.org/InStock"},"author":{"@type":"Organization","name":"IkkaDoes","email":"spoolfarm@ikkadoes.com"},"publisher":{"@type":"Organization","name":"IkkaDoes"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"SpoolFarm","item":"https://spoolfarm.ikkadoes.com/"},{"@type":"ListItem","position":2,"name":"Filament inventory app","item":"https://spoolfarm.ikkadoes.com/filament-inventory/"}]}</script>
+<!--SF:/META-->
+</head>
+<body>
+<!--SF:HEADER-->
+<a class="skip" href="#main">Skip to content</a>
+<header class="sitehead noprint">
+  <div class="bar">
+    <a class="brand" href="/">
+      <img src="/assets/icon.png" alt="" width="26" height="26">
+      <span>SpoolFarm</span>
+      <span class="brand-by">IkkaDoes</span>
+    </a>
+    <nav class="sitenav" aria-label="Product">
+      <a href="/tour/">Tour</a>
+      <a href="/calculator/">Calculator</a>
+      <a href="/filament-inventory/" aria-current="page">Filament</a>
+      <a href="/faq/">FAQ</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+    </nav>
+    <div class="lang"><span class="on">EN</span><a href="/filament-inventory/ru/" hreflang="ru" lang="ru">RU</a><a href="/filament-inventory/uk/" hreflang="uk" lang="uk">UK</a></div>
+  </div>
+</header>
+<!--SF:/HEADER-->
+
+<main id="main">
+<div class="wrap">
+
+  <section class="homehero">
+    <div>
+      <span class="badge"><span class="dot"></span>Android 12+ · on Google Play</span>
+      <h1>Filament inventory that stays honest</h1>
+      <p class="lead">A spool tracker for people who print for money: what is on the shelf,
+      how much is left on each spool, what it cost, and what it is worth after the job.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm">Get it on Google Play</a>
+        <a class="btn btn-ghost" href="/calculator/">Cost calculator</a>
+      </div>
+    </div>
+    <div class="shot">
+      <div class="phone">
+        <img src="/tour/shots/02-spools.jpg" width="1220" height="2712"
+             alt="Spool list in SpoolFarm: material, colour and remaining weight for each spool">
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Why filament stock drifts</h2>
+    </div>
+    <p>Nobody weighs a spool after every print. You subtract in your head, then you print a
+    batch, then someone starts a job on the other printer — and by the end of the week the
+    number on the shelf and the number in your notes have nothing to do with each other.
+    The cost of that is not the filament: it is the job that stops at 80 % because the spool
+    was emptier than you thought.</p>
+    <p>SpoolFarm subtracts for you. When a print finishes, the grams come off the spool that
+    printed it, and the spool that printed it is recorded in the job's history.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>What the spool card holds</h2>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>Material and colour</h3>
+        <p>Type, sub-type, brand, colour with its real hex, diameter and spool weight.
+        Nozzle and bed temperatures you actually use for it.</p>
+      </div>
+      <div class="card">
+        <h3>Remaining weight</h3>
+        <p>Net weight, used weight, what is left — updated automatically as jobs finish,
+        and correctable by hand when you reweigh.</p>
+      </div>
+      <div class="card">
+        <h3>Price</h3>
+        <p>What this spool cost you, not what the shop charges today. Cost per gram follows
+        from it into every calculation and every order.</p>
+      </div>
+      <div class="card">
+        <h3>QR and NFC labels</h3>
+        <p>Stick a label on the spool, scan it with the phone, the right card opens. No
+        scrolling through a list of forty greys.</p>
+      </div>
+      <div class="card">
+        <h3>Low-stock alerts</h3>
+        <p>A threshold per spool and per material. The warning arrives before the filament
+        runs out mid-print, not after.</p>
+      </div>
+      <div class="card">
+        <h3>Spoolman sync</h3>
+        <p>Already keeping stock in Spoolman? Synchronise instead of typing everything
+        twice.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Questions</h2>
+    </div>
+
+    <h3 class="q">How does the app know how much filament a print used?</h3>
+    <p>From the printer. Klipper, OctoPrint, Bambu Lab and the others report the finished
+    job and its filament use; the grams are written off the spool assigned to that printer.
+    You can also enter a job by hand.</p>
+
+    <h3 class="q">What if I swap spools between printers?</h3>
+    <p>Assign the spool to the printer when you load it. The write-off follows the
+    assignment, so a swap mid-week does not corrupt last week's numbers.</p>
+
+    <h3 class="q">Can I import my existing list?</h3>
+    <p>Yes, by CSV. Be careful with re-importing your own export: import always adds rows
+    and does not match by id, so importing the same file twice doubles the shelf. The
+    import wizard warns about it.</p>
+
+    <h3 class="q">Does it work without the internet?</h3>
+    <p>Yes. There is no SpoolFarm server and no account. Printers are reached over your own
+    network; Bambu Lab works in LAN mode without a cloud account.</p>
+
+    <h3 class="q">Does packaging count too?</h3>
+    <p>Yes, packaging is its own stock with its own reorder threshold, and it is written off
+    with the order — boxes are the second thing that runs out at the worst moment.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Stock, cost and orders in one app</h2>
+      <p class="sub">The inventory feeds the
+      <a href="/calculator/">print cost calculator</a> and the order sheet: one spool price,
+      counted everywhere.</p>
+    </div>
+    <div class="cta">
+      <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm">Get it on Google Play</a>
+      <a class="btn btn-ghost" href="/tour/">Product tour</a>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<!--SF:FOOTER-->
+<footer class="sitefoot noprint">
+  <div class="cols">
+    <div class="about">
+      <a class="brand" href="/">
+        <img src="/assets/icon.png" alt="" width="26" height="26">
+        <span>SpoolFarm</span>
+        <span class="brand-by">IkkaDoes</span>
+      </a>
+      <p>An IkkaDoes product. 3D printing farm management for Android — filament inventory, real costing, orders and printer control.</p>
+      <p><a href="mailto:spoolfarm@ikkadoes.com?subject=%5BSpoolFarm%5D%20">spoolfarm@ikkadoes.com</a><br>
+      <span class="small">Subject line must keep the <code>[SpoolFarm]</code> tag.</span></p>
+    </div>
+    <div>
+      <h4>Product</h4>
+      <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/tour/">Product tour</a></li>
+      <li><a href="/calculator/">3D print cost calculator</a></li>
+      <li><a href="/filament-inventory/">Filament inventory</a></li>
+      <li><a href="/printers/">Printers and monitoring</a></li>
+      <li><a href="/faq/">Questions &amp; answers</a></li>
+      <li><a href="https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm">Get it on Google Play</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <ul>
+      <li><a href="/privacy/">Privacy policy</a></li>
+      <li><a href="/terms/">Terms of service</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="small" style="margin:0 0 8px">Other languages</p>
+      <h4 lang="ru">Русский</h4>
+      <ul lang="ru">
+      <li><a href="/ru/">Главная</a></li>
+      <li><a href="/tour/ru/">Обзор приложения</a></li>
+      <li><a href="/calculator/ru/">Калькулятор себестоимости 3D-печати</a></li>
+      <li><a href="/faq/ru/">Вопросы и ответы</a></li>
+      <li><a href="/privacy/ru/">Политика конфиденциальности</a></li>
+      <li><a href="/terms/ru/">Пользовательское соглашение</a></li>
+      </ul>
+      <h4 lang="uk">Українська</h4>
+      <ul lang="uk">
+      <li><a href="/uk/">Головна</a></li>
+      <li><a href="/tour/uk/">Огляд застосунку</a></li>
+      <li><a href="/calculator/uk/">Калькулятор собівартості 3D-друку</a></li>
+      <li><a href="/faq/uk/">Питання та відповіді</a></li>
+      <li><a href="/privacy/uk/">Політика конфіденційності</a></li>
+      <li><a href="/terms/uk/">Угода користувача</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="fine">© 2026 IkkaDoes. SpoolFarm is an independent project and is not affiliated with Bambu Lab, Klipper, OctoPrint, Prusa, Duet3D or Spoolman. Product names belong to their respective owners.</p>
+</footer>
+<!--SF:/FOOTER-->
+</body>
+</html>

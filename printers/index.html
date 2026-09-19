@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One app for Klipper, Bambu Lab and OctoPrint printers | SpoolFarm</title>
+<meta name="description" content="Monitor and control every 3D printer from one Android app: Klipper/Moonraker, Bambu Lab over LAN, OctoPrint, Prusa Connect, Duet and Repetier. Live status, camera, G-code console, calibration macros.">
+<link rel="stylesheet" href="/assets/site.css">
+<!--SF:META-->
+<script>document.documentElement.classList.add('js')</script>
+<link rel="canonical" href="https://spoolfarm.ikkadoes.com/printers/">
+<link rel="alternate" hreflang="en" href="https://spoolfarm.ikkadoes.com/printers/">
+<link rel="alternate" hreflang="ru" href="https://spoolfarm.ikkadoes.com/printers/ru/">
+<link rel="alternate" hreflang="uk" href="https://spoolfarm.ikkadoes.com/printers/uk/">
+<link rel="alternate" hreflang="x-default" href="https://spoolfarm.ikkadoes.com/">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1013" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SpoolFarm">
+<meta property="og:title" content="One app for Klipper, Bambu Lab and OctoPrint printers | SpoolFarm">
+<meta property="og:description" content="Monitor and control every 3D printer from one Android app: Klipper/Moonraker, Bambu Lab over LAN, OctoPrint, Prusa Connect, Duet and Repetier. Live status, camera, G-code console, calibration macros.">
+<meta property="og:url" content="https://spoolfarm.ikkadoes.com/printers/">
+<meta property="og:image" content="https://spoolfarm.ikkadoes.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:locale:alternate" content="uk_UA">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="One app for Klipper, Bambu Lab and OctoPrint printers | SpoolFarm">
+<meta name="twitter:description" content="Monitor and control every 3D printer from one Android app: Klipper/Moonraker, Bambu Lab over LAN, OctoPrint, Prusa Connect, Duet and Repetier. Live status, camera, G-code console, calibration macros.">
+<meta name="twitter:image" content="https://spoolfarm.ikkadoes.com/assets/og.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","url":"https://spoolfarm.ikkadoes.com/printers/","mainEntity":[{"@type":"Question","name":"Do I need a cloud account for Bambu Lab?","acceptedAnswer":{"@type":"Answer","text":"No. LAN mode works with the access code from the printer's screen. If the printer reports an authentication error, it is almost always the access code, not the network."}},{"@type":"Question","name":"Does it work outside my home network?","acceptedAnswer":{"@type":"Answer","text":"Yes, through your own VPN or Tailscale — the app talks to the address you give it. There is no SpoolFarm server in the middle, which is also why we cannot see your printers."}},{"@type":"Question","name":"Will it eat my mobile data?","acceptedAnswer":{"@type":"Answer","text":"Bambu printers push around 13 KB every second or so on their own and that rate is not adjustable, which adds up on a metered connection. There is a mobile-data saver for exactly this."}},{"@type":"Question","name":"Does watching printers drain the battery?","acceptedAnswer":{"@type":"Answer","text":"It did, and that was fixed: background use dropped from about 21 % to 4–6 % of the app's share. The cause was not the monitoring itself but repeated decryption of stored settings on every update."}},{"@type":"Question","name":"Can it spot a failed print?","acceptedAnswer":{"@type":"Answer","text":"Yes, with your own self-hosted Obico ML server. Frames go to the address you configure and nowhere else."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"SpoolFarm","url":"https://spoolfarm.ikkadoes.com/printers/","applicationCategory":"BusinessApplication","operatingSystem":"Android 12+","inLanguage":"en","description":"Monitor and control every 3D printer from one Android app: Klipper/Moonraker, Bambu Lab over LAN, OctoPrint, Prusa Connect, Duet and Repetier. Live status, camera, G-code console, calibration macros.","image":"https://spoolfarm.ikkadoes.com/assets/og.png","screenshot":"https://spoolfarm.ikkadoes.com/tour/shots/01-dashboard.jpg","downloadUrl":"https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm","installUrl":"https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR","url":"https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm","availability":"https://schema.org/InStock"},"author":{"@type":"Organization","name":"IkkaDoes","email":"spoolfarm@ikkadoes.com"},"publisher":{"@type":"Organization","name":"IkkaDoes"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"SpoolFarm","item":"https://spoolfarm.ikkadoes.com/"},{"@type":"ListItem","position":2,"name":"One app for Klipper, Bambu Lab and OctoPrint printers","item":"https://spoolfarm.ikkadoes.com/printers/"}]}</script>
+<!--SF:/META-->
+</head>
+<body>
+<!--SF:HEADER-->
+<a class="skip" href="#main">Skip to content</a>
+<header class="sitehead noprint">
+  <div class="bar">
+    <a class="brand" href="/">
+      <img src="/assets/icon.png" alt="" width="26" height="26">
+      <span>SpoolFarm</span>
+      <span class="brand-by">IkkaDoes</span>
+    </a>
+    <nav class="sitenav" aria-label="Product">
+      <a href="/tour/">Tour</a>
+      <a href="/calculator/">Calculator</a>
+      <a href="/printers/" aria-current="page">Printers</a>
+      <a href="/faq/">FAQ</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+    </nav>
+    <div class="lang"><span class="on">EN</span><a href="/printers/ru/" hreflang="ru" lang="ru">RU</a><a href="/printers/uk/" hreflang="uk" lang="uk">UK</a></div>
+  </div>
+</header>
+<!--SF:/HEADER-->
+
+<main id="main">
+<div class="wrap">
+
+  <section class="homehero">
+    <div>
+      <span class="badge"><span class="dot"></span>Android 12+ · on Google Play</span>
+      <h1>Every printer in one list</h1>
+      <p class="lead">Four machines from three vendors should not mean four apps. Klipper,
+      Bambu Lab, OctoPrint, Prusa, Duet and Repetier report into the same screen — status,
+      temperatures, progress and camera.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm">Get it on Google Play</a>
+        <a class="btn btn-ghost" href="/tour/">Product tour</a>
+      </div>
+    </div>
+    <div class="shot">
+      <div class="phone">
+        <img src="/tour/shots/01-dashboard.jpg" width="1220" height="2712"
+             alt="SpoolFarm dashboard: printers from different vendors in one list">
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>What connects</h2>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>Klipper and Moonraker</h3>
+        <p>Full status, G-code console and interactive calibration macros, including bed
+        screw adjustment with the real screw names from your config.</p>
+      </div>
+      <div class="card">
+        <h3>Bambu Lab over LAN</h3>
+        <p>X1, P1, A1 and H2 in LAN mode — no cloud account needed. The printer reports its
+        own model, so the app does not guess. Cloud login is available if you prefer it.</p>
+      </div>
+      <div class="card">
+        <h3>OctoPrint</h3>
+        <p>Job status, temperatures and control through the API key, with the same
+        write-off of filament when a print ends.</p>
+      </div>
+      <div class="card">
+        <h3>Prusa Connect, Duet, Repetier</h3>
+        <p>The rest of the shelf, in the same list and the same accounting — no second app
+        and no second spreadsheet.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>What you can do from the phone</h2>
+    </div>
+    <div class="callout">
+      <p><strong>Watch.</strong> Status, nozzle and bed temperature, progress, time left,
+      and a camera view for each machine.</p>
+      <p><strong>Intervene.</strong> Pause, resume, cancel, send G-code from a console with
+      history — the validator warns but never blocks, because Klipper macros are legitimate
+      commands a strict parser would reject.</p>
+      <p><strong>Calibrate.</strong> Interactive macros walk through bed screws and other
+      routines instead of leaving you to retype coordinates.</p>
+      <p><strong>Be told.</strong> Telegram, Discord or your own webhook when a job finishes
+      or a printer errors out — with Bambu Lab error codes translated into plain language.</p>
+      <p style="margin:0"><strong>Recover.</strong> A smart plug can power-cycle a printer
+      that has stopped answering, without a trip to the workshop.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Questions</h2>
+    </div>
+
+    <h3 class="q">Do I need a cloud account for Bambu Lab?</h3>
+    <p>No. LAN mode works with the access code from the printer's screen. If the printer
+    reports an authentication error, it is almost always the access code, not the network.</p>
+
+    <h3 class="q">Does it work outside my home network?</h3>
+    <p>Yes, through your own VPN or Tailscale — the app talks to the address you give it.
+    There is no SpoolFarm server in the middle, which is also why we cannot see your
+    printers.</p>
+
+    <h3 class="q">Will it eat my mobile data?</h3>
+    <p>Bambu printers push around 13 KB every second or so on their own and that rate is not
+    adjustable, which adds up on a metered connection. There is a mobile-data saver for
+    exactly this.</p>
+
+    <h3 class="q">Does watching printers drain the battery?</h3>
+    <p>It did, and that was fixed: background use dropped from about 21 % to 4–6 % of the
+    app's share. The cause was not the monitoring itself but repeated decryption of stored
+    settings on every update.</p>
+
+    <h3 class="q">Can it spot a failed print?</h3>
+    <p>Yes, with your own self-hosted Obico ML server. Frames go to the address you
+    configure and nowhere else.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Monitoring is half of it</h2>
+      <p class="sub">The other half is money: the
+      <a href="/calculator/">print cost calculator</a> and
+      <a href="/filament-inventory/">filament inventory</a> use what the printers report.</p>
+    </div>
+    <div class="cta">
+      <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm">Get it on Google Play</a>
+      <a class="btn btn-ghost" href="/faq/">Questions &amp; answers</a>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<!--SF:FOOTER-->
+<footer class="sitefoot noprint">
+  <div class="cols">
+    <div class="about">
+      <a class="brand" href="/">
+        <img src="/assets/icon.png" alt="" width="26" height="26">
+        <span>SpoolFarm</span>
+        <span class="brand-by">IkkaDoes</span>
+      </a>
+      <p>An IkkaDoes product. 3D printing farm management for Android — filament inventory, real costing, orders and printer control.</p>
+      <p><a href="mailto:spoolfarm@ikkadoes.com?subject=%5BSpoolFarm%5D%20">spoolfarm@ikkadoes.com</a><br>
+      <span class="small">Subject line must keep the <code>[SpoolFarm]</code> tag.</span></p>
+    </div>
+    <div>
+      <h4>Product</h4>
+      <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/tour/">Product tour</a></li>
+      <li><a href="/calculator/">3D print cost calculator</a></li>
+      <li><a href="/filament-inventory/">Filament inventory</a></li>
+      <li><a href="/printers/">Printers and monitoring</a></li>
+      <li><a href="/faq/">Questions &amp; answers</a></li>
+      <li><a href="https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm">Get it on Google Play</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <ul>
+      <li><a href="/privacy/">Privacy policy</a></li>
+      <li><a href="/terms/">Terms of service</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="small" style="margin:0 0 8px">Other languages</p>
+      <h4 lang="ru">Русский</h4>
+      <ul lang="ru">
+      <li><a href="/ru/">Главная</a></li>
+      <li><a href="/tour/ru/">Обзор приложения</a></li>
+      <li><a href="/calculator/ru/">Калькулятор себестоимости 3D-печати</a></li>
+      <li><a href="/faq/ru/">Вопросы и ответы</a></li>
+      <li><a href="/privacy/ru/">Политика конфиденциальности</a></li>
+      <li><a href="/terms/ru/">Пользовательское соглашение</a></li>
+      </ul>
+      <h4 lang="uk">Українська</h4>
+      <ul lang="uk">
+      <li><a href="/uk/">Головна</a></li>
+      <li><a href="/tour/uk/">Огляд застосунку</a></li>
+      <li><a href="/calculator/uk/">Калькулятор собівартості 3D-друку</a></li>
+      <li><a href="/faq/uk/">Питання та відповіді</a></li>
+      <li><a href="/privacy/uk/">Політика конфіденційності</a></li>
+      <li><a href="/terms/uk/">Угода користувача</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="fine">© 2026 IkkaDoes. SpoolFarm is an independent project and is not affiliated with Bambu Lab, Klipper, OctoPrint, Prusa, Duet3D or Spoolman. Product names belong to their respective owners.</p>
+</footer>
+<!--SF:/FOOTER-->
+</body>
+</html>

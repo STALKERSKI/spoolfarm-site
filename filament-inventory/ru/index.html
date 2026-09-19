@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Учёт филамента — остатки катушек, вес и цена | SpoolFarm</title>
+<meta name="description" content="Учёт катушек филамента: материал, цвет, остаток и цена. Автосписание по завершении печати, QR- и NFC-метки, предупреждение о низком остатке, синхронизация со Spoolman. Приложение для Android.">
+<link rel="stylesheet" href="/assets/site.css">
+<!--SF:META-->
+<script>document.documentElement.classList.add('js')</script>
+<link rel="canonical" href="https://spoolfarm.ikkadoes.com/filament-inventory/ru/">
+<link rel="alternate" hreflang="en" href="https://spoolfarm.ikkadoes.com/filament-inventory/">
+<link rel="alternate" hreflang="ru" href="https://spoolfarm.ikkadoes.com/filament-inventory/ru/">
+<link rel="alternate" hreflang="uk" href="https://spoolfarm.ikkadoes.com/filament-inventory/uk/">
+<link rel="alternate" hreflang="x-default" href="https://spoolfarm.ikkadoes.com/">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1013" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SpoolFarm">
+<meta property="og:title" content="Учёт филамента — остатки катушек, вес и цена | SpoolFarm">
+<meta property="og:description" content="Учёт катушек филамента: материал, цвет, остаток и цена. Автосписание по завершении печати, QR- и NFC-метки, предупреждение о низком остатке, синхронизация со Spoolman. Приложение для Android.">
+<meta property="og:url" content="https://spoolfarm.ikkadoes.com/filament-inventory/ru/">
+<meta property="og:image" content="https://spoolfarm.ikkadoes.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="uk_UA">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Учёт филамента — остатки катушек, вес и цена | SpoolFarm">
+<meta name="twitter:description" content="Учёт катушек филамента: материал, цвет, остаток и цена. Автосписание по завершении печати, QR- и NFC-метки, предупреждение о низком остатке, синхронизация со Spoolman. Приложение для Android.">
+<meta name="twitter:image" content="https://spoolfarm.ikkadoes.com/assets/og.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","url":"https://spoolfarm.ikkadoes.com/filament-inventory/ru/","mainEntity":[{"@type":"Question","name":"Откуда приложение знает, сколько филамента ушло?","acceptedAnswer":{"@type":"Answer","text":"От принтера. Klipper, OctoPrint, Bambu Lab и остальные сообщают о завершённой работе и расходе; граммы списываются с катушки, назначенной на этот принтер. Работу можно внести и руками."}},{"@type":"Question","name":"А если я переставляю катушки между принтерами?","acceptedAnswer":{"@type":"Answer","text":"Назначайте катушку на принтер, когда заправляете. Списание идёт по назначению, поэтому перестановка среди недели не портит цифры за прошлую."}},{"@type":"Question","name":"Можно перенести свой список?","acceptedAnswer":{"@type":"Answer","text":"Да, через CSV. Осторожно с повторным импортом собственного экспорта: импорт всегда ДОБАВЛЯЕТ строки и не сверяет id, поэтому один и тот же файл, залитый дважды, удвоит склад. Мастер импорта об этом предупреждает."}},{"@type":"Question","name":"Работает без интернета?","acceptedAnswer":{"@type":"Answer","text":"Да. Сервера SpoolFarm не существует, аккаунтов нет. К принтерам приложение ходит по вашей сети, Bambu Lab работает в LAN-режиме без облачной учётной записи."}},{"@type":"Question","name":"Упаковка тоже считается?","acceptedAnswer":{"@type":"Answer","text":"Да, упаковка — отдельный склад со своим порогом дозаказа, и списывается вместе с заказом: коробки заканчиваются вторыми по закону подлости."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"SpoolFarm","url":"https://spoolfarm.ikkadoes.com/filament-inventory/ru/","applicationCategory":"BusinessApplication","operatingSystem":"Android 12+","inLanguage":"ru","description":"Учёт катушек филамента: материал, цвет, остаток и цена. Автосписание по завершении печати, QR- и NFC-метки, предупреждение о низком остатке, синхронизация со Spoolman. Приложение для Android.","image":"https://spoolfarm.ikkadoes.com/assets/og.png","screenshot":"https://spoolfarm.ikkadoes.com/tour/shots/01-dashboard.jpg","downloadUrl":"https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm","installUrl":"https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR","url":"https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm","availability":"https://schema.org/InStock"},"author":{"@type":"Organization","name":"IkkaDoes","email":"spoolfarm@ikkadoes.com"},"publisher":{"@type":"Organization","name":"IkkaDoes"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"SpoolFarm","item":"https://spoolfarm.ikkadoes.com/ru/"},{"@type":"ListItem","position":2,"name":"Учёт филамента","item":"https://spoolfarm.ikkadoes.com/filament-inventory/ru/"}]}</script>
+<!--SF:/META-->
+</head>
+<body>
+<!--SF:HEADER-->
+<a class="skip" href="#main">К содержанию</a>
+<header class="sitehead noprint">
+  <div class="bar">
+    <a class="brand" href="/ru/">
+      <img src="/assets/icon.png" alt="" width="26" height="26">
+      <span>SpoolFarm</span>
+      <span class="brand-by">IkkaDoes</span>
+    </a>
+    <nav class="sitenav" aria-label="Продукт">
+      <a href="/tour/ru/">Обзор</a>
+      <a href="/calculator/ru/">Калькулятор</a>
+      <a href="/filament-inventory/ru/" aria-current="page">Филамент</a>
+      <a href="/faq/ru/">Вопросы</a>
+      <a href="/privacy/ru/">Приватность</a>
+      <a href="/terms/ru/">Соглашение</a>
+    </nav>
+    <div class="lang"><a href="/filament-inventory/" hreflang="en" lang="en">EN</a><span class="on">RU</span><a href="/filament-inventory/uk/" hreflang="uk" lang="uk">UK</a></div>
+  </div>
+</header>
+<!--SF:/HEADER-->
+
+<main id="main">
+<div class="wrap">
+
+  <section class="homehero">
+    <div>
+      <span class="badge"><span class="dot"></span>Android 12+ · в Google Play</span>
+      <h1>Склад филамента, который не врёт</h1>
+      <p class="lead">Учёт катушек для тех, кто печатает на продажу: что лежит на полке,
+      сколько осталось на каждой катушке, во сколько она обошлась и что от неё останется
+      после заказа.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm">Установить из Google Play</a>
+        <a class="btn btn-ghost" href="/calculator/ru/">Калькулятор себестоимости</a>
+      </div>
+    </div>
+    <div class="shot">
+      <div class="phone">
+        <img src="/tour/shots/02-spools.jpg" width="1220" height="2712"
+             alt="Список катушек в SpoolFarm: материал, цвет и остаток по каждой">
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Почему остатки разъезжаются</h2>
+    </div>
+    <p>Никто не взвешивает катушку после каждой печати. Вычли в уме, потом напечатали
+    партию, потом кто-то поставил работу на второй принтер — и к концу недели число на
+    полке и число в заметках не имеют друг к другу отношения. Дорого обходится не филамент,
+    а работа, которая встала на 80 %, потому что на катушке было меньше, чем казалось.</p>
+    <p>SpoolFarm вычитает сам. Печать завершилась — граммы ушли с той катушки, которая
+    печатала, и эта катушка записалась в историю работы.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Что лежит в карточке катушки</h2>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>Материал и цвет</h3>
+        <p>Тип, подтип, производитель, цвет настоящим hex-ом, диаметр и вес катушки.
+        Температуры сопла и стола, на которых вы её реально печатаете.</p>
+      </div>
+      <div class="card">
+        <h3>Остаток</h3>
+        <p>Чистый вес, израсходовано, осталось — обновляется само по завершении печати и
+        правится руками, когда вы перевешиваете.</p>
+      </div>
+      <div class="card">
+        <h3>Цена</h3>
+        <p>Во сколько обошлась именно эта катушка, а не сегодняшний ценник в магазине. Цена
+        грамма уходит отсюда в каждый расчёт и в каждый заказ.</p>
+      </div>
+      <div class="card">
+        <h3>QR- и NFC-метки</h3>
+        <p>Наклеили метку, поднесли телефон — открылась нужная карточка. Без пролистывания
+        сорока серых.</p>
+      </div>
+      <div class="card">
+        <h3>Предупреждение о низком остатке</h3>
+        <p>Порог по катушке и по материалу. Предупреждение приходит до того, как филамент
+        кончится посреди печати, а не после.</p>
+      </div>
+      <div class="card">
+        <h3>Синхронизация со Spoolman</h3>
+        <p>Склад уже ведётся в Spoolman? Синхронизируйте, а не вбивайте всё дважды.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Вопросы</h2>
+    </div>
+
+    <h3 class="q">Откуда приложение знает, сколько филамента ушло?</h3>
+    <p>От принтера. Klipper, OctoPrint, Bambu Lab и остальные сообщают о завершённой работе
+    и расходе; граммы списываются с катушки, назначенной на этот принтер. Работу можно
+    внести и руками.</p>
+
+    <h3 class="q">А если я переставляю катушки между принтерами?</h3>
+    <p>Назначайте катушку на принтер, когда заправляете. Списание идёт по назначению,
+    поэтому перестановка среди недели не портит цифры за прошлую.</p>
+
+    <h3 class="q">Можно перенести свой список?</h3>
+    <p>Да, через CSV. Осторожно с повторным импортом собственного экспорта: импорт всегда
+    ДОБАВЛЯЕТ строки и не сверяет id, поэтому один и тот же файл, залитый дважды, удвоит
+    склад. Мастер импорта об этом предупреждает.</p>
+
+    <h3 class="q">Работает без интернета?</h3>
+    <p>Да. Сервера SpoolFarm не существует, аккаунтов нет. К принтерам приложение ходит по
+    вашей сети, Bambu Lab работает в LAN-режиме без облачной учётной записи.</p>
+
+    <h3 class="q">Упаковка тоже считается?</h3>
+    <p>Да, упаковка — отдельный склад со своим порогом дозаказа, и списывается вместе с
+    заказом: коробки заканчиваются вторыми по закону подлости.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Склад, себестоимость и заказы в одном приложении</h2>
+      <p class="sub">Со склада цена уходит в
+      <a href="/calculator/ru/">калькулятор себестоимости</a> и в заказы: одна цена катушки,
+      посчитанная везде.</p>
+    </div>
+    <div class="cta">
+      <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm">Установить из Google Play</a>
+      <a class="btn btn-ghost" href="/tour/ru/">Обзор приложения</a>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<!--SF:FOOTER-->
+<footer class="sitefoot noprint">
+  <div class="cols">
+    <div class="about">
+      <a class="brand" href="/ru/">
+        <img src="/assets/icon.png" alt="" width="26" height="26">
+        <span>SpoolFarm</span>
+        <span class="brand-by">IkkaDoes</span>
+      </a>
+      <p>Продукт IkkaDoes. Управление фермой 3D-печати с телефона — склад филамента, честная себестоимость, заказы и контроль принтеров.</p>
+      <p><a href="mailto:spoolfarm@ikkadoes.com?subject=%5BSpoolFarm%5D%20">spoolfarm@ikkadoes.com</a><br>
+      <span class="small">Пожалуйста, оставьте в теме письма пометку <code>[SpoolFarm]</code>.</span></p>
+    </div>
+    <div>
+      <h4>Продукт</h4>
+      <ul>
+      <li><a href="/ru/">Главная</a></li>
+      <li><a href="/tour/ru/">Обзор приложения</a></li>
+      <li><a href="/calculator/ru/">Калькулятор себестоимости 3D-печати</a></li>
+      <li><a href="/filament-inventory/ru/">Учёт филамента</a></li>
+      <li><a href="/printers/ru/">Принтеры и слежение</a></li>
+      <li><a href="/faq/ru/">Вопросы и ответы</a></li>
+      <li><a href="https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm">Установить из Google Play</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Документы</h4>
+      <ul>
+      <li><a href="/privacy/ru/">Политика конфиденциальности</a></li>
+      <li><a href="/terms/ru/">Пользовательское соглашение</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="small" style="margin:0 0 8px">Другие языки</p>
+      <h4 lang="en">English</h4>
+      <ul lang="en">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tour/">Product tour</a></li>
+      <li><a href="/calculator/">3D print cost calculator</a></li>
+      <li><a href="/faq/">Questions &amp; answers</a></li>
+      <li><a href="/privacy/">Privacy policy</a></li>
+      <li><a href="/terms/">Terms of service</a></li>
+      </ul>
+      <h4 lang="uk">Українська</h4>
+      <ul lang="uk">
+      <li><a href="/uk/">Головна</a></li>
+      <li><a href="/tour/uk/">Огляд застосунку</a></li>
+      <li><a href="/calculator/uk/">Калькулятор собівартості 3D-друку</a></li>
+      <li><a href="/faq/uk/">Питання та відповіді</a></li>
+      <li><a href="/privacy/uk/">Політика конфіденційності</a></li>
+      <li><a href="/terms/uk/">Угода користувача</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="fine">© 2026 IkkaDoes. SpoolFarm — независимый проект, не связанный с Bambu Lab, Klipper, OctoPrint, Prusa, Duet3D и Spoolman. Названия продуктов принадлежат их владельцам.</p>
+</footer>
+<!--SF:/FOOTER-->
+</body>
+</html>

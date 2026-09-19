@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Одно приложение для Klipper, Bambu Lab и OctoPrint | SpoolFarm</title>
+<meta name="description" content="Контроль всех 3D-принтеров с телефона: Klipper/Moonraker, Bambu Lab по локальной сети, OctoPrint, Prusa Connect, Duet и Repetier. Живой статус, камера, консоль G-code, макросы калибровки.">
+<link rel="stylesheet" href="/assets/site.css">
+<!--SF:META-->
+<script>document.documentElement.classList.add('js')</script>
+<link rel="canonical" href="https://spoolfarm.ikkadoes.com/printers/ru/">
+<link rel="alternate" hreflang="en" href="https://spoolfarm.ikkadoes.com/printers/">
+<link rel="alternate" hreflang="ru" href="https://spoolfarm.ikkadoes.com/printers/ru/">
+<link rel="alternate" hreflang="uk" href="https://spoolfarm.ikkadoes.com/printers/uk/">
+<link rel="alternate" hreflang="x-default" href="https://spoolfarm.ikkadoes.com/">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1013" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SpoolFarm">
+<meta property="og:title" content="Одно приложение для Klipper, Bambu Lab и OctoPrint | SpoolFarm">
+<meta property="og:description" content="Контроль всех 3D-принтеров с телефона: Klipper/Moonraker, Bambu Lab по локальной сети, OctoPrint, Prusa Connect, Duet и Repetier. Живой статус, камера, консоль G-code, макросы калибровки.">
+<meta property="og:url" content="https://spoolfarm.ikkadoes.com/printers/ru/">
+<meta property="og:image" content="https://spoolfarm.ikkadoes.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="uk_UA">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Одно приложение для Klipper, Bambu Lab и OctoPrint | SpoolFarm">
+<meta name="twitter:description" content="Контроль всех 3D-принтеров с телефона: Klipper/Moonraker, Bambu Lab по локальной сети, OctoPrint, Prusa Connect, Duet и Repetier. Живой статус, камера, консоль G-code, макросы калибровки.">
+<meta name="twitter:image" content="https://spoolfarm.ikkadoes.com/assets/og.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","url":"https://spoolfarm.ikkadoes.com/printers/ru/","mainEntity":[{"@type":"Question","name":"Нужен ли облачный аккаунт для Bambu Lab?","acceptedAnswer":{"@type":"Answer","text":"Нет. LAN-режим работает по коду доступа с экрана принтера. Если принтер отвечает ошибкой авторизации, дело почти всегда в коде доступа, а не в сети."}},{"@type":"Question","name":"А из-за пределов домашней сети?","acceptedAnswer":{"@type":"Answer","text":"Да, через свой VPN или Tailscale — приложение ходит по тому адресу, который вы указали. Сервера SpoolFarm посередине нет, поэтому мы и не видим ваши принтеры."}},{"@type":"Question","name":"Не съест ли это мобильный трафик?","acceptedAnswer":{"@type":"Answer","text":"Принтеры Bambu сами шлют около 13 КБ примерно раз в секунду, и частота не регулируется — на лимитном тарифе это заметно. Ровно для этого есть экономия мобильного трафика."}},{"@type":"Question","name":"Слежение сажает батарею?","acceptedAnswer":{"@type":"Answer","text":"Сажало, и это исправлено: фоновое потребление упало примерно с 21 % до 4–6 % доли приложения. Виновато было не само слежение, а расшифровка настроек при каждом обновлении данных."}},{"@type":"Question","name":"Умеет ли оно ловить брак печати?","acceptedAnswer":{"@type":"Answer","text":"Да, через ваш собственный сервер Obico ML. Кадры уходят по тому адресу, который вы настроили, и никуда больше."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"SpoolFarm","url":"https://spoolfarm.ikkadoes.com/printers/ru/","applicationCategory":"BusinessApplication","operatingSystem":"Android 12+","inLanguage":"ru","description":"Контроль всех 3D-принтеров с телефона: Klipper/Moonraker, Bambu Lab по локальной сети, OctoPrint, Prusa Connect, Duet и Repetier. Живой статус, камера, консоль G-code, макросы калибровки.","image":"https://spoolfarm.ikkadoes.com/assets/og.png","screenshot":"https://spoolfarm.ikkadoes.com/tour/shots/01-dashboard.jpg","downloadUrl":"https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm","installUrl":"https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR","url":"https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm","availability":"https://schema.org/InStock"},"author":{"@type":"Organization","name":"IkkaDoes","email":"spoolfarm@ikkadoes.com"},"publisher":{"@type":"Organization","name":"IkkaDoes"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"SpoolFarm","item":"https://spoolfarm.ikkadoes.com/ru/"},{"@type":"ListItem","position":2,"name":"Одно приложение для Klipper, Bambu Lab и OctoPrint","item":"https://spoolfarm.ikkadoes.com/printers/ru/"}]}</script>
+<!--SF:/META-->
+</head>
+<body>
+<!--SF:HEADER-->
+<a class="skip" href="#main">К содержанию</a>
+<header class="sitehead noprint">
+  <div class="bar">
+    <a class="brand" href="/ru/">
+      <img src="/assets/icon.png" alt="" width="26" height="26">
+      <span>SpoolFarm</span>
+      <span class="brand-by">IkkaDoes</span>
+    </a>
+    <nav class="sitenav" aria-label="Продукт">
+      <a href="/tour/ru/">Обзор</a>
+      <a href="/calculator/ru/">Калькулятор</a>
+      <a href="/printers/ru/" aria-current="page">Принтеры</a>
+      <a href="/faq/ru/">Вопросы</a>
+      <a href="/privacy/ru/">Приватность</a>
+      <a href="/terms/ru/">Соглашение</a>
+    </nav>
+    <div class="lang"><a href="/printers/" hreflang="en" lang="en">EN</a><span class="on">RU</span><a href="/printers/uk/" hreflang="uk" lang="uk">UK</a></div>
+  </div>
+</header>
+<!--SF:/HEADER-->
+
+<main id="main">
+<div class="wrap">
+
+  <section class="homehero">
+    <div>
+      <span class="badge"><span class="dot"></span>Android 12+ · в Google Play</span>
+      <h1>Все принтеры в одном списке</h1>
+      <p class="lead">Четыре машины трёх производителей не должны означать четыре
+      приложения. Klipper, Bambu Lab, OctoPrint, Prusa, Duet и Repetier отчитываются на
+      один экран — статус, температуры, прогресс и камера.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm">Установить из Google Play</a>
+        <a class="btn btn-ghost" href="/tour/ru/">Обзор приложения</a>
+      </div>
+    </div>
+    <div class="shot">
+      <div class="phone">
+        <img src="/tour/shots/01-dashboard.jpg" width="1220" height="2712"
+             alt="Дашборд SpoolFarm: принтеры разных производителей в одном списке">
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Что подключается</h2>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>Klipper и Moonraker</h3>
+        <p>Полный статус, консоль G-code и интерактивные макросы калибровки, включая винты
+        стола — с настоящими именами винтов из вашего конфига.</p>
+      </div>
+      <div class="card">
+        <h3>Bambu Lab по локальной сети</h3>
+        <p>X1, P1, A1 и H2 в LAN-режиме, без облачного аккаунта. Принтер сам сообщает свою
+        модель, так что приложение не гадает. Вход в облако возможен, если он вам удобнее.</p>
+      </div>
+      <div class="card">
+        <h3>OctoPrint</h3>
+        <p>Статус работы, температуры и управление по API-ключу, с тем же списанием
+        филамента по завершении печати.</p>
+      </div>
+      <div class="card">
+        <h3>Prusa Connect, Duet, Repetier</h3>
+        <p>Остальная полка — в том же списке и в том же учёте, без второго приложения и без
+        второй таблицы.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Что можно сделать с телефона</h2>
+    </div>
+    <div class="callout">
+      <p><strong>Смотреть.</strong> Статус, температуры сопла и стола, прогресс, остаток
+      времени и камера по каждой машине.</p>
+      <p><strong>Вмешаться.</strong> Пауза, продолжение, отмена, отправка G-code из консоли
+      с историей — валидатор предупреждает, но не блокирует: макросы Klipper это законные
+      команды, которые строгий разборщик отверг бы.</p>
+      <p><strong>Откалибровать.</strong> Интерактивные макросы проводят по винтам стола и
+      другим процедурам, вместо того чтобы заставлять вас перенабирать координаты.</p>
+      <p><strong>Узнать.</strong> Telegram, Discord или свой вебхук, когда работа
+      закончилась или принтер встал с ошибкой — коды ошибок Bambu Lab переведены на
+      человеческий язык.</p>
+      <p style="margin:0"><strong>Поднять.</strong> Умная розетка перезапустит принтер,
+      который перестал отвечать, без похода в мастерскую.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Вопросы</h2>
+    </div>
+
+    <h3 class="q">Нужен ли облачный аккаунт для Bambu Lab?</h3>
+    <p>Нет. LAN-режим работает по коду доступа с экрана принтера. Если принтер отвечает
+    ошибкой авторизации, дело почти всегда в коде доступа, а не в сети.</p>
+
+    <h3 class="q">А из-за пределов домашней сети?</h3>
+    <p>Да, через свой VPN или Tailscale — приложение ходит по тому адресу, который вы
+    указали. Сервера SpoolFarm посередине нет, поэтому мы и не видим ваши принтеры.</p>
+
+    <h3 class="q">Не съест ли это мобильный трафик?</h3>
+    <p>Принтеры Bambu сами шлют около 13 КБ примерно раз в секунду, и частота не
+    регулируется — на лимитном тарифе это заметно. Ровно для этого есть экономия
+    мобильного трафика.</p>
+
+    <h3 class="q">Слежение сажает батарею?</h3>
+    <p>Сажало, и это исправлено: фоновое потребление упало примерно с 21 % до 4–6 % доли
+    приложения. Виновато было не само слежение, а расшифровка настроек при каждом
+    обновлении данных.</p>
+
+    <h3 class="q">Умеет ли оно ловить брак печати?</h3>
+    <p>Да, через ваш собственный сервер Obico ML. Кадры уходят по тому адресу, который вы
+    настроили, и никуда больше.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Слежение — это половина</h2>
+      <p class="sub">Вторая половина — деньги:
+      <a href="/calculator/ru/">калькулятор себестоимости</a> и
+      <a href="/filament-inventory/ru/">склад филамента</a> считают по тому, что сообщили
+      принтеры.</p>
+    </div>
+    <div class="cta">
+      <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm">Установить из Google Play</a>
+      <a class="btn btn-ghost" href="/faq/ru/">Вопросы и ответы</a>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<!--SF:FOOTER-->
+<footer class="sitefoot noprint">
+  <div class="cols">
+    <div class="about">
+      <a class="brand" href="/ru/">
+        <img src="/assets/icon.png" alt="" width="26" height="26">
+        <span>SpoolFarm</span>
+        <span class="brand-by">IkkaDoes</span>
+      </a>
+      <p>Продукт IkkaDoes. Управление фермой 3D-печати с телефона — склад филамента, честная себестоимость, заказы и контроль принтеров.</p>
+      <p><a href="mailto:spoolfarm@ikkadoes.com?subject=%5BSpoolFarm%5D%20">spoolfarm@ikkadoes.com</a><br>
+      <span class="small">Пожалуйста, оставьте в теме письма пометку <code>[SpoolFarm]</code>.</span></p>
+    </div>
+    <div>
+      <h4>Продукт</h4>
+      <ul>
+      <li><a href="/ru/">Главная</a></li>
+      <li><a href="/tour/ru/">Обзор приложения</a></li>
+      <li><a href="/calculator/ru/">Калькулятор себестоимости 3D-печати</a></li>
+      <li><a href="/filament-inventory/ru/">Учёт филамента</a></li>
+      <li><a href="/printers/ru/">Принтеры и слежение</a></li>
+      <li><a href="/faq/ru/">Вопросы и ответы</a></li>
+      <li><a href="https://play.google.com/store/apps/details?id=com.ikkadoes.spoolfarm">Установить из Google Play</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Документы</h4>
+      <ul>
+      <li><a href="/privacy/ru/">Политика конфиденциальности</a></li>
+      <li><a href="/terms/ru/">Пользовательское соглашение</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="small" style="margin:0 0 8px">Другие языки</p>
+      <h4 lang="en">English</h4>
+      <ul lang="en">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tour/">Product tour</a></li>
+      <li><a href="/calculator/">3D print cost calculator</a></li>
+      <li><a href="/faq/">Questions &amp; answers</a></li>
+      <li><a href="/privacy/">Privacy policy</a></li>
+      <li><a href="/terms/">Terms of service</a></li>
+      </ul>
+      <h4 lang="uk">Українська</h4>
+      <ul lang="uk">
+      <li><a href="/uk/">Головна</a></li>
+      <li><a href="/tour/uk/">Огляд застосунку</a></li>
+      <li><a href="/calculator/uk/">Калькулятор собівартості 3D-друку</a></li>
+      <li><a href="/faq/uk/">Питання та відповіді</a></li>
+      <li><a href="/privacy/uk/">Політика конфіденційності</a></li>
+      <li><a href="/terms/uk/">Угода користувача</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="fine">© 2026 IkkaDoes. SpoolFarm — независимый проект, не связанный с Bambu Lab, Klipper, OctoPrint, Prusa, Duet3D и Spoolman. Названия продуктов принадлежат их владельцам.</p>
+</footer>
+<!--SF:/FOOTER-->
+</body>
+</html>
